@@ -248,6 +248,23 @@ ul.dots li b{color:var(--text);font-weight:600}
 .legend span{display:inline-flex;align-items:center;gap:7px}
 .legend i{width:12px;height:12px;border-radius:4px;border:1px solid}
 @media (max-width:860px){.week-grid{grid-template-columns:1fr 1fr}.day{min-height:0}}
+.objs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.obj{position:relative;padding:22px 22px 20px;border-radius:18px;border:1px solid var(--line);background:var(--bg-card);transition:border-color .3s,transform .35s var(--ease)}
+.obj:hover{border-color:var(--pink-line);transform:translateY(-3px)}
+.obj .q{margin:0 0 10px;font-family:var(--font-display);font-weight:800;font-size:clamp(19px,1.8vw,24px);line-height:1.2;color:var(--text)}
+.obj .a{margin:0 0 14px;font-size:15px;color:var(--soft);line-height:1.5}
+.obj .a b{color:var(--pink-lt)}
+.obj .fmt{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line-strong);color:var(--muted)}
+.obj-note{margin:14px 0 0;font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.objs{grid-template-columns:1fr}}
+.laws{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.law{padding:20px;border-radius:18px;border:1px solid var(--line);background:var(--bg-card);transition:border-color .3s}
+.law:hover{border-color:var(--pink-line)}
+.law .ref{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:var(--pink-soft);border:1px solid var(--pink-line);color:var(--pink-lt);margin-bottom:12px}
+.law h4{margin:0 0 8px;font-family:var(--font-display);font-weight:800;font-size:17px;line-height:1.25}
+.law p{margin:0;font-size:14.5px;color:var(--soft);line-height:1.5}
+@media (max-width:1060px){.laws{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.laws{grid-template-columns:1fr}}
 .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
 @media (max-width:860px){.how{grid-template-columns:1fr}}
 
@@ -535,9 +552,9 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 
     <div class="sub reveal"><h3>Målgruppe</h3><span class="label">Tre segmenter</span></div>
     <div class="segs">
-      <article class="card seg reveal"><span class="age">19 til 25 år</span><h3 class="h-md">Studenten</h3><dl><dt>Lurer på</dt><dd>Passer det med studiene? Hva tjener jeg?</dd><dt>Budskap</dt><dd class="msg">Fleksibel jobb, god lønn og erfaring som teller på CV-en.</dd></dl></article>
-      <article class="card seg reveal" style="--d:.08s"><span class="age">18 til 22 år</span><h3 class="h-md">Friåret</h3><dl><dt>Lurer på</dt><dd>Blir det gøy? Hvem skal jeg jobbe med?</dd><dt>Budskap</dt><dd class="msg">Turnéteam, nye byer og en gjeng du reiser med.</dd></dl></article>
-      <article class="card seg reveal" style="--d:.16s"><span class="age">20 til 30 år</span><h3 class="h-md">Den ambisiøse</h3><dl><dt>Lurer på</dt><dd>Kan jeg komme meg videre?</dd><dt>Budskap</dt><dd class="msg">Fra selger til teamleder gjennom Face2face Campus.</dd></dl></article>
+      <article class="card seg reveal"><span class="age">Studerer</span><h3 class="h-md">Studenten</h3><dl><dt>Lurer på</dt><dd>Passer det med studiene? Hva tjener jeg?</dd><dt>Budskap</dt><dd class="msg">Fleksibel jobb, god lønn og erfaring som teller på CV-en.</dd></dl></article>
+      <article class="card seg reveal" style="--d:.08s"><span class="age">Tar et friår</span><h3 class="h-md">Friåret</h3><dl><dt>Lurer på</dt><dd>Blir det gøy? Hvem skal jeg jobbe med?</dd><dt>Budskap</dt><dd class="msg">Turnéteam, nye byer og en gjeng du reiser med.</dd></dl></article>
+      <article class="card seg reveal" style="--d:.16s"><span class="age">Vil videre</span><h3 class="h-md">Den ambisiøse</h3><dl><dt>Lurer på</dt><dd>Kan jeg komme meg videre?</dd><dt>Budskap</dt><dd class="msg">Fra selger til teamleder gjennom Face2face Campus.</dd></dl></article>
     </div>
   </div>
 </section>
@@ -628,6 +645,15 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="pillars reveal" role="tablist" aria-label="Innholdspilarer" id="pillars"></div>
     <div class="pillar-detail" id="pillar-detail" role="tabpanel" aria-live="polite"></div>
 
+    <div class="sub reveal"><h3>Innvendingene vi svarer på</h3><span class="label">Lønn er den største barrieren</span></div>
+    <div class="objs">
+      <article class="obj reveal"><p class="q">«Det er utrygg lønn»</p><p class="a"><b>Svaret:</b> Grunnlønnen er garantert, og provisjonen kommer i tillegg. En selger viser hvordan lønnen er satt sammen, med tall Face2face har godkjent.</p><span class="fmt">Rett i kamera</span></article>
+      <article class="obj reveal" style="--d:.06s"><p class="q">«Jeg får ikke betalt hvis jeg ikke selger»</p><p class="a"><b>Svaret:</b> Grunnlønnen kommer uansett. Videoen viser en uke der lite gikk, og hva som likevel kom på konto.</p><span class="fmt">Svar på kommentar</span></article>
+      <article class="obj reveal" style="--d:.12s"><p class="q">«Hva tjener man egentlig?»</p><p class="a"><b>Svaret:</b> Hva en vanlig selger tjener etter de første månedene, ikke toppselgeren. Regnestykket vises på skjermen.</p><span class="fmt">Trend med tekst</span></article>
+      <article class="obj reveal" style="--d:.18s"><p class="q">«Når får jeg pengene?»</p><p class="a"><b>Svaret:</b> Når lønnen utbetales og hvordan provisjonen beregnes, slik det står i arbeidsavtalen.</p><span class="fmt">Spørsmål til teamet</span></article>
+    </div>
+    <p class="obj-note reveal">Alle lønnstall i innholdet hentes fra Face2face og skal kunne dokumenteres. Se regelverket under «Risiko og retningslinjer».</p>
+
     <div class="sub reveal"><h3>En vanlig uke</h3></div>
     <div class="week-grid">
       <div class="day reveal"><span class="dn">Man</span><div class="slot s-data">Ukerapport</div><div class="slot s-pub">Feltet uten filter</div></div>
@@ -686,12 +712,12 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       </article>
       <article class="ad ad-3 reveal" style="--d:.12s">
         <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 3</span>
-          <p class="hook"><span>Svar til @bruker: «Er ikke dette bare dørselging?»</span></p>
+          <p class="hook"><span>Svar til @bruker: «Får man betalt hvis man ikke selger?»</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Vi svarer på det alle lurer på.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
         <h3 class="h-md">Svar på kommentar</h3>
-        <ul class="script"><li><b>Slik</b>En selger svarer på en ekte, kritisk kommentar.</li><li><b>Tester</b>Om det å møte fordommene direkte gir flere søknader.</li></ul>
+        <ul class="script"><li><b>Slik</b>En selger svarer på en ekte, kritisk kommentar.</li><li><b>Tester</b>Om ærlige svar om lønn gir flere søknader.</li></ul>
       </article>
       <article class="ad ad-4 reveal" style="--d:.18s">
         <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 4</span>
@@ -741,12 +767,12 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Oppsett</h3></div>
     <div class="setup">
       <article class="card reveal"><span class="k">Målgruppe og format</span><h3 class="h-md">Bredt treff, sterkt innhold</h3><ul class="dots">
-        <li><b>18 til 30 år i Norge.</b> Egen annonsegruppe for Oslo og en for turnéteamet i resten av landet.</li>
+        <li><b>Alle over 18 år i Norge,</b> uten øvre aldersgrense. Egen annonsegruppe for Oslo og en for turnéteamet i resten av landet.</li>
         <li><b>Bred målretting.</b> På TikTok er det innholdet som finner riktige folk.</li>
         <li><b>Spark Ads</b> fra ekte kontoer, med likes og kommentarer som sosialt bevis.</li>
         <li><b>9:16, 15 til 30 sekunder,</b> tekst på skjermen og tydelig åpning innen to sekunder.</li></ul></article>
       <article class="card reveal" style="--d:.08s"><span class="k">Konvertering og testing</span><h3 class="h-md">La tallene velge vinnerne</h3><ul class="dots">
-        <li><b>Leadskjema i TikTok:</b> Navn, telefon, alder, by og når du kan starte.</li>
+        <li><b>Leadskjema i TikTok:</b> Navn, telefon, by, når du kan starte og bekreftelse på at du er over 18.</li>
         <li><b>Én ting testes om gangen:</b> Først formatet, så innholdet i det.</li>
         <li><b>Vinneren avgjøres av pris per søknad</b> som møter til intervju, ikke av visninger.</li>
         <li><b>Fem nye annonser</b> i vinnerformatet når den beste begynner å miste effekt.</li></ul></article>
@@ -847,6 +873,15 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <p class="lead reveal">Og hvordan det håndteres før det blir et problem.</p>
     </div>
     <div class="risks" id="risks"></div>
+
+    <div class="sub reveal"><h3>Regelverket</h3><span class="label">Lønn, alder og merking</span></div>
+    <div class="laws">
+      <article class="law reveal"><span class="ref">Ingen egen lov</span><h4>Ikke lov om lønn i stillingsannonser</h4><p>Forbudet mot villedende reklame i markedsføringsloven §§ 6 og 7 gjelder overfor forbrukere, ikke jobbsøkere. Prinsippet følges likevel: Ingen forventninger som ikke stemmer.</p></article>
+      <article class="law reveal" style="--d:.06s"><span class="ref">Mfl. § 3 · Aml. § 14-6</span><h4>Tallene må holde</h4><p>Påstander i markedsføring skal kunne dokumenteres. Lønnen i innholdet må stemme med arbeidsavtalen, som skal oppgi lønn, tillegg og utbetaling.</p></article>
+      <article class="law reveal" style="--d:.12s"><span class="ref">Aml. §§ 13-1 og 13-2</span><h4>Ingen aldersgrense</h4><p>Diskriminering på grunn av alder er forbudt, også i utlysning. Derfor målrettes annonsene mot alle over 18 år.</p></article>
+      <article class="law reveal" style="--d:.18s"><span class="ref">Forbrukertilsynet</span><h4>Reklame skal merkes</h4><p>Spark Ads merkes automatisk som sponset. Selgere som får bonus for å poste på egne kontoer, merker innlegget som reklame.</p></article>
+    </div>
+    <p class="obj-note reveal">Dette er min gjennomgang av regelverket, ikke juridisk rådgivning. Lønnsbudskapet bør sjekkes med Face2face sin jurist før kampanjestart.</p>
   </div>
 </section>
 
@@ -1019,7 +1054,8 @@ const RISKS = [
   ['Negative kommentarer om feltsalg',3,'Høy','Svares åpent, gjerne med en video. Kritikk blir ofte det beste innholdet.'],
   ['Selgerne mister motivasjonen for innhold',2,'Middels','Bonus per publisert video, rotasjon i teamet og synlige resultater.'],
   ['Annonsetretthet',2,'Middels','Fem nye annonser i vinnerformatet når den beste mister effekt, og overvåking av frekvens.'],
-  ['Misvisende lønnsbudskap',1,'Lav','Alltid fastlønn pluss provisjon. Toppinntekter vises aldri som det normale.'],
+  ['Misvisende lønnsbudskap',2,'Middels','Bare tall Face2face kan dokumentere, og som stemmer med arbeidsavtalen. Toppinntekter vises aldri som det normale.'],
+  ['Annonser som stenger ute på grunn av alder',2,'Middels','Målretting mot alle over 18 år, uten øvre grense.'],
   ['Kunder vises uten godkjenning',1,'Lav','Organisasjoner og merkevarer vises bare etter klarsignal. Alle i videoene har gitt samtykke.']
 ];
 document.getElementById('risks').innerHTML = RISKS.map((r,i) => `<div class="risk reveal" style="--d:${i*.06}s"><b>${r[0]}</b><span class="lvl"><i>${[1,2,3].map(n=>`<span class="${n<=r[1]?'on':''}"></span>`).join('')}</i>${r[2]}</span><p>${r[3]}</p></div>`).join('');

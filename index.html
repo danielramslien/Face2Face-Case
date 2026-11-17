@@ -324,7 +324,11 @@ ul.dots li b{color:var(--text);font-weight:600}
 .months.in .mo i{transform:scaleY(1)}
 .mo span{font-size:11.5px;text-align:center;color:var(--muted);font-weight:600}
 .mo.hot span{color:var(--text)}
-.season-notes{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.season-labels{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;margin-top:12px}
+.season-labels span{position:relative;padding-top:12px;text-align:center;font-size:13.5px;font-weight:600;line-height:1.3;color:var(--text)}
+.season-labels span::before{content:"";position:absolute;top:0;left:8px;right:8px;height:3px;border-radius:2px;background:var(--pink)}
+.season-notes{display:none;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media (max-width:760px){.season-labels{display:none}.season-notes{display:flex}}
 
 /* Plan */
 .phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
@@ -759,6 +763,12 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 
     <div class="sub reveal"><h3>Når budsjettet bør være størst</h3></div>
     <div class="months" id="months" role="img" aria-label="Søknadstopper i januar, mars til mai, august og oktober"></div>
+    <div class="season-labels reveal" aria-hidden="true">
+      <span style="grid-column:1/2">Nytt år, ny jobb</span>
+      <span style="grid-column:3/6">Sommerjobb</span>
+      <span style="grid-column:8/9">Studiestart og friår</span>
+      <span style="grid-column:10/11">Ekstrajobb ved siden av studiene</span>
+    </div>
     <div class="season-notes reveal">
       <span class="pill">Januar: Nytt år, ny jobb</span>
       <span class="pill">Mars til mai: Sommerjobb</span>

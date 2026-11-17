@@ -131,14 +131,6 @@ ul.dots li b{color:var(--text);font-weight:600}
 .hero-scroll svg{width:40px;height:40px;filter:drop-shadow(0 0 8px rgba(236,0,140,.8))}
 @keyframes scrollBob{0%,100%{transform:translateY(-4px)}50%{transform:translateY(8px)}}
 
-/* Marquee */
-.marquee{margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marquee-track{display:flex;gap:36px;width:max-content;animation:mq 38s linear infinite}
-.marquee span{font-family:var(--font-display);font-weight:800;font-size:clamp(18px,2vw,26px);text-transform:uppercase;white-space:nowrap;color:var(--faint)}
-.marquee span.on{color:var(--text)}
-.marquee i{align-self:center;width:10px;height:10px;border-radius:50%;background:var(--pink);flex:none}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
 /* Stats */
 .stats{container-type:inline-size;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -470,9 +462,6 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
   <a class="hero-scroll" href="#sammendrag" aria-label="Bla ned til sammendraget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee"></div>
-</div>
 
 <!-- SAMMENDRAG -->
 <section class="section" id="sammendrag" aria-labelledby="sammendrag-tittel">
@@ -887,10 +876,6 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 <button class="to-top" id="to-top" type="button" aria-label="Til toppen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg>Til toppen</button>
 
 <script>
-/* Marquee */
-const MQ = ['Feltet uten filter','Folka bak','Veien videre','Sakene vi jobber for','Trend og humor','Spark Ads','24 timer','90 dager'];
-const mqHtml = MQ.map((t,i) => `<span class="${i%2?'':'on'}">${t}</span><i></i>`).join('');
-document.getElementById('marquee').innerHTML = mqHtml + mqHtml;
 
 /* Pilarer */
 const PILLARS = [

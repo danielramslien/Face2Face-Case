@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Face2face på TikTok</title>
-<meta name="description" content="Daniel Ramslien sitt svar på caset fra Face2face Creatives: En TikTok-strategi for rekrutteringsannonser og organisk innhold, med plan for prioritering og måling.">
+<title>TikTok-strategi Face2face</title>
+<meta name="description" content="Strategiplan for Face2face Creatives på TikTok: Rekrutteringsannonser, organisk innhold, gjennomføringsplan og måling. Utarbeidet av Daniel Ramslien.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Bricolage Grotesque";font-weight:700;font-display:swap;src:url(assets/fonts/bricolage-grotesque-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Bricolage Grotesque";font-weight:700;font-display:swap;src:url(assets/fonts/bricolage-grotesque-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -24,873 +23,691 @@
 @font-face{font-family:"DM Sans";font-weight:700;font-display:swap;src:url(assets/fonts/dm-sans-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
 :root{
-  --bg:#0a0a0a;--bg-raised:#121212;--bg-card:#171717;
-  --text:#ffffff;--text-soft:#d9d9d9;--muted:#9a9a9a;--faint:#666666;
-  --line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.28);
-  --accent:#ec008c;--accent-soft:rgba(236,0,140,.12);--accent-line:rgba(236,0,140,.45);
-  --ink:#ffffff;--pink:#fe2c55;--cyan:#25f4ee;
+  --paper:#ffffff;--page:#f4f4f4;--ink:#0a0a0a;--text:#1d1d1d;--soft:#4a4a4a;--muted:#767676;
+  --line:#e3e3e3;--line-strong:#cfcfcf;--tint:#fafafa;
+  --pink:#ec008c;--pink-dark:#b8006d;--pink-soft:#fde6f3;--pink-line:#f6b3d8;
   --font-display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
   --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --gutter:clamp(16px,5vw,72px);--max:1180px;--header-h:64px;
-  --ease:cubic-bezier(.2,.7,.2,1);
+  --side:260px;--bar-h:56px;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{color-scheme:dark;background:var(--bg);scrollbar-color:#3a3a3a var(--bg);scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-main{overflow-x:hidden;overflow-x:clip}
+html{color-scheme:light;background:var(--page);scroll-behavior:smooth;scroll-padding-top:24px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-a{color:inherit}
-::selection{background:var(--accent);color:var(--ink)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{width:100%;max-width:calc(var(--max) + var(--gutter)*2);margin:0 auto;padding:0 var(--gutter)}
-.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--accent);color:var(--ink);padding:10px 16px;border-radius:999px;font-weight:600;text-decoration:none}
+a{color:var(--pink-dark)}
+::selection{background:var(--pink);color:#fff}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none}
 .skip:focus{top:12px}
+.progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--pink);z-index:60}
 
-/* Header */
-.site-header{position:fixed;inset:0 0 auto;z-index:50;height:var(--header-h);display:flex;align-items:center;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
-.site-header.scrolled{background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
-.brand small{font-weight:400;color:var(--muted);font-size:15px}
-.brand-dot{width:14px;height:14px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#ffc2e4,#ec008c 55%,#8a0052);box-shadow:0 0 12px rgba(236,0,140,.45)}
-.nav{display:flex;gap:clamp(12px,2vw,26px)}
-.nav a{text-decoration:none;font-size:14px;color:var(--muted);transition:color .2s;white-space:nowrap}
-.nav a:hover,.nav a.active{color:var(--text)}
-.nav a .n{color:var(--faint);margin-right:5px}
-.nav a.active .n{color:var(--accent)}
-@media (max-width:980px){.nav{display:none}}
+/* Layout */
+.layout{display:grid;grid-template-columns:var(--side) minmax(0,1fr);max-width:1240px;margin:0 auto;gap:40px;padding:40px 32px 80px}
+.toc{position:sticky;top:32px;align-self:start;max-height:calc(100vh - 64px);overflow:auto}
+.toc-brand{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.f2f{flex:none;width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:9.5px;line-height:1;text-align:center;letter-spacing:.02em}
+.f2f span{display:block}
+.f2f span:last-child{transform:rotate(180deg)}
+.toc-brand b{display:block;font-size:14px;line-height:1.25;color:var(--ink)}
+.toc-brand small{display:block;font-size:12.5px;color:var(--muted)}
+.toc-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.toc a{display:block;padding:6px 0 6px 14px;margin-left:-2px;border-left:2px solid transparent;color:var(--soft);text-decoration:none;font-size:14.5px;line-height:1.35;transition:color .15s,border-color .15s}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--ink);font-weight:600;border-left-color:var(--pink)}
+.toc-meta{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.5}
+.toc-meta a{color:var(--soft)}
+.print-btn{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);cursor:pointer}
+.print-btn:hover{border-color:var(--ink)}
 
-/* Type */
-.display{font-family:var(--font-display);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:-.005em;margin:0}
-.h-xl{font-size:clamp(28px,4.6vw,60px)}
-.h-md{font-family:var(--font-display);font-weight:800;font-size:clamp(19px,1.7vw,23px);line-height:1.2;margin:0}
-.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--text);margin:0}
-.body{color:var(--text-soft);margin:0}
-.label{display:block;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.eyebrow .num{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.14em}
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.eyebrow .label{color:var(--muted)}
-.accent{color:var(--accent)}
-.section{padding:clamp(88px,11vw,140px) 0 0}
-.sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:clamp(36px,4.6vw,60px)}
-.sec-head .lead{color:var(--text-soft)}
-@media (max-width:860px){.sec-head{grid-template-columns:1fr;align-items:start}}
-
-.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;font-size:13px;line-height:1.3;color:var(--text);white-space:nowrap}
-.pill--accent{border-color:var(--accent-line);background:var(--accent-soft);color:#ff7cc4}
-.pill--accent .d{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2.4s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(236,0,140,.55)}70%{box-shadow:0 0 0 9px rgba(236,0,140,0)}100%{box-shadow:0 0 0 0 rgba(236,0,140,0)}}
-
-.card{position:relative;overflow:hidden;background:linear-gradient(160deg,#1c1c1c 0%,var(--bg-card) 55%);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,2.4vw,30px)}
-.card p{margin:0;color:var(--text-soft);font-size:15px;line-height:1.55}
-.card .h-md{margin-bottom:10px}
-.card .k{display:block;font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
-
-/* Hero */
-.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-h) + 32px) 0 56px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
-.hero-kicker{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-.hero-title{font-family:var(--font-display);font-weight:800;font-size:clamp(36px,5.6vw,80px);line-height:.98;letter-spacing:-.015em;margin:0 0 26px;text-transform:uppercase}
-.hero-title em{font-style:normal;color:var(--accent)}
-.hero .lead{max-width:560px;color:var(--text-soft)}
-.brief{margin:34px 0 0;padding:20px 22px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0;max-width:600px}
-.brief .label{margin-bottom:8px;color:#ff7cc4}
-.brief p{margin:0;font-size:15px;color:var(--text)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s}
-.btn-primary{background:var(--accent);color:var(--ink);box-shadow:0 8px 30px rgba(236,0,140,.35)}
-.btn-primary:hover{background:#ff2fa3;transform:translateY(-2px)}
-.btn-ghost{border:1px solid var(--line-strong);color:var(--text)}
-.btn-ghost:hover{border-color:var(--text)}
-.hero-visual{position:relative;width:min(100%,420px);aspect-ratio:1;margin:0 auto;animation:float 9s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.orb{position:absolute;inset:0;border-radius:50%;isolation:isolate;background:radial-gradient(circle at 34% 29%,#ffd6ee 0%,#ff9fd6 11%,#ff4fb0 28%,#f0169a 50%,#d4007f 68%,#a8006a 86%,#6b003f 100%);box-shadow:0 0 70px 6px rgba(236,0,140,.30),inset -26px -34px 70px rgba(70,0,40,.35)}
-.orb::before{content:"";position:absolute;inset:-42%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(236,0,140,.2) 0%,rgba(236,0,140,.08) 38%,rgba(236,0,140,0) 66%);pointer-events:none}
-.hero-clip{position:absolute;inset:0;border-radius:50%;overflow:hidden;-webkit-mask-image:-webkit-radial-gradient(white,black)}
-.hero-photo{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);width:74%;height:auto}
-.float-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:rgba(18,18,18,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line-strong);box-shadow:0 14px 40px rgba(0,0,0,.45);font-size:13px;line-height:1.25;white-space:nowrap}
-.float-chip b{display:block;font-family:var(--font-display);font-size:17px;color:var(--accent)}
-.float-chip .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#000;flex:none}
-.float-chip .ico svg{width:16px;height:16px;filter:drop-shadow(-1.2px -1.2px 0 var(--cyan)) drop-shadow(1.2px 1.2px 0 var(--pink))}
-.chip-1{left:-6%;top:12%}
-.chip-2{right:-4%;bottom:14%}
-@media (max-width:860px){
-  .hero{min-height:auto}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-visual{width:min(78vw,340px);order:-1}
-  .chip-1{left:-4%}.chip-2{right:-2%}
+.mbar{display:none}
+@media (max-width:1000px){
+  .layout{grid-template-columns:minmax(0,1fr);padding:0 0 60px;gap:0}
+  .toc{display:none}
+  .mbar{display:flex;position:sticky;top:0;z-index:40;gap:6px;align-items:center;height:var(--bar-h);padding:0 12px;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+  .mbar::-webkit-scrollbar{display:none}
+  .mbar a{flex:none;font-size:13.5px;text-decoration:none;color:var(--soft);padding:6px 11px;border-radius:999px;white-space:nowrap}
+  .mbar a.active{background:var(--ink);color:#fff}
+  html{scroll-padding-top:calc(var(--bar-h) + 12px)}
 }
-@media (prefers-reduced-motion:reduce){.hero-visual{animation:none}}
 
-/* Insight */
-.insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
-@media (max-width:860px){.insights{grid-template-columns:1fr}}
-.tension{margin-top:clamp(18px,2vw,26px);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:18px;align-items:center;padding:clamp(22px,2.6vw,34px);border:1px dashed var(--accent-line);border-radius:20px}
-.tension .side .label{margin-bottom:6px}
-.tension .side p{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(17px,1.6vw,22px);line-height:1.25}
-.tension .vs{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--ink);font-weight:800;font-size:13px}
-.tension .side:last-child{text-align:right}
-@media (max-width:700px){.tension{grid-template-columns:1fr;text-align:left}.tension .side:last-child{text-align:left}}
+/* Document */
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 40px rgba(0,0,0,.05);min-width:0}
+.sec{padding:56px 64px;border-top:1px solid var(--line)}
+@media (max-width:1000px){.doc{border-radius:0;border-left:0;border-right:0}}
+@media (max-width:700px){.sec{padding:40px 18px}}
 
-/* Strategy flywheel */
-.engine{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr);gap:clamp(14px,2vw,28px);align-items:center}
-.engine .card{height:100%}
-.engine ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
-.engine li{display:flex;gap:10px;font-size:15px;color:var(--text-soft);line-height:1.45}
-.engine li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--accent)}
-.wheel{position:relative;width:100%;max-width:400px;margin:0 auto;aspect-ratio:1}
-.wheel svg{width:100%;height:100%;overflow:visible}
-.wheel .ring{fill:none;stroke:var(--line-strong);stroke-width:1.5;stroke-dasharray:4 7}
-.wheel .spin{transform-origin:200px 200px;animation:spin 26s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.wheel .spin{animation:none}}
-.wheel .node rect{fill:var(--bg-card);stroke:var(--accent-line);stroke-width:1.2}
-.wheel .node text{fill:var(--text);font-family:var(--font-body);font-size:13px;font-weight:600;text-anchor:middle}
-.wheel .node .n{fill:var(--accent);font-size:11px;font-weight:700;letter-spacing:.12em}
-.wheel .core{fill:url(#og)}
-.wheel .core-t{fill:var(--ink);font-family:var(--font-display);font-weight:800;font-size:17px;text-anchor:middle}
-.wheel .core-s{fill:var(--ink);font-family:var(--font-body);font-size:11.5px;font-weight:600;text-anchor:middle;opacity:.75}
-@media (max-width:980px){.engine{grid-template-columns:1fr}.wheel{max-width:340px;order:-1}}
-.oneliner{margin:clamp(28px,3vw,44px) auto 0;max-width:820px;text-align:center;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2.1vw,28px);line-height:1.3}
+.cover{padding:0;border-top:0;overflow:hidden;border-radius:6px 6px 0 0}
+.cover-band{background:var(--ink);color:#fff;padding:52px 64px 44px;position:relative;overflow:hidden}
+.cover-band::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--pink)}
+.cover-kicker{position:relative;z-index:1;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ff8fcb;margin:0 0 18px}
+.cover h1{position:relative;z-index:1;font-family:var(--font-display);font-weight:800;font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.015em;margin:0 0 16px;max-width:640px}
+.cover h1 em{font-style:normal;color:var(--pink)}
+.cover-sub{position:relative;z-index:1;font-size:clamp(16px,1.6vw,19px);line-height:1.5;color:#d6d6d6;margin:0;max-width:600px}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.meta div{padding:18px 22px;border-right:1px solid var(--line)}
+.meta div:last-child{border-right:0}
+.meta dt{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.meta dd{margin:0;font-size:14.5px;color:var(--ink);font-weight:500;line-height:1.4}
+@media (max-width:700px){
+  .cover-band{padding:40px 18px 34px}
+  .cover-band::after{width:180px;height:180px;right:-70px;top:-70px}
+  .meta{grid-template-columns:1fr 1fr}
+  .meta div:nth-child(2){border-right:0}
+  .meta div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+.brief{margin:28px 64px 52px;padding:18px 22px;border-left:4px solid var(--pink);background:var(--pink-soft);border-radius:0 6px 6px 0}
+.brief b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:6px}
+.brief p{margin:0;color:var(--ink);font-size:15.5px}
+@media (max-width:700px){.brief{margin:24px 18px 40px}}
 
-/* Pillars */
-.pillars{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
-.pillar{display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;font:inherit;color:inherit;padding:20px 18px;border-radius:18px;border:1px solid var(--line);background:var(--bg-card);transition:border-color .25s,transform .25s var(--ease),background .25s}
-.pillar:hover{border-color:var(--accent-line);transform:translateY(-3px)}
-.pillar[aria-selected="true"]{border-color:var(--accent);background:linear-gradient(160deg,#2a0b1d,var(--bg-card) 70%)}
-.pillar .pct{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,2.6vw,36px);line-height:1;color:var(--accent)}
-.pillar .pct small{font-size:.5em}
-.pillar .pt{font-family:var(--font-display);font-weight:800;font-size:16px;line-height:1.2}
-.pillar .bar{height:4px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:auto}
-.pillar .bar i{display:block;height:100%;background:var(--accent);border-radius:4px}
-@media (max-width:980px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.pillars .pillar:last-child{grid-column:1/-1}}
-.pillar-detail{margin-top:clamp(14px,1.6vw,20px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(18px,2.4vw,32px)}
-.pillar-detail .card p + p{margin-top:12px}
-.ex-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.ex-list li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg-raised);font-size:15px;color:var(--text-soft);line-height:1.45}
-.ex-list li b{color:var(--text);font-weight:600}
-.ex-list .play{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent);margin-top:1px}
-.ex-list .play svg{width:10px;height:10px}
-@media (max-width:860px){.pillar-detail{grid-template-columns:1fr}}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,2.8vw,34px);line-height:1.1;letter-spacing:-.01em;color:var(--ink);margin:0 0 6px}
+.sec-lead{font-size:17px;color:var(--soft);margin:0 0 30px;max-width:720px}
+h3{font-family:var(--font-display);font-weight:700;font-size:19px;line-height:1.25;color:var(--ink);margin:34px 0 12px}
+h3:first-child{margin-top:0}
+p{margin:0 0 14px}
+.sec > p,.sec li{max-width:760px}
+ul.list{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:8px}
+ul.list li{position:relative;padding-left:20px}
+ul.list li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--pink)}
+strong{color:var(--ink);font-weight:600}
+
+/* Summary */
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:6px 0 26px}
+.sum{border:1px solid var(--line);border-radius:8px;padding:18px;background:var(--tint)}
+.sum .k{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:8px}
+.sum p{margin:0;font-size:15px;color:var(--text);line-height:1.5}
+@media (max-width:760px){.summary{grid-template-columns:1fr}}
+.callout{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper);margin:18px 0}
+.callout .ic{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;margin-top:1px}
+.callout p{margin:0;font-size:15px}
+.callout.pink{border-color:var(--pink-line);background:var(--pink-soft)}
+.callout.pink .ic{background:var(--pink)}
+.quote{font-family:var(--font-display);font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.3;color:var(--ink);margin:6px 0 0;padding:22px 24px;border-radius:8px;background:var(--ink);color:#fff}
+.quote em{font-style:normal;color:#ff6fbf}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.45}
+th{text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--tint);padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--text)}
+tr:last-child td{border-bottom:0}
+td.k{font-weight:600;color:var(--ink);white-space:nowrap}
+td.num{font-family:var(--font-display);font-weight:700;color:var(--pink-dark);white-space:nowrap}
+td.goal{font-weight:600;color:var(--ink);white-space:nowrap}
+.share{display:flex;align-items:center;gap:10px;min-width:120px}
+.share i{display:block;height:6px;border-radius:3px;background:var(--pink)}
+.share b{font-weight:700;color:var(--ink);font-size:14px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--pink-soft);color:var(--pink-dark);white-space:nowrap}
+.tag.grey{background:#eee;color:var(--soft)}
+.tag.dark{background:var(--ink);color:#fff}
+.tbl-group td{background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px}
+@media (max-width:700px){table{font-size:13.5px}td,th{padding:10px 11px}}
+
+/* SWOT */
+.swot{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:0 0 18px}
+.swot > div{padding:18px 20px}
+.swot > div:nth-child(1),.swot > div:nth-child(3){border-right:1px solid var(--line)}
+.swot > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.swot h4{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--ink)}
+.swot h4 span{width:22px;height:22px;border-radius:5px;display:grid;place-items:center;font-size:12px;color:#fff;background:var(--ink)}
+.swot > div:nth-child(1) h4 span,.swot > div:nth-child(3) h4 span{background:var(--pink)}
+.swot ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.5;color:var(--text)}
+.swot li + li{margin-top:5px}
+@media (max-width:700px){.swot{grid-template-columns:1fr}.swot > div{border-right:0!important;border-bottom:1px solid var(--line)}.swot > div:last-child{border-bottom:0}}
+
+/* Goals */
+.goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.goalc{border:1px solid var(--line);border-radius:8px;padding:18px;position:relative}
+.goalc.main{grid-column:1/-1;border-color:var(--ink);background:var(--ink);color:#fff;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.goalc.main .dot{width:54px;height:54px;border-radius:50%;background:var(--pink)}
+.goalc.main .k{color:#ff8fcb}
+.goalc.main h4{color:#fff;font-size:20px}
+.goalc.main p{color:#cfcfcf}
+.goalc .k{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:6px}
+.goalc h4{margin:0 0 6px;font-family:var(--font-display);font-weight:700;font-size:17px;line-height:1.25;color:var(--ink)}
+.goalc p{margin:0;font-size:14.5px;color:var(--soft)}
+@media (max-width:760px){.goals{grid-template-columns:1fr}.goalc.main{grid-template-columns:1fr}}
+
+/* Model */
+.model{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin:0 0 20px}
+.mstep{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:var(--paper)}
+.mstep .k{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:6px}
+.mstep b{display:block;font-family:var(--font-display);font-size:17px;color:var(--ink);margin-bottom:4px}
+.mstep p{margin:0;font-size:14px;color:var(--soft);line-height:1.45}
+.marrow{display:grid;place-items:center;width:36px;color:var(--pink);font-size:20px;font-weight:700}
+.mloop{grid-column:1/-1;margin-top:10px;padding:10px 14px;border:1px dashed var(--pink-line);border-radius:8px;font-size:14px;color:var(--pink-dark);text-align:center}
+@media (max-width:760px){.model{grid-template-columns:1fr}.marrow{width:auto;height:28px;transform:rotate(90deg)}}
 
 /* Week */
-.week{margin-top:clamp(40px,4.6vw,64px)}
-.week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:16px}
-.day{border:1px solid var(--line);border-radius:14px;padding:14px 12px;min-height:128px;background:var(--bg-raised);display:flex;flex-direction:column;gap:8px}
-.day .dn{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.day .slot{font-size:13px;line-height:1.35;padding:7px 9px;border-radius:9px;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--text)}
-.day .slot.prod{background:rgba(37,244,238,.08);border-color:rgba(37,244,238,.35)}
-.day .slot.data{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3)}
-.day.off .slot{opacity:.6}
-.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-size:13px;color:var(--muted)}
-.legend span{display:inline-flex;align-items:center;gap:7px}
-.legend i{width:12px;height:12px;border-radius:4px;border:1px solid}
-@media (max-width:860px){.week-grid{grid-template-columns:1fr 1fr}.day{min-height:0}}
-.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(18px,2vw,26px)}
-@media (max-width:860px){.how{grid-template-columns:1fr}}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:0 0 10px}
+.week > div{border-right:1px solid var(--line);min-height:120px;display:flex;flex-direction:column}
+.week > div:last-child{border-right:0}
+.week .dh{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--tint);padding:8px 10px;border-bottom:1px solid var(--line)}
+.week .slots{padding:8px;display:grid;gap:6px;align-content:start}
+.slot{font-size:12.5px;line-height:1.3;padding:6px 8px;border-radius:5px}
+.s-pub{background:var(--pink);color:#fff}
+.s-prod{background:var(--ink);color:#fff}
+.s-data{background:#ececec;color:var(--text)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--soft);margin:0 0 20px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px}
+@media (max-width:760px){.week{grid-template-columns:1fr}.week > div{border-right:0;border-bottom:1px solid var(--line);min-height:0}.week > div:last-child{border-bottom:0}.week .slots{display:flex;flex-wrap:wrap}}
 
-/* Ads */
-.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
-@media (max-width:1060px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.phones{grid-template-columns:1fr}}
-.ad{display:flex;flex-direction:column;gap:14px}
-.phone{position:relative;aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:6px solid #050505;box-shadow:0 0 0 1px var(--line-strong),0 24px 60px rgba(0,0,0,.5);isolation:isolate}
-@media (max-width:560px){.phone{max-width:300px;width:100%;margin:0 auto}}
-.phone .bg{position:absolute;inset:0;z-index:-1}
-.ad-1 .bg{background:radial-gradient(circle at 30% 20%,#5a0a38,#1a0712 60%,#080305)}
-.ad-2 .bg{background:radial-gradient(circle at 70% 30%,#123a3a,#0a1414 60%,#050808)}
-.ad-3 .bg{background:radial-gradient(circle at 40% 30%,#23123d,#0e0915 60%,#050407)}
-.ad-4 .bg{background:radial-gradient(circle at 50% 25%,#2e2a10,#14120a 60%,#070605)}
-.phone .top{position:absolute;top:12px;left:0;right:0;display:flex;justify-content:center;gap:14px;font-size:11px;font-weight:600;color:rgba(255,255,255,.55)}
-.phone .top b{color:#fff;border-bottom:2px solid #fff;padding-bottom:2px}
-.phone .hook{position:absolute;left:12px;right:12px;top:26%;text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(17px,1.5vw,20px);line-height:1.15;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-.phone .hook span{background:#fff;color:#000;padding:1px 6px;border-radius:5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;line-height:1.45}
-.phone .rail{position:absolute;right:9px;bottom:84px;display:flex;flex-direction:column;gap:13px;align-items:center}
-.phone .rail i{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18)}
-.phone .rail i:first-child{background:var(--accent);box-shadow:0 0 0 2px #fff}
-.phone .meta{position:absolute;left:12px;right:46px;bottom:52px;font-size:11.5px;line-height:1.35;color:#fff}
-.phone .meta b{display:block;font-size:12.5px;margin-bottom:2px}
-.phone .meta .sp{display:inline-block;margin-top:5px;font-size:10px;padding:1px 6px;border-radius:4px;background:rgba(255,255,255,.2)}
-.phone .cta{position:absolute;left:10px;right:10px;bottom:12px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--pink);color:#fff;font-size:12.5px;font-weight:700}
-.phone .tag{position:absolute;top:36px;left:10px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--accent);color:var(--ink)}
-.ad h3{margin:0}
-.script{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;line-height:1.45;color:var(--text-soft)}
-.script li{display:grid;grid-template-columns:62px 1fr;gap:10px}
-.script li b{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);padding-top:2px}
+/* Concepts */
+.concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.concept{display:grid;grid-template-columns:96px 1fr;gap:16px;border:1px solid var(--line);border-radius:8px;padding:14px}
+.story{aspect-ratio:9/16;border-radius:8px;background:var(--ink);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:8px}
+.story span{background:#fff;color:#000;font-family:var(--font-display);font-weight:700;font-size:10.5px;line-height:1.35;text-align:center;padding:3px 5px;border-radius:3px}
+.story i{position:absolute;left:6px;right:6px;bottom:6px;height:12px;border-radius:3px;background:#fe2c55}
+.story em{position:absolute;top:6px;left:6px;font-style:normal;font-size:8.5px;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--pink);padding:1px 5px;border-radius:999px}
+.concept h4{margin:0 0 4px;font-family:var(--font-display);font-weight:700;font-size:16.5px;color:var(--ink)}
+.concept .hook{margin:0 0 8px;font-size:14px;color:var(--pink-dark);font-weight:600;line-height:1.35}
+.concept dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13.5px;line-height:1.4}
+.concept dt{font-weight:700;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+.concept dd{margin:0;color:var(--text)}
+@media (max-width:900px){.concepts{grid-template-columns:1fr}}
+@media (max-width:420px){.concept{grid-template-columns:72px 1fr;gap:12px}}
 
-.setup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(40px,4.6vw,64px)}
-@media (max-width:860px){.setup{grid-template-columns:1fr}}
-.setup .card ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:9px}
-.setup .card li{display:flex;gap:10px;font-size:15px;color:var(--text-soft);line-height:1.45}
-.setup .card li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--accent)}
-.setup .card li b{color:var(--text);font-weight:600}
+/* Funnel */
+.funnel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0 0 18px}
+.fs{padding:14px;border-radius:6px;background:var(--tint);border:1px solid var(--line)}
+.fs:last-child{background:var(--ink);border-color:var(--ink);color:#fff}
+.fs .k{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--pink-dark);margin-bottom:6px}
+.fs:last-child .k{color:#ff8fcb}
+.fs b{display:block;font-size:14.5px;color:inherit;margin-bottom:4px}
+.fs:not(:last-child) b{color:var(--ink)}
+.fs p{margin:0;font-size:13px;line-height:1.4;color:var(--soft)}
+.fs:last-child p{color:#cfcfcf}
+@media (max-width:860px){.funnel{grid-template-columns:1fr}}
 
-.funnel{margin-top:clamp(18px,2vw,26px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.fstep{padding:20px 18px;background:var(--bg-card);position:relative}
-.fstep + .fstep{border-left:1px solid var(--line)}
-.fstep .k{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--accent);margin-bottom:8px}
-.fstep b{display:block;font-family:var(--font-display);font-weight:800;font-size:16px;line-height:1.2;margin-bottom:6px}
-.fstep p{margin:0;font-size:13.5px;color:var(--text-soft);line-height:1.45}
-.fstep:last-child{background:linear-gradient(160deg,#2a0b1d,var(--bg-card))}
-@media (max-width:900px){.funnel{grid-template-columns:1fr}.fstep + .fstep{border-left:0;border-top:1px solid var(--line)}}
+/* Season */
+.months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin:0 0 8px;align-items:end;height:110px}
+.mo{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:6px}
+.mo i{display:block;border-radius:4px 4px 0 0;background:var(--line-strong)}
+.mo.hot i{background:var(--pink)}
+.mo span{font-size:11px;text-align:center;color:var(--muted);font-weight:600}
+.mo.hot span{color:var(--ink)}
 
-.season{margin-top:clamp(18px,2vw,26px)}
-.months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin-top:12px}
-.m{position:relative;height:66px;border-radius:8px;background:var(--bg-raised);border:1px solid var(--line);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:11px;font-weight:600;color:var(--muted);overflow:hidden}
-.m i{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(236,0,140,.55),rgba(236,0,140,.12));z-index:0}
-.m span{position:relative;z-index:1}
-.m.hot span{color:var(--text)}
-.season-notes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-@media (max-width:560px){.months{grid-template-columns:repeat(6,minmax(0,1fr))}}
+/* Budget */
+.budget{display:flex;height:40px;border-radius:6px;overflow:hidden;margin:0 0 8px}
+.budget div{display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.budget .b1{background:var(--pink);flex:70}
+.budget .b2{background:var(--ink);flex:20}
+.budget .b3{background:#9a9a9a;flex:10}
+.budget-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;font-size:14px;margin:0 0 18px}
+.budget-key b{display:block;color:var(--ink)}
+.budget-key span{color:var(--soft)}
+@media (max-width:700px){.budget-key{grid-template-columns:1fr}}
 
-/* Plan */
-.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);position:relative}
+/* Gantt */
+.gantt{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:0 0 18px;overflow-x:auto}
+.gantt-inner{min-width:640px}
+.grow{display:grid;grid-template-columns:220px repeat(13,minmax(0,1fr));align-items:center;border-bottom:1px solid var(--line)}
+.grow:last-child{border-bottom:0}
+.grow > .gl{padding:9px 14px;font-size:13.5px;color:var(--text);line-height:1.3}
+.grow.head{background:var(--tint)}
+.grow.head > div{font-size:11px;font-weight:700;color:var(--muted);text-align:center;padding:8px 0}
+.grow.head > .gl{text-align:left;letter-spacing:.1em;text-transform:uppercase}
+.grow.phase > .gl{font-weight:700;color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.grow.phase{background:var(--ink)}
+.grow.phase > .wk{color:#fff;font-size:11px;font-weight:600;text-align:center}
+.bar{height:14px;border-radius:4px;background:var(--pink);margin:0 2px}
+.bar.d{background:var(--ink)}
+.bar.g{background:#bdbdbd}
+.ms{width:12px;height:12px;background:var(--ink);transform:rotate(45deg);margin:0 auto}
+
+/* Phases */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.ph{border:1px solid var(--line);border-radius:8px;padding:18px}
+.ph .k{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--pink-soft);color:var(--pink-dark);margin-bottom:10px}
+.ph h4{margin:0 0 8px;font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--ink)}
+.ph p{margin:0;font-size:14px;color:var(--soft)}
+.ph .done{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.ph .done b{color:var(--pink-dark)}
 @media (max-width:860px){.phases{grid-template-columns:1fr}}
-.phase .wk{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--accent-line);color:#ff7cc4;background:var(--accent-soft);margin-bottom:14px}
-.phase ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px}
-.phase li{display:flex;gap:10px;font-size:15px;color:var(--text-soft);line-height:1.45}
-.phase li::before{content:"";flex:none;width:14px;height:14px;margin-top:4px;border-radius:4px;border:1.5px solid var(--accent-line)}
-.phase .goal{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--text)}
-.phase .goal b{color:var(--accent)}
-.prio{margin-top:clamp(18px,2vw,26px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.prio > div{padding:26px 22px 26px 0}
-.prio > div + div{padding-left:22px;border-left:1px solid var(--line)}
-.prio .big{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,3.4vw,46px);line-height:1;color:var(--accent);margin-bottom:10px}
-.prio p{margin:0;font-size:15px;color:var(--text-soft)}
-.prio p b{display:block;color:var(--text);font-size:16px;margin-bottom:4px}
-@media (max-width:860px){.prio{grid-template-columns:1fr}.prio > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
-.needs{margin-top:clamp(18px,2vw,26px)}
-.needs .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 
-/* Measure */
-.north{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center;padding:clamp(24px,3vw,40px);border-radius:24px;background:radial-gradient(circle at 0% 0%,rgba(236,0,140,.22),rgba(236,0,140,0) 55%),var(--bg-card);border:1px solid var(--accent-line);margin-bottom:clamp(18px,2vw,26px)}
-.north .star{width:clamp(64px,7vw,92px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 29%,#ffd6ee,#ff4fb0 30%,#d4007f 70%,#6b003f);box-shadow:0 0 50px rgba(236,0,140,.35)}
-.north .label{color:#ff7cc4;margin-bottom:8px}
-.north h3{margin:0 0 8px;font-family:var(--font-display);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.15}
-.north p{margin:0;color:var(--text-soft)}
-@media (max-width:640px){.north{grid-template-columns:1fr}}
-.kpi-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.kpi-tab{font:inherit;font-size:14px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
-.kpi-tab:hover{color:var(--text)}
-.kpi-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.kpi-table{width:100%;border-collapse:collapse;font-size:15px}
-.kpi-table th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 14px 12px 0;border-bottom:1px solid var(--line-strong)}
-.kpi-table td{padding:16px 14px 16px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--text-soft);line-height:1.45}
-.kpi-table td:first-child{color:var(--text);font-weight:600;width:28%}
-.kpi-table td.t{font-family:var(--font-display);font-weight:800;color:var(--accent);white-space:nowrap;width:18%}
-@media (max-width:700px){
-  .kpi-table thead{display:none}
-  .kpi-table tr{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
-  .kpi-table td{border:0;padding:0;width:auto!important}
-  .kpi-table td:nth-child(2){grid-column:1/-1;grid-row:2}
-  .kpi-table td.t{grid-column:2;grid-row:1;text-align:right}
+/* Priorities */
+.prio{counter-reset:p;list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.prio li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:8px}
+.prio li::before{content:counter(p);width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:20px}
+.prio b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.prio span{color:var(--soft);font-size:14.5px}
+
+/* Author */
+.author{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--tint)}
+.author .ph-img{width:96px;height:96px;border-radius:50%;background:var(--pink);overflow:hidden;position:relative}
+.author .ph-img img{position:absolute;left:50%;bottom:-8%;transform:translateX(-50%);width:80%}
+.author h4{margin:0 0 4px;font-family:var(--font-display);font-size:19px;color:var(--ink)}
+.author p{margin:0 0 10px;font-size:14.5px;color:var(--soft)}
+.creds{display:flex;flex-wrap:wrap;gap:6px}
+@media (max-width:560px){.author{grid-template-columns:1fr}}
+.contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:8px;font-weight:600;font-size:14.5px;text-decoration:none}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-pink:hover{background:var(--pink-dark)}
+.btn-line{border:1px solid var(--line-strong);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.doc-foot{padding:22px 64px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+@media (max-width:700px){.doc-foot{padding:20px 18px}}
+
+/* Print */
+@media print{
+  @page{margin:16mm}
+  html,body{background:#fff}
+  .toc,.mbar,.progress,.skip{display:none!important}
+  .layout{display:block;padding:0;max-width:none}
+  .doc{border:0;box-shadow:none}
+  .sec{padding:24px 0;break-inside:auto}
+  .cover-band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .brief{margin:20px 0 28px}
+  h2,h3{break-after:avoid}
+  .tbl-wrap,.swot,.concept,.ph,.goalc,.gantt,.week{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .doc-foot{padding:16px 0}
 }
-.kpi-note{margin-top:14px;font-size:13.5px;color:var(--muted)}
-.rhythm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(28px,3vw,40px)}
-@media (max-width:860px){.rhythm{grid-template-columns:1fr}}
-.rules{margin-top:clamp(40px,4.6vw,64px)}
-.rules-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,18px);margin-top:16px}
-@media (max-width:980px){.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.rules-grid{grid-template-columns:1fr}}
-.rule{padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--bg-raised)}
-.rule b{display:block;font-family:var(--font-display);font-weight:800;font-size:16px;margin-bottom:6px}
-.rule p{margin:0;font-size:14px;color:var(--text-soft);line-height:1.5}
-
-/* Me */
-.me-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:center}
-@media (max-width:860px){.me-grid{grid-template-columns:1fr}}
-.proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.proof .shot{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;border:1px solid var(--line)}
-.proof .shot img{width:100%;height:100%;object-fit:cover}
-.proof .shot::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(to top,rgba(10,10,10,.92),rgba(10,10,10,0))}
-.proof .shot figcaption{position:absolute;left:14px;right:14px;bottom:14px;z-index:1;font-size:13px;color:var(--text-soft);line-height:1.35}
-.proof .shot figcaption b{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(20px,2vw,26px);color:var(--accent);line-height:1.05;margin-bottom:4px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:28px 0}
-.stat{padding:22px 16px 22px 0}
-.stat + .stat{padding-left:16px;border-left:1px solid var(--line)}
-.stat-num{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(22px,2.3vw,32px);line-height:1;color:var(--accent)}
-.stat-label{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:var(--text-soft)}
-@media (max-width:560px){.stats{grid-template-columns:1fr}.stat + .stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
-
-/* Contact */
-.contact{padding:clamp(88px,11vw,140px) 0 40px;text-align:center}
-.contact .display{margin-bottom:20px}
-.contact .lead{max-width:600px;margin:0 auto;color:var(--text-soft)}
-.contact-email{display:inline-block;margin:30px 0 18px;font-family:var(--font-display);font-weight:800;font-size:clamp(18px,2.2vw,30px);color:var(--accent);text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease)}
-.contact-email:hover{background-size:100% 2px}
-.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-.progress{position:fixed;left:0;top:0;height:2px;background:var(--accent);z-index:60;width:0;box-shadow:0 0 10px rgba(236,0,140,.6)}
 </style>
 </head>
 <body>
-<a class="skip" href="#innhold-start">Hopp til innholdet</a>
+<a class="skip" href="#sammendrag">Hopp til innholdet</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
-<header class="site-header" id="top-bar">
-  <div class="wrap">
-    <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true"></span>Daniel Ramslien <small>× Face2face</small></a>
-    <nav class="nav" aria-label="Seksjoner">
-      <a href="#innsikt">Innsikt</a>
-      <a href="#strategi">Strategi</a>
-      <a href="#innhold">Innhold</a>
-      <a href="#annonser">Annonser</a>
-      <a href="#plan">Plan</a>
-      <a href="#maling">Måling</a>
-    </nav>
-  </div>
-</header>
+<nav class="mbar" id="mbar" aria-label="Innhold"></nav>
 
-<main id="innhold-start">
+<div class="layout">
+  <aside class="toc" aria-label="Innholdsfortegnelse">
+    <div class="toc-brand">
+      <div class="f2f" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div>
+      <div><b>TikTok-strategi</b><small>Face2face Creatives</small></div>
+    </div>
+    <p class="toc-label">Innhold</p>
+    <ol id="toc"></ol>
+    <div class="toc-meta">
+      Utarbeidet av Daniel Ramslien<br>17. november 2026
+      <br><button class="print-btn" type="button" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 6V2h8v4M4 12H2.5V7.5A1.5 1.5 0 0 1 4 6h8a1.5 1.5 0 0 1 1.5 1.5V12H12M4 10h8v4H4z"/></svg>
+        Skriv ut / lagre PDF</button>
+    </div>
+  </aside>
 
-<!-- HERO -->
-<section class="hero" id="top" aria-labelledby="hero-tittel">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="hero-kicker">
-        <span class="pill pill--accent"><span class="d"></span>Case til Face2face Creatives</span>
-        <span class="pill">TikTok-strategi</span>
+  <main class="doc" id="doc">
+
+    <!-- FORSIDE -->
+    <header class="cover" data-toc="Forside" id="forside">
+      <div class="cover-band">
+        <p class="cover-kicker">Strategiplan · Konfidensielt utkast</p>
+        <h1>TikTok-strategi for <em>Face2face Creatives</em></h1>
+        <p class="cover-sub">Rekrutteringsannonser som gir flere og bedre selgere, og en kanal med jevnlig innhold som folk faktisk vil følge.</p>
       </div>
-      <h1 class="hero-title" id="hero-tittel">La selgerne <em>vise jobben.</em> Annonsene gjør resten.</h1>
-      <p class="lead">Mitt forslag til hvordan Face2face kan bruke TikTok til å rekruttere flere og bedre selgere, og samtidig bygge en kanal folk faktisk vil følge.</p>
+      <dl class="meta">
+        <div><dt>Til</dt><dd>Margrethe Wam Solvang, CCO</dd></div>
+        <div><dt>Fra</dt><dd>Daniel Ramslien</dd></div>
+        <div><dt>Dato</dt><dd>17. november 2026</dd></div>
+        <div><dt>Periode</dt><dd>De første 90 dagene</dd></div>
+      </dl>
       <div class="brief">
-        <span class="label">Oppgaven</span>
-        <p>Hvordan ville du lagt opp Face2face Creatives sin strategi på TikTok? Målet er effektive, betalte rekrutteringsannonser og en kanal med relevant og engasjerende innhold, publisert jevnlig.</p>
+        <b>Oppdraget</b>
+        <p>Hvordan ville du lagt opp Face2face Creatives sin strategi på TikTok? Målet er både å utvikle og poste betalte, effektive rekrutteringsannonser, og å sørge for at kanalen har relevant og engasjerende innhold med jevnlig publisering. Beskriv fremgangsmåte, prioriteringer og hvordan strategien måles.</p>
       </div>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#strategi">Se strategien
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
-        <a class="btn btn-ghost" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener">Porteføljen min</a>
+    </header>
+
+    <!-- 1 SAMMENDRAG -->
+    <section class="sec" id="sammendrag" data-toc="Sammendrag">
+      <h2>Sammendrag</h2>
+      <p class="sec-lead">Strategien kort fortalt, for den som bare har tid til én side.</p>
+      <div class="summary">
+        <div class="sum"><span class="k">Utfordringen</span><p>Face2face har et godt tilbud til unge jobbsøkere, men feltsalg har et rykte som skremmer mange bort før de søker.</p></div>
+        <div class="sum"><span class="k">Grepet</span><p>Ekte selgere viser en ekte arbeidsdag på TikTok. Det organiske innholdet bygger tillit, og de beste videoene blir til rekrutteringsannonser.</p></div>
+        <div class="sum"><span class="k">Målet</span><p>Lavere pris per ansatt selger som fortsatt er i jobb etter 90 dager, sammenlignet med dagens kanaler.</p></div>
       </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="orb"></div>
-      <div class="hero-clip"><img class="hero-photo" src="assets/img/profil.webp" width="933" height="1400" alt=""></div>
-      <div class="float-chip chip-1"><span class="ico"><svg viewBox="0 0 24 24"><path fill="#fff" d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.6c.27 0 .53.04.77.11V9.75a5.7 5.7 0 1 0 4.91 5.65V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.24-1.48z"/></svg></span><span><b>863 000+</b>visninger for Mufano</span></div>
-      <div class="float-chip chip-2"><span><b>0 → 20</b>faste kunder, M40 Studios</span></div>
-    </div>
-  </div>
-</section>
+      <h3>Tre prioriteringer</h3>
+      <ol class="prio">
+        <li><div><b>Et fast team av selgere foran kamera</b><span>Uten dem blir det verken jevn publisering eller troverdige annonser.</span></div></li>
+        <li><div><b>Rask oppfølging av søkere</b><span>En rekrutterer ringer alle innen 24 timer. Ellers forsvinner effekten av annonsene.</span></div></li>
+        <li><div><b>Mål ansettelser, ikke visninger</b><span>Alle tall kobles til hvem som blir ansatt og blir værende.</span></div></li>
+      </ol>
+    </section>
 
-<!-- 01 INNSIKT -->
-<section class="section" id="innsikt" aria-labelledby="innsikt-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">01</span><span class="dot"></span><span class="label">Utgangspunkt</span></div>
-        <h2 class="display h-xl" id="innsikt-tittel">Jobben er bedre enn ryktet</h2>
-      </div>
-      <p class="lead reveal">Face2face har mye som unge jobbsøkere vil ha. Utfordringen er at de fleste ikke tror på det før de ser det med egne øyne.</p>
-    </div>
+    <!-- 2 SITUASJON -->
+    <section class="sec" id="situasjon" data-toc="Situasjon og innsikt">
+      <h2>Situasjon og innsikt</h2>
+      <p class="sec-lead">Hva Face2face har å spille på, og hva som står i veien.</p>
 
-    <div class="insights">
-      <article class="card reveal">
-        <span class="k">HVEM VI SNAKKER TIL</span>
-        <h3 class="h-md">18 til 28 år, sosial og sulten</h3>
-        <p>Studenter, folk i friår og de som vil tjene godt uten lang utdanning. De bruker TikTok daglig og søker ofte etter jobb der før de går til Finn.</p>
-      </article>
-      <article class="card reveal" style="--d:.08s">
-        <span class="k">HVA FACE2FACE HAR</span>
-        <h3 class="h-md">Et tilbud som er lett å vise fram</h3>
-        <p>Ingen krav til erfaring. Fastlønn pluss provisjon. Ti dager med opplæring, turnéteam rundt i Norge, et sosialt miljø og en tydelig vei til teamleder gjennom Face2face Campus.</p>
-      </article>
-      <article class="card reveal" style="--d:.16s">
-        <span class="k">BARRIEREN</span>
-        <h3 class="h-md">Fordommer om feltsalg</h3>
-        <p>Mange ser for seg dørbank og avvisning. En stillingsannonse fjerner ikke den følelsen. Det gjør derimot ekte folk som viser hvordan en vanlig dag faktisk ser ut.</p>
-      </article>
-    </div>
+      <h3>Utgangspunkt</h3>
+      <p>Face2face rekrutterer selgere til felt- og standsalg i Norge. Stillingene krever ingen erfaring, gir fastlønn pluss provisjon, ti dager med opplæring og en vei videre til teamleder gjennom Face2face Campus. Det finnes også et turnéteam som reiser rundt i landet. Det er et tilbud som er lett å vise fram på video, men vanskelig å forklare i en stillingsannonse.</p>
 
-    <div class="tension reveal">
-      <div class="side"><span class="label">Det de tror</span><p>«Det er sikkert stress, mye nei og dårlig betalt.»</p></div>
-      <div class="vs" aria-hidden="true">VS</div>
-      <div class="side"><span class="label">Det TikTok kan vise</span><p>Folk som har det gøy, lærer fort og tjener godt.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 02 STRATEGI -->
-<section class="section" id="strategi" aria-labelledby="strategi-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">02</span><span class="dot"></span><span class="label">Strategien</span></div>
-        <h2 class="display h-xl" id="strategi-tittel">To motorer, én kanal</h2>
-      </div>
-      <p class="lead reveal">Det organiske innholdet bygger tillit. Annonsene høster den. Og det beste innholdet blir til de neste annonsene.</p>
-    </div>
-
-    <div class="engine">
-      <article class="card reveal">
-        <span class="k">MOTOR 1 · ORGANISK</span>
-        <h3 class="h-md">Kanalen bygger tillit</h3>
-        <p>Selgerne er stemmen til Face2face. Innholdet viser kulturen, folka og hverdagen, slik at de som ser annonsene allerede vet hvem dere er.</p>
-        <ul>
-          <li>Fire videoer i uka, alltid</li>
-          <li>Laget av et fast team av selgere</li>
-          <li>Bygger følgere, søk og varme målgrupper</li>
-        </ul>
-      </article>
-
-      <div class="wheel reveal" style="--d:.08s" role="img" aria-label="Svinghjul: Organisk innhold, de beste videoene blir Spark Ads, søknader, nye selgere, som lager nytt innhold.">
-        <svg viewBox="0 0 400 400">
-          <defs><radialGradient id="og" cx="34%" cy="29%" r="75%"><stop offset="0" stop-color="#ffd6ee"/><stop offset=".3" stop-color="#ff4fb0"/><stop offset=".7" stop-color="#d4007f"/><stop offset="1" stop-color="#6b003f"/></radialGradient>
-          <marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#ec008c"/></marker></defs>
-          <circle class="ring" cx="200" cy="200" r="150"/>
-          <g class="spin"><circle cx="200" cy="50" r="5" fill="#ec008c"/><circle cx="350" cy="200" r="3" fill="#ec008c" opacity=".6"/></g>
-          <path d="M268 72 A150 150 0 0 1 330 140" fill="none" stroke="#ec008c" stroke-width="2" marker-end="url(#ar)"/>
-          <path d="M330 262 A150 150 0 0 1 268 328" fill="none" stroke="#ec008c" stroke-width="2" marker-end="url(#ar)"/>
-          <path d="M132 328 A150 150 0 0 1 70 262" fill="none" stroke="#ec008c" stroke-width="2" marker-end="url(#ar)"/>
-          <path d="M70 140 A150 150 0 0 1 132 72" fill="none" stroke="#ec008c" stroke-width="2" marker-end="url(#ar)"/>
-          <circle class="core" cx="200" cy="200" r="72"/>
-          <text class="core-t" x="200" y="198">TikTok</text>
-          <text class="core-s" x="200" y="216">@face2face</text>
-          <g class="node"><rect x="140" y="28" width="120" height="44" rx="12"/><text class="n" x="200" y="45">1</text><text x="200" y="62">Organisk video</text></g>
-          <g class="node"><rect x="290" y="178" width="104" height="44" rx="12"/><text class="n" x="342" y="195">2</text><text x="342" y="212">Spark Ads</text></g>
-          <g class="node"><rect x="140" y="328" width="120" height="44" rx="12"/><text class="n" x="200" y="345">3</text><text x="200" y="362">Søknader</text></g>
-          <g class="node"><rect x="6" y="178" width="104" height="44" rx="12"/><text class="n" x="58" y="195">4</text><text x="58" y="212">Nye selgere</text></g>
-        </svg>
+      <h3>SWOT</h3>
+      <div class="swot">
+        <div><h4><span>S</span>Styrker</h4><ul>
+          <li>Tydelig tilbud: Ingen krav til erfaring, god lønn og opplæring</li>
+          <li>Sosial kultur med team, turné og konkurranser</li>
+          <li>Hundrevis av selgere som kan være stemmen til merkevaren</li>
+          <li>En selvironisk tone som passer TikTok</li></ul></div>
+        <div><h4><span>W</span>Svakheter</h4><ul>
+          <li>Feltsalg forbindes med dørbank og avvisning</li>
+          <li>Provisjon kan oppleves som usikker inntekt</li>
+          <li>Jobben er vanskelig å forstå uten å se den</li></ul></div>
+        <div><h4><span>O</span>Muligheter</h4><ul>
+          <li>Unge bruker TikTok til å finne jobber og arbeidsgivere</li>
+          <li>Spark Ads gjør organiske videoer om til annonser</li>
+          <li>Faste søknadstopper gjennom året</li>
+          <li>Ansattes egne historier gir troverdighet</li></ul></div>
+        <div><h4><span>T</span>Trusler</h4><ul>
+          <li>Negative kommentarer om feltsalg</li>
+          <li>Kamp om de samme unge fra andre arbeidsgivere</li>
+          <li>Annonsetretthet hvis innholdet ikke fornyes</li>
+          <li>Regler for hvordan lønn kan markedsføres</li></ul></div>
       </div>
 
-      <article class="card reveal" style="--d:.16s">
-        <span class="k">MOTOR 2 · BETALT</span>
-        <h3 class="h-md">Annonsene henter søknader</h3>
-        <p>Betalte rekrutteringsannonser bygget på de videoene som allerede har bevist at de fungerer organisk. Målet er søknader, ikke visninger.</p>
-        <ul>
-          <li>Spark Ads av de beste organiske videoene</li>
-          <li>Egne annonsekonsepter som testes systematisk</li>
-          <li>Kort søknadsskjema rett i TikTok</li>
-        </ul>
-      </article>
-    </div>
-    <p class="oneliner reveal">Strategien i én setning: <span class="accent">Ekte selgere viser en ekte jobb, og vi bruker penger på det publikum allerede har sagt ja til.</span></p>
-  </div>
-</section>
+      <div class="callout pink"><span class="ic">!</span><p><strong>Kjerneinnsikten:</strong> Folk tror jobben er stressende, full av nei og dårlig betalt. TikTok kan vise at den er sosial, lærerik og godt betalt. Ingen annen kanal viser det like godt.</p></div>
+    </section>
 
-<!-- 03 INNHOLD -->
-<section class="section" id="innhold" aria-labelledby="innhold-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">03</span><span class="dot"></span><span class="label">Organisk innhold</span></div>
-        <h2 class="display h-xl" id="innhold-tittel">Fem pilarer, fire videoer i uka</h2>
+    <!-- 3 MÅLGRUPPE -->
+    <section class="sec" id="malgruppe" data-toc="Målgruppe">
+      <h2>Målgruppe</h2>
+      <p class="sec-lead">Hvem vi snakker til, og hva de trenger å høre.</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Segment</th><th>Hvem</th><th>Hva de lurer på</th><th>Budskap</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Studenten</td><td>19 til 25 år, vil ha fleksibel og godt betalt deltidsjobb</td><td>Passer det med studiene? Hva tjener jeg?</td><td>Fleksibel jobb, god lønn og erfaring som teller på CV-en.</td></tr>
+          <tr><td class="k">Friåret</td><td>18 til 22 år, ferdig med videregående og vil oppleve noe</td><td>Blir det gøy? Hvem skal jeg jobbe med?</td><td>Turnéteam, nye byer og en gjeng du reiser med.</td></tr>
+          <tr><td class="k">Den ambisiøse</td><td>20 til 30 år, vil tjene godt uten lang utdanning</td><td>Kan jeg komme meg videre?</td><td>Fra selger til teamleder gjennom Face2face Campus.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Felles for alle tre: De er sosiale, tåler et nei og motiveres av mål. Det er egenskapene innholdet skal vise fram, slik at de som kjenner seg igjen søker, og de som ikke passer lar være.</p>
+    </section>
+
+    <!-- 4 MÅL -->
+    <section class="sec" id="mal" data-toc="Mål">
+      <h2>Mål</h2>
+      <p class="sec-lead">Ett hovedmål og tre delmål for de første 90 dagene. Tallene settes endelig når utgangspunktet er målt i fase 1.</p>
+      <div class="goals">
+        <div class="goalc main"><span class="dot" aria-hidden="true"></span><div><span class="k">Hovedmål</span><h4>Lavere pris per ansatt selger som er i jobb etter 90 dager</h4><p>Billige søknader hjelper lite hvis folk slutter etter to uker. Dette tallet kobler TikTok direkte til det Face2face trenger.</p></div></div>
+        <div class="goalc"><span class="k">Delmål 1 · Kanal</span><h4>Fire videoer i uka, hver uke</h4><p>Med engasjement over plattformsnittet på rundt 4 prosent.</p></div>
+        <div class="goalc"><span class="k">Delmål 2 · Annonser</span><h4>To til tre vinnerkonsepter</h4><p>Med kjent pris per søknad etter testfasen.</p></div>
+        <div class="goalc"><span class="k">Delmål 3 · Rekruttering</span><h4>TikTok som fast søkerkilde</h4><p>Like gode kandidater som fra Finn, målt fra søknad til ansettelse.</p></div>
       </div>
-      <p class="lead reveal">Hver video skal svare på ett spørsmål en jobbsøker har. Trykk på en pilar for å se eksempler.</p>
-    </div>
+    </section>
 
-    <div class="pillars" role="tablist" aria-label="Innholdspilarer" id="pillars"></div>
-    <div class="pillar-detail" id="pillar-detail" role="tabpanel" aria-live="polite"></div>
-
-    <div class="week">
-      <span class="label">En vanlig uke</span>
-      <div class="week-grid">
-        <div class="day reveal"><span class="dn">Man</span><div class="slot data">Ukerapport og læring</div><div class="slot">Feltet uten filter</div></div>
-        <div class="day reveal" style="--d:.04s"><span class="dn">Tir</span><div class="slot prod">Opptaksdag med selgerteamet</div></div>
-        <div class="day reveal" style="--d:.08s"><span class="dn">Ons</span><div class="slot">Folka bak</div><div class="slot">Svar på kommentar</div></div>
-        <div class="day reveal" style="--d:.12s"><span class="dn">Tor</span><div class="slot prod">Klipp og godkjenning</div></div>
-        <div class="day reveal" style="--d:.16s"><span class="dn">Fre</span><div class="slot">Trend og humor</div></div>
-        <div class="day reveal" style="--d:.2s"><span class="dn">Lør</span><div class="slot">Veien videre eller sakene vi jobber for</div></div>
-        <div class="day off reveal" style="--d:.24s"><span class="dn">Søn</span><div class="slot data">Svar på kommentarer</div></div>
+    <!-- 5 STRATEGI -->
+    <section class="sec" id="strategi" data-toc="Strategi">
+      <h2>Strategi</h2>
+      <p class="sec-lead">Organisk innhold og betalte annonser er ikke to separate løp. De henger sammen.</p>
+      <div class="model">
+        <div class="mstep"><span class="k">Steg 1 · Organisk</span><b>Bygg tillit</b><p>Selgerne viser hverdagen, kulturen og folka. Fire videoer i uka.</p></div>
+        <div class="marrow" aria-hidden="true">→</div>
+        <div class="mstep"><span class="k">Steg 2 · Utvalg</span><b>Finn vinnerne</b><p>Videoene med høyest seertid og flest delinger plukkes ut hver uke.</p></div>
+        <div class="marrow" aria-hidden="true">→</div>
+        <div class="mstep"><span class="k">Steg 3 · Betalt</span><b>Hent søknader</b><p>Vinnerne kjøres som Spark Ads med søknadsskjema rett i TikTok.</p></div>
+        <div class="mloop">Nye selgere blir en del av creator-teamet og lager neste runde med innhold.</div>
       </div>
-      <div class="legend">
-        <span><i style="background:var(--accent-soft);border-color:var(--accent-line)"></i>Publisering</span>
-        <span><i style="background:rgba(37,244,238,.08);border-color:rgba(37,244,238,.35)"></i>Produksjon</span>
-        <span><i style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3)"></i>Analyse og dialog</span>
+      <p class="quote">Strategien i én setning: <em>Ekte selgere viser en ekte jobb, og vi bruker penger på det publikum allerede har sagt ja til.</em></p>
+    </section>
+
+    <!-- 6 INNHOLD -->
+    <section class="sec" id="innhold" data-toc="Organisk innhold">
+      <h2>Organisk innhold</h2>
+      <p class="sec-lead">Fem innholdspilarer. Hver video svarer på ett spørsmål en jobbsøker har.</p>
+
+      <h3>Innholdspilarer</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Pilar</th><th>Andel</th><th>Svarer på</th><th>Eksempler</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Feltet uten filter</td><td><div class="share"><i style="width:60px"></i><b>30 %</b></div></td><td>Hvordan er en vanlig dag?</td><td>«En dag på stand på Gardermoen», «Ting du lærer første uka»</td></tr>
+          <tr><td class="k">Folka bak</td><td><div class="share"><i style="width:50px"></i><b>25 %</b></div></td><td>Hvem skal jeg jobbe med?</td><td>«Møt turnéteamet», fredagskonkurransen, trendformater med teamet</td></tr>
+          <tr><td class="k">Veien videre</td><td><div class="share"><i style="width:30px"></i><b>15 %</b></div></td><td>Hvor kan dette ta meg?</td><td>«Fra ny til teamleder», «Hva lærer du på Campus?»</td></tr>
+          <tr><td class="k">Sakene vi jobber for</td><td><div class="share"><i style="width:30px"></i><b>15 %</b></div></td><td>Betyr jobben noe?</td><td>«Hva skjer med pengene?», «Hvorfor jeg sier ja hver dag»</td></tr>
+          <tr><td class="k">Trend og humor</td><td><div class="share"><i style="width:30px"></i><b>15 %</b></div></td><td>Er dette et sted jeg vil være?</td><td>«Ceci n'est pas une pub» som fast spøk, «Kundetyper på stand»</td></tr>
+        </tbody>
+      </table></div>
+      <p>«Feltet uten filter» får størst andel fordi det er den pilaren som tar ned fordommene, og den som oftest egner seg som annonse.</p>
+
+      <h3>Publiseringsplan for en vanlig uke</h3>
+      <div class="week">
+        <div><span class="dh">Man</span><div class="slots"><span class="slot s-data">Ukerapport</span><span class="slot s-pub">Feltet uten filter</span></div></div>
+        <div><span class="dh">Tir</span><div class="slots"><span class="slot s-prod">Opptaksdag</span></div></div>
+        <div><span class="dh">Ons</span><div class="slots"><span class="slot s-pub">Folka bak</span><span class="slot s-data">Svar på kommentarer</span></div></div>
+        <div><span class="dh">Tor</span><div class="slots"><span class="slot s-prod">Klipp og godkjenning</span></div></div>
+        <div><span class="dh">Fre</span><div class="slots"><span class="slot s-pub">Trend og humor</span></div></div>
+        <div><span class="dh">Lør</span><div class="slots"><span class="slot s-pub">Veien videre eller sakene</span></div></div>
+        <div><span class="dh">Søn</span><div class="slots"><span class="slot s-data">Svar på kommentarer</span></div></div>
       </div>
-    </div>
+      <div class="legend"><span><i style="background:var(--pink)"></i>Publisering</span><span><i style="background:var(--ink)"></i>Produksjon</span><span><i style="background:#ececec;border:1px solid #d5d5d5"></i>Analyse og dialog</span></div>
 
-    <div class="how">
-      <article class="card reveal">
-        <span class="k">HVEM LAGER DET</span>
-        <h3 class="h-md">Et fast creator-team</h3>
-        <p>Seks til åtte selgere som liker å være foran kamera. De får en kort opplæring, en enkel mikrofon og en bonus for innhold som publiseres. Jeg planlegger, regisserer og klipper.</p>
-      </article>
-      <article class="card reveal" style="--d:.08s">
-        <span class="k">HVORDAN DET HOLDES JEVNT</span>
-        <h3 class="h-md">Én opptaksdag, en hel uke</h3>
-        <p>Alt planlagt innhold filmes på én dag. Da er det plass til å hoppe på en trend innen 24 timer uten at resten av planen sprekker.</p>
-      </article>
-      <article class="card reveal" style="--d:.16s">
-        <span class="k">HVORDAN DET FØLES</span>
-        <h3 class="h-md">Face2face sin egen stemme</h3>
-        <p>Dere skriver allerede «Ceci n'est pas une agence de publicité traditionnelle». Den selvironiske tonen passer perfekt på TikTok. Den skal ikke vaskes bort.</p>
-      </article>
-    </div>
-  </div>
-</section>
+      <h3>Produksjonsmodell</h3>
+      <ul class="list">
+        <li><strong>Creator-team:</strong> Seks til åtte selgere som liker å være foran kamera. De får kort opplæring, en enkel mikrofon og bonus for innhold som publiseres.</li>
+        <li><strong>Én opptaksdag i uka:</strong> Alt planlagt innhold filmes samlet. Da er det rom for å hoppe på en trend innen 24 timer uten at planen sprekker.</li>
+        <li><strong>Ansvar:</strong> Jeg planlegger, regisserer, klipper og rapporterer. Selgerne er ansiktet utad.</li>
+        <li><strong>Tone:</strong> Face2face sin selvironiske stemme beholdes. Den passer TikTok bedre enn en polert bedriftsstemme.</li>
+      </ul>
+    </section>
 
-<!-- 04 ANNONSER -->
-<section class="section" id="annonser" aria-labelledby="annonser-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">04</span><span class="dot"></span><span class="label">Betalte rekrutteringsannonser</span></div>
-        <h2 class="display h-xl" id="annonser-tittel">Annonser som ikke ser ut som annonser</h2>
+    <!-- 7 ANNONSER -->
+    <section class="sec" id="annonser" data-toc="Rekrutteringsannonser">
+      <h2>Betalte rekrutteringsannonser</h2>
+      <p class="sec-lead">Fire konsepter i første testrunde. Hvert testes med tre ulike åpninger, til sammen tolv varianter.</p>
+
+      <h3>Annonsekonsepter</h3>
+      <div class="concepts">
+        <article class="concept"><div class="story" aria-hidden="true"><em>A</em><span>Jeg hadde aldri solgt noe før</span><i></i></div><div><h4>Første måned mot nå</h4><p class="hook">«Jeg hadde aldri solgt noe før jeg begynte her»</p><dl><dt>Innhold</dt><dd>Opplæring, første salg og hvordan lønnen er satt sammen. Kun godkjente tall.</dd><dt>Mål</dt><dd>Fjerne frykten for å ikke være «en selgertype».</dd></dl></div></article>
+        <article class="concept"><div class="story" aria-hidden="true"><em>B</em><span>POV: Du reiser rundt i Norge med teamet</span><i></i></div><div><h4>Turnéteamet</h4><p class="hook">«POV: Jobben din er å reise rundt i Norge med teamet ditt»</p><dl><dt>Innhold</dt><dd>Montasje av tog, hotell, stand og middag med gjengen.</dd><dt>Mål</dt><dd>Selge opplevelsen. Treffer friårs-segmentet.</dd></dl></div></article>
+        <article class="concept"><div class="story" aria-hidden="true"><em>C</em><span>Nå leder jeg et team</span><i></i></div><div><h4>Fra selger til leder</h4><p class="hook">«For [X] måneder siden var jeg ny. Nå leder jeg et team»</p><dl><dt>Innhold</dt><dd>En ekte teamleder fra Campus forteller sin historie.</dd><dt>Mål</dt><dd>Vise at dette er en karriere. Treffer de ambisiøse.</dd></dl></div></article>
+        <article class="concept"><div class="story" aria-hidden="true"><em>D</em><span>Jeg fikk 30 nei i dag</span><i></i></div><div><h4>Det ingen sier</h4><p class="hook">«Jeg fikk 30 nei i dag. Her er hvorfor jeg gleder meg til i morgen»</p><dl><dt>Innhold</dt><dd>Hvordan nei-ene håndteres og støtten fra teamet.</dd><dt>Mål</dt><dd>Bygge tillit gjennom ærlighet og sile ut de som ikke passer.</dd></dl></div></article>
       </div>
-      <p class="lead reveal">Fire konsepter jeg ville startet med. Hvert av dem testes med tre ulike åpninger, altså tolv varianter i første runde.</p>
-    </div>
 
-    <div class="phones">
-      <article class="ad ad-1 reveal">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept A</span>
-          <p class="hook"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
-          <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Første måned vs. nå. Ærlig talt.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Søk på 1 minutt</div></div>
-        <h3 class="h-md">Første måned mot nå</h3>
-        <ul class="script">
-          <li><b>Åpning</b>En selger forteller rett i kamera hvordan det var å starte uten erfaring.</li>
-          <li><b>Innhold</b>Opplæringen, første salg og hvordan lønnen er satt sammen. Kun ekte tall som er godkjent.</li>
-          <li><b>Hvorfor</b>Fjerner frykten for å ikke være «en selgertype».</li>
-        </ul>
-      </article>
+      <h3>Oppsett</h3>
+      <div class="tbl-wrap"><table>
+        <tbody>
+          <tr><td class="k">Kampanjemål</td><td>Leadgenerering med TikToks eget skjema: Navn, telefon, alder, by og når du kan starte.</td></tr>
+          <tr><td class="k">Målgruppe</td><td>18 til 30 år i Norge. Egen annonsegruppe for Oslo og en for turnéteamet i resten av landet. Bred målretting, der innholdet gjør jobben.</td></tr>
+          <tr><td class="k">Format</td><td>Spark Ads fra ekte kontoer. 9:16, 15 til 30 sekunder, tekst på skjermen og en tydelig åpning i løpet av to sekunder.</td></tr>
+          <tr><td class="k">Oppfølging</td><td>Leads går rett til en rekrutterer som ringer innen 24 timer.</td></tr>
+          <tr><td class="k">Fornyelse</td><td>Nye varianter hver tredje uke for å unngå annonsetretthet.</td></tr>
+        </tbody>
+      </table></div>
 
-      <article class="ad ad-2 reveal" style="--d:.06s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept B</span>
-          <p class="hook"><span>POV: Jobben din er å reise rundt i Norge med teamet ditt</span></p>
-          <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Tre uker, seks byer, én gjeng.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Bli med på turnéteamet</div></div>
-        <h3 class="h-md">Turnéteamet</h3>
-        <ul class="script">
-          <li><b>Åpning</b>Rask montasje: Togvindu, hotell, stand, middag med gjengen.</li>
-          <li><b>Innhold</b>Hvordan en turnéuke ser ut, fra morgenmøte til kveld.</li>
-          <li><b>Hvorfor</b>Selger opplevelsen, ikke stillingen. Treffer de som vil ha et eventyr.</li>
-        </ul>
-      </article>
-
-      <article class="ad ad-3 reveal" style="--d:.12s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept C</span>
-          <p class="hook"><span>For [X] måneder siden var jeg ny. Nå leder jeg et team</span></p>
-          <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Veien fra selger til teamleder.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Start din egen reise</div></div>
-        <h3 class="h-md">Fra selger til leder</h3>
-        <ul class="script">
-          <li><b>Åpning</b>En ekte teamleder fra Face2face Campus med sin egen historie.</li>
-          <li><b>Innhold</b>Tre ting hen lærte som hen ikke hadde lært på skolen.</li>
-          <li><b>Hvorfor</b>Viser at dette er en karriere, ikke bare en sommerjobb.</li>
-        </ul>
-      </article>
-
-      <article class="ad ad-4 reveal" style="--d:.18s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept D</span>
-          <p class="hook"><span>Jeg fikk 30 nei i dag. Her er hvorfor jeg gleder meg til i morgen</span></p>
-          <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Det ingen sier om feltsalg.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Prøv selv</div></div>
-        <h3 class="h-md">Det ingen sier</h3>
-        <ul class="script">
-          <li><b>Åpning</b>Starter med fordommen, rett på sak.</li>
-          <li><b>Innhold</b>Hvordan nei-ene håndteres, støtten fra teamet og det ene ja-et som gjorde dagen.</li>
-          <li><b>Hvorfor</b>Ærlighet bygger tillit og siler ut de som ikke passer, før rekruttereren må gjøre det.</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="setup">
-      <article class="card reveal">
-        <span class="k">MÅLGRUPPE OG FORMAT</span>
-        <h3 class="h-md">Bredt treff, sterkt innhold</h3>
-        <ul>
-          <li><b>18 til 30 år i Norge.</b> Egen annonsegruppe for Oslo og en for turnéteamet i resten av landet.</li>
-          <li><b>Bred målretting.</b> På TikTok er det innholdet som finner riktige folk. Interesser brukes bare som test.</li>
-          <li><b>Spark Ads.</b> Annonsen vises fra en ekte konto, med likes og kommentarer som sosialt bevis.</li>
-          <li><b>9:16, 15 til 30 sekunder,</b> tekst på skjermen og en tydelig åpning i løpet av to sekunder.</li>
-        </ul>
-      </article>
-      <article class="card reveal" style="--d:.08s">
-        <span class="k">TESTING OG BUDSJETT</span>
-        <h3 class="h-md">La tallene velge vinnerne</h3>
-        <ul>
-          <li><b>Første to uker:</b> Tolv varianter med likt budsjett. Ingen konklusjoner før de har fått nok visninger.</li>
-          <li><b>Kutt og skaler:</b> De svakeste halvparten slås av. Vinnerne får mer budsjett gradvis.</li>
-          <li><b>70 / 20 / 10:</b> 70 prosent på det som virker, 20 prosent på nye varianter, 10 prosent på helt nye ideer.</li>
-          <li><b>Ny vri hver tredje uke,</b> før publikum blir lei av de samme videoene.</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="funnel reveal">
-      <div class="fstep"><span class="k">STEG 1</span><b>Ser videoen</b><p>Åpningen stopper scrollingen.</p></div>
-      <div class="fstep"><span class="k">STEG 2</span><b>Trykker på søk</b><p>Kort skjema rett i TikTok: Navn, telefon, alder, by og når du kan starte.</p></div>
-      <div class="fstep"><span class="k">STEG 3</span><b>Blir ringt opp</b><p>En rekrutterer ringer innen 24 timer, mens interessen er varm.</p></div>
-      <div class="fstep"><span class="k">STEG 4</span><b>Intervju</b><p>Booking går rett inn i kalenderen.</p></div>
-      <div class="fstep"><span class="k">MÅLET</span><b>En selger som blir</b><p>Vi måler hvem som fortsatt er her etter 90 dager.</p></div>
-    </div>
-
-    <div class="season reveal">
-      <span class="label">Når budsjettet bør være størst</span>
-      <div class="months" id="months"></div>
-      <div class="season-notes">
-        <span class="pill">Januar: Nytt år, ny jobb</span>
-        <span class="pill">Mars til mai: Sommerjobb</span>
-        <span class="pill">August: Studiestart og friår</span>
-        <span class="pill">Oktober: Ekstrajobb ved siden av studiene</span>
+      <h3>Fra visning til ansettelse</h3>
+      <div class="funnel">
+        <div class="fs"><span class="k">1</span><b>Ser videoen</b><p>Åpningen stopper scrollingen.</p></div>
+        <div class="fs"><span class="k">2</span><b>Søker</b><p>Kort skjema rett i TikTok.</p></div>
+        <div class="fs"><span class="k">3</span><b>Blir ringt</b><p>Innen 24 timer.</p></div>
+        <div class="fs"><span class="k">4</span><b>Intervju</b><p>Booket direkte i telefonen.</p></div>
+        <div class="fs"><span class="k">Mål</span><b>Selger som blir</b><p>Fortsatt i jobb etter 90 dager.</p></div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- 05 PLAN -->
-<section class="section" id="plan" aria-labelledby="plan-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">05</span><span class="dot"></span><span class="label">Prioritering</span></div>
-        <h2 class="display h-xl" id="plan-tittel">De første 90 dagene</h2>
+      <h3>Testing og budsjettfordeling</h3>
+      <p>De første to ukene får alle tolv variantene likt budsjett. Deretter slås den svakeste halvparten av, og vinnerne får gradvis mer. Når testfasen er over, fordeles budsjettet slik:</p>
+      <div class="budget" role="img" aria-label="Budsjettfordeling: 70 prosent dokumenterte vinnere, 20 prosent nye varianter, 10 prosent nye ideer"><div class="b1">70 %</div><div class="b2">20 %</div><div class="b3">10 %</div></div>
+      <div class="budget-key">
+        <div><b>70 prosent: Vinnere</b><span>Konsepter med dokumentert lav pris per søknad.</span></div>
+        <div><b>20 prosent: Varianter</b><span>Nye åpninger og vinklinger av vinnerne.</span></div>
+        <div><b>10 prosent: Nye ideer</b><span>Helt nye konsepter og formater.</span></div>
       </div>
-      <p class="lead reveal">Fundamentet først, så testing, så skalering. Ingen grunn til å bruke store penger før vi vet hva som virker.</p>
-    </div>
 
-    <div class="phases">
-      <article class="card phase reveal">
-        <span class="wk">Uke 1 til 3</span>
-        <h3 class="h-md">Fundament</h3>
-        <ul>
-          <li>Gjennomgang av kanalen og dagens rekrutteringstall</li>
-          <li>Ny profil, bio og lenke til søknad</li>
-          <li>Rekruttere og lære opp creator-teamet</li>
-          <li>Sette opp TikTok-piksel, skjema og rutine for oppringing</li>
-          <li>Innholdsbank med 20 videoer før start</li>
-        </ul>
-        <p class="goal"><b>Ferdig når:</b> Kanalen publiserer fire ganger i uka, og vi har et tallgrunnlag å måle mot.</p>
-      </article>
-      <article class="card phase reveal" style="--d:.08s">
-        <span class="wk">Uke 4 til 8</span>
-        <h3 class="h-md">Test</h3>
-        <ul>
-          <li>Tolv annonsevarianter ut i drift</li>
-          <li>Ukentlig kutt av det som ikke virker</li>
-          <li>De beste organiske videoene prøves som Spark Ads</li>
-          <li>Teste skjema mot landingsside</li>
-        </ul>
-        <p class="goal"><b>Ferdig når:</b> Vi vet hvilke to til tre konsepter som gir billigst søknader som faktisk møter til intervju.</p>
-      </article>
-      <article class="card phase reveal" style="--d:.16s">
-        <span class="wk">Uke 9 til 13</span>
-        <h3 class="h-md">Skaler</h3>
-        <ul>
-          <li>Mer budsjett på vinnerne</li>
-          <li>Nye varianter av de beste konseptene</li>
-          <li>Faste serier som publikum kjenner igjen</li>
-          <li>Første 90-dagersrapport med anbefalinger</li>
-        </ul>
-        <p class="goal"><b>Ferdig når:</b> TikTok er en stabil kilde til nye selgere med kjent pris per ansettelse.</p>
-      </article>
-    </div>
+      <h3>Sesong</h3>
+      <p>Budsjettet bør være størst når flest unge leter etter jobb.</p>
+      <div class="months" id="months" role="img" aria-label="Søknadstopper: Januar, mars til mai, august og oktober"></div>
+      <div class="legend"><span><i style="background:var(--pink)"></i>Høysesong: Januar (nytt år), mars til mai (sommerjobb), august (studiestart og friår), oktober (ekstrajobb)</span></div>
+    </section>
 
-    <div class="prio reveal">
-      <div><div class="big">1</div><p><b>Folka foran kamera</b>Uten et creator-team blir det verken jevn publisering eller troverdige annonser. Dette er det viktigste grepet.</p></div>
-      <div><div class="big">2</div><p><b>Raskt svar på søknader</b>Den beste annonsen er bortkastet hvis ingen ringer før det har gått en uke.</p></div>
-      <div><div class="big">3</div><p><b>Mål det som betyr noe</b>Visninger er hyggelig, men ansettelser som blir værende er målet.</p></div>
-    </div>
+    <!-- 8 GJENNOMFØRING -->
+    <section class="sec" id="plan" data-toc="Gjennomføringsplan">
+      <h2>Gjennomføringsplan</h2>
+      <p class="sec-lead">Fundament først, så testing, så skalering. Ingen store summer før vi vet hva som virker.</p>
 
-    <div class="needs reveal">
-      <span class="label">Det jeg trenger fra dere for å starte</span>
-      <div class="pills">
-        <span class="pill">Tilgang til TikTok og TikTok Ads Manager</span>
-        <span class="pill">6 til 8 selgere som vil være med</span>
-        <span class="pill">Dagens tall på søknader og ansettelser</span>
-        <span class="pill">En rekrutterer med tid til raske oppringinger</span>
-        <span class="pill">Godkjente lønnseksempler</span>
+      <div class="phases">
+        <div class="ph"><span class="k">Uke 1 til 3</span><h4>Fundament</h4><p>Kartlegging, profil, creator-team, sporing og innholdsbank.</p><p class="done"><b>Ferdig når:</b> Kanalen publiserer fire ganger i uka, og utgangspunktet er målt.</p></div>
+        <div class="ph"><span class="k">Uke 4 til 8</span><h4>Test</h4><p>Tolv annonsevarianter, ukentlig kutt og test av skjema mot landingsside.</p><p class="done"><b>Ferdig når:</b> To til tre konsepter gir billigst søknader som møter til intervju.</p></div>
+        <div class="ph"><span class="k">Uke 9 til 13</span><h4>Skaler</h4><p>Mer budsjett på vinnerne, faste serier og første 90-dagersrapport.</p><p class="done"><b>Ferdig når:</b> Pris per ansettelse er kjent og stabil.</p></div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- 06 MÅLING -->
-<section class="section" id="maling" aria-labelledby="maling-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow"><span class="num">06</span><span class="dot"></span><span class="label">Måling</span></div>
-        <h2 class="display h-xl" id="maling-tittel">Slik vet vi om det virker</h2>
+      <h3>Tidslinje</h3>
+      <div class="gantt"><div class="gantt-inner" id="gantt"></div></div>
+      <div class="legend"><span><i style="background:var(--pink)"></i>Aktivitet</span><span><i style="background:var(--ink)"></i>Løpende</span><span><i style="background:var(--ink);transform:rotate(45deg);width:10px;height:10px"></i>Milepæl</span></div>
+
+      <h3>Ressurser og avhengigheter</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Hva</th><th>Hvorfor</th><th>Når</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Tilgang til TikTok og Ads Manager</td><td>Publisering, annonser og sporing</td><td><span class="tag">Uke 1</span></td></tr>
+          <tr><td class="k">6 til 8 selgere</td><td>Creator-teamet som står foran kamera</td><td><span class="tag">Uke 1</span></td></tr>
+          <tr><td class="k">Dagens rekrutteringstall</td><td>Utgangspunkt å måle mot</td><td><span class="tag">Uke 1</span></td></tr>
+          <tr><td class="k">Godkjente lønnseksempler</td><td>Ærlige tall i innhold og annonser</td><td><span class="tag">Uke 2</span></td></tr>
+          <tr><td class="k">Rekrutterer med kapasitet</td><td>Ringe alle søkere innen 24 timer</td><td><span class="tag">Uke 4</span></td></tr>
+          <tr><td class="k">Annonsebudsjett</td><td>Test og skalering</td><td><span class="tag">Uke 4</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 9 MÅLING -->
+    <section class="sec" id="maling" data-toc="Måling og KPI-er">
+      <h2>Måling og KPI-er</h2>
+      <p class="sec-lead">Tre lag med tall som alle leder opp til hovedmålet. Startmålene er forslag og justeres etter fase 1.</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>KPI</th><th>Hvorfor den betyr noe</th><th>Startmål</th></tr></thead>
+        <tbody>
+          <tr class="tbl-group"><td colspan="3">Kanalen</td></tr>
+          <tr><td class="k">Fullføringsrate</td><td>Viser om innholdet holder på folk. Viktigste signal til algoritmen.</td><td class="goal">Over 30 %</td></tr>
+          <tr><td class="k">Engasjementsrate</td><td>Likes, kommentarer, delinger og lagringer delt på visninger.</td><td class="goal">Over 6 %</td></tr>
+          <tr><td class="k">Delinger og lagringer</td><td>Noen sender videoen til en venn som burde søke.</td><td class="goal">Økning hver måned</td></tr>
+          <tr><td class="k">Kommentarer om jobben</td><td>«Hvordan søker jeg?» er det beste tegnet på interesse.</td><td class="goal">Telles ukentlig</td></tr>
+          <tr class="tbl-group"><td colspan="3">Annonsene</td></tr>
+          <tr><td class="k">Hook rate</td><td>Andelen som ser forbi de første to sekundene.</td><td class="goal">Over 25 %</td></tr>
+          <tr><td class="k">Klikkrate</td><td>Andelen som trykker på søk.</td><td class="goal">Over 1 %</td></tr>
+          <tr><td class="k">Pris per søknad</td><td>Hva én utfylt søknad koster.</td><td class="goal">Settes etter fase 1</td></tr>
+          <tr><td class="k">Frekvens</td><td>For høy betyr at innholdet må fornyes.</td><td class="goal">Under 3 per uke</td></tr>
+          <tr class="tbl-group"><td colspan="3">Rekrutteringen</td></tr>
+          <tr><td class="k">Svar på telefon</td><td>Viser om søkerne er reelle og om vi ringer raskt nok.</td><td class="goal">Over 60 %</td></tr>
+          <tr><td class="k">Søknad til intervju</td><td>Kvaliteten på søkerne fra TikTok.</td><td class="goal">Settes etter fase 1</td></tr>
+          <tr><td class="k">Intervju til ansatt</td><td>Om vi treffer riktige folk, ikke bare mange.</td><td class="goal">Lik eller bedre enn Finn</td></tr>
+          <tr><td class="k">I jobb etter 90 dager</td><td>Det endelige beviset, koblet til hovedmålet.</td><td class="goal">Lik eller bedre enn i dag</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout"><span class="ic">i</span><p>Engasjementsraten på TikTok ligger rundt 4 prosent i snitt. Med Mufano oppnådde jeg 9,1 prosent, så startmålet på 6 prosent er realistisk med riktig innhold.</p></div>
+
+      <h3>Rapportering</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Frekvens</th><th>Innhold</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Hver uke</td><td>Kort status: Hva fungerte, hva kuttes og hva testes neste uke.</td></tr>
+          <tr><td class="k">Hver måned</td><td>Hvilke pilarer og konsepter som gir best kandidater, og ny budsjettfordeling.</td></tr>
+          <tr><td class="k">Etter 90 dager</td><td>Pris per ansatt som ble værende, sammenlignet med Finn og andre kanaler.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 10 RISIKO -->
+    <section class="sec" id="risiko" data-toc="Risiko og retningslinjer">
+      <h2>Risiko og retningslinjer</h2>
+      <p class="sec-lead">Hva som kan gå galt, og hvordan det håndteres.</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Risiko</th><th>Sannsynlighet</th><th>Tiltak</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Negative kommentarer om feltsalg</td><td><span class="tag">Høy</span></td><td>Svares åpent, gjerne med en video. Kritikk blir ofte det beste innholdet.</td></tr>
+          <tr><td class="k">Selgerne mister motivasjonen for innhold</td><td><span class="tag grey">Middels</span></td><td>Bonus per publisert video, rotasjon i teamet og synlige resultater.</td></tr>
+          <tr><td class="k">Annonsetretthet</td><td><span class="tag grey">Middels</span></td><td>Nye varianter hver tredje uke og overvåking av frekvens.</td></tr>
+          <tr><td class="k">Misvisende lønnsbudskap</td><td><span class="tag grey">Lav</span></td><td>Alltid fastlønn pluss provisjon. Toppinntekter vises aldri som det normale.</td></tr>
+          <tr><td class="k">Kunder vises uten godkjenning</td><td><span class="tag grey">Lav</span></td><td>Organisasjoner og merkevarer vises bare etter klarsignal.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Retningslinjer for innhold</h3>
+      <ul class="list">
+        <li><strong>Samtykke:</strong> Alle som er med i en video har sagt ja, også de som skimtes i bakgrunnen.</li>
+        <li><strong>Ærlighet:</strong> Innholdet viser jobben slik den er, med både ja og nei.</li>
+        <li><strong>Tone:</strong> Selvironisk og varm, aldri på bekostning av de vi møter på stand.</li>
+      </ul>
+    </section>
+
+    <!-- 11 OM FORFATTEREN -->
+    <section class="sec" id="forfatter" data-toc="Om forfatteren">
+      <h2>Om forfatteren</h2>
+      <p class="sec-lead">Strategien bygger på det som har fungert for meg på TikTok tidligere.</p>
+      <div class="author">
+        <div class="ph-img"><img src="assets/img/profil.webp" alt="Portrett av Daniel Ramslien" width="933" height="1400" loading="lazy"></div>
+        <div>
+          <h4>Daniel Ramslien</h4>
+          <p>Digital markedsfører. Har planlagt, filmet og klippet TikTok-innhold selv, og kjørt annonser på Meta og TikTok.</p>
+          <div class="creds">
+            <span class="tag dark">863 000+ visninger for Mufano</span>
+            <span class="tag">9,1 % engasjement</span>
+            <span class="tag">0 til 20 faste kunder for M40 Studios</span>
+          </div>
+        </div>
       </div>
-      <p class="lead reveal">Ett hovedmål og tre lag med tall under. Startmålene under er mitt forslag, og justeres etter at vi har målt utgangspunktet i fase 1.</p>
-    </div>
-
-    <div class="north reveal">
-      <div class="star" aria-hidden="true"></div>
-      <div>
-        <span class="label">Hovedmålet</span>
-        <h3>Pris per ansatt selger som fortsatt er i jobb etter 90 dager</h3>
-        <p>Billige søknader hjelper lite hvis folk slutter etter to uker. Dette tallet kobler TikTok direkte til det Face2face faktisk trenger.</p>
+      <div class="contact">
+        <a class="btn btn-pink" href="mailto:danielramslien@gmail.com">danielramslien@gmail.com</a>
+        <a class="btn btn-line" href="tel:+4791168076">+47 911 68 076</a>
+        <a class="btn btn-line" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener">Portefølje</a>
       </div>
-    </div>
+    </section>
 
-    <div class="kpi-tabs" role="tablist" aria-label="Måletall" id="kpi-tabs"></div>
-    <div role="tabpanel" id="kpi-panel">
-      <table class="kpi-table">
-        <thead><tr><th>Måletall</th><th>Hvorfor det betyr noe</th><th>Startmål</th></tr></thead>
-        <tbody id="kpi-body"></tbody>
-      </table>
-    </div>
-    <p class="kpi-note">Engasjementsraten på TikTok ligger rundt 4 prosent i snitt. Med Mufano fikk jeg 9,1 prosent, så målet over er realistisk med riktig innhold.</p>
-
-    <div class="rhythm">
-      <article class="card reveal"><span class="k">HVER UKE</span><h3 class="h-md">Kort statusrapport</h3><p>Hva som gikk bra, hva som kuttes og hva vi tester neste uke. Kort nok til å leses på fem minutter.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">HVER MÅNED</span><h3 class="h-md">Læring og justering</h3><p>Hvilke pilarer og konsepter som gir best kandidater, og hvordan budsjettet bør fordeles videre.</p></article>
-      <article class="card reveal" style="--d:.16s"><span class="k">ETTER 90 DAGER</span><h3 class="h-md">Status på hovedmålet</h3><p>Pris per ansatt som ble værende, sammenlignet med Finn og andre kanaler dere bruker i dag.</p></article>
-    </div>
-
-    <div class="rules">
-      <span class="label">Spilleregler</span>
-      <div class="rules-grid">
-        <div class="rule reveal"><b>Ærlig om lønn</b><p>Alltid fastlønn pluss provisjon. Toppinntekter vises aldri som det normale.</p></div>
-        <div class="rule reveal" style="--d:.05s"><b>Samtykke først</b><p>Alle som er med i en video har sagt ja, også de som skimtes i bakgrunnen.</p></div>
-        <div class="rule reveal" style="--d:.1s"><b>Kundene godkjenner</b><p>Organisasjoner og merkevarer vises bare når de har gitt klarsignal.</p></div>
-        <div class="rule reveal" style="--d:.15s"><b>Svar på kritikk</b><p>Skeptiske kommentarer besvares åpent, gjerne med en video. Det er ofte det beste innholdet.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 HVORFOR MEG -->
-<section class="section" id="meg" aria-labelledby="meg-tittel">
-  <div class="wrap me-grid">
-    <div class="proof">
-      <figure class="shot reveal" style="margin:0"><img src="assets/img/mufano-start.jpg" alt="Skjermbilde fra en TikTok-video for Mufano" loading="lazy"><figcaption><b>863 000+</b>visninger på fire videoer for Mufano, uten annonsekroner</figcaption></figure>
-      <figure class="shot reveal" style="margin:0;--d:.08s"><img src="assets/img/m40-start.jpg" alt="Fra en video for M40 Studios" loading="lazy"><figcaption><b>0 → 20</b>faste kunder for M40 Studios gjennom organisk innhold</figcaption></figure>
-    </div>
-    <div>
-      <div class="eyebrow"><span class="num">07</span><span class="dot"></span><span class="label">Hvorfor meg</span></div>
-      <h2 class="display h-xl" id="meg-tittel">Jeg har gjort dette før</h2>
-      <p class="lead" style="margin-top:22px">Strategien over bygger på det som har fungert for meg på TikTok: Ekte folk, en sterk åpning og tett oppfølging av tallene.</p>
-      <div class="stats">
-        <div class="stat"><span class="stat-num">9,1 %</span><span class="stat-label">engasjement for Mufano, over dobbelt så høyt som snittet</span></div>
-        <div class="stat"><span class="stat-num">15 900</span><span class="stat-label">delinger på fire videoer</span></div>
-        <div class="stat"><span class="stat-num">100 000+ kr</span><span class="stat-label">i studioleie for M40 Studios</span></div>
-      </div>
-      <p class="body">Jeg har planlagt, filmet og klippet selv i CapCut og Premiere Pro, og jeg har kjørt annonser på Meta og TikTok. Jeg kan ta hele løpet fra idé til rapport, og jeg trives best tett på folka som skal være med i innholdet.</p>
-    </div>
-  </div>
-</section>
-
-<!-- KONTAKT -->
-<section class="contact" id="kontakt" aria-labelledby="kontakt-tittel">
-  <div class="wrap">
-    <h2 class="display h-xl" id="kontakt-tittel">Klar til å sette i gang</h2>
-    <p class="lead">Takk for caset. Jeg går gjerne gjennom strategien sammen med dere og svarer på spørsmål.</p>
-    <a class="contact-email" href="mailto:danielramslien@gmail.com">danielramslien@gmail.com</a>
-    <div class="contact-links">
-      <a class="pill" href="tel:+4791168076">+47 911 68 076</a>
-      <a class="pill pill--accent" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener"><span class="d"></span>Se porteføljen</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>Daniel Ramslien · Case til Face2face Creatives · November 2026</footer>
+    <footer class="doc-foot"><span>TikTok-strategi for Face2face Creatives · Daniel Ramslien</span><span>17. november 2026</span></footer>
+  </main>
+</div>
 
 <script>
-const PILLARS = [
-  {t:'Feltet uten filter', p:30, q:'Hvordan er en vanlig dag?',
-   d:'Vi viser hverdagen slik den faktisk er: Morgenmøtet, de første samtalene, pausene og ja-et som gjør dagen. POV-formater filmet av selgerne selv.',
-   w:'Dette er pilaren som tar ned fordommene, og den som oftest blir til annonser.',
-   ex:[['«En dag på stand på Gardermoen»','POV fra morgen til kveld, 30 sekunder.'],['«Ting du lærer første uka»','Fem raske klipp med tekst på skjermen.'],['«Rangerer dagens samtaler»','Selgeren rangerer dagens møter, med humor.']]},
-  {t:'Folka bak', p:25, q:'Hvem skal jeg jobbe med?',
-   d:'Kulturen er det Face2face er best på, og det er den som er vanskeligst å forklare i en stillingsannonse. Afterwork, konkurranser og turnéteamet.',
-   w:'Folk søker seg til folk. Når seerne kjenner igjen ansiktene, stiger tilliten.',
-   ex:[['«Møt turnéteamet»','Serie der hvert medlem får 15 sekunder.'],['«Hvem i teamet …»','Trendformat der teamet peker på hverandre.'],['«Fredagskonkurransen»','Hva vinneren fikk, og hvordan.']]},
-  {t:'Veien videre', p:15, q:'Hvor kan dette ta meg?',
-   d:'Face2face Campus og veien fra selger til teamleder. Historier fra de som har gått den.',
-   w:'Gjør jobben til en karriere i stedet for en midlertidig jobb, og tiltrekker de ambisiøse.',
-   ex:[['«Fra ny til teamleder»','En ekte teamleder forteller sin historie.'],['«Hva lærer du på Campus?»','Tre ting på 20 sekunder.'],['«Salg er et superpower»','Hvordan ferdighetene brukes etterpå.']]},
-  {t:'Sakene vi jobber for', p:15, q:'Betyr jobben noe?',
-   d:'Mye av arbeidet er å skaffe faste givere til organisasjoner. Det gir mening, og det er verdt å vise fram, så lenge kundene godkjenner det.',
-   w:'Mange unge velger arbeidsgiver ut fra verdier. Dette gir et svar på hvorfor jobben er viktig.',
-   ex:[['«Hva skjer med pengene?»','En kort forklaring på hva én giver bidrar med.'],['«Hvorfor jeg sier ja hver dag»','Selgeren forteller hva saken betyr for hen.'],['«Bak kampanjen»','Hvordan et nytt prosjekt blir til.']]},
-  {t:'Trend og humor', p:15, q:'Er dette et sted jeg vil være?',
-   d:'Kjappe trendformater og lyder i Face2face sin selvironiske tone. Laget raskt, publisert mens trenden fortsatt lever.',
-   w:'Gir rekkevidde og følgere, og viser at dette er en arbeidsplass med humor.',
-   ex:[['«Ceci n’est pas une pub»','En gjentakende spøk som blir en signatur.'],['«Ting selgere aldri sier»','Trendlyd med teamet i hovedrollene.'],['«Kundetyper på stand»','Gjenkjennelig humor uten å tråkke på noen.']]}
-];
-const playIco = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>';
-const pEl = document.getElementById('pillars'), dEl = document.getElementById('pillar-detail');
-PILLARS.forEach((p,i) => {
-  const b = document.createElement('button');
-  b.className = 'pillar'; b.type = 'button'; b.setAttribute('role','tab'); b.id = 'pil-'+i;
-  b.innerHTML = `<span class="pct">${p.p}<small> %</small></span><span class="pt">${p.t}</span><span class="body" style="font-size:13.5px">${p.q}</span><span class="bar"><i style="width:${p.p/30*100}%"></i></span>`;
-  b.addEventListener('click', () => selectPillar(i));
-  b.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + PILLARS.length) % PILLARS.length;
-      selectPillar(n); document.getElementById('pil-'+n).focus();
-    }
-  });
-  pEl.appendChild(b);
+const secs = [...document.querySelectorAll('[data-toc]')];
+const toc = document.getElementById('toc'), mbar = document.getElementById('mbar');
+secs.forEach(s => {
+  const li = document.createElement('li');
+  li.innerHTML = `<a href="#${s.id}">${s.dataset.toc}</a>`;
+  toc.appendChild(li);
+  const a = document.createElement('a'); a.href = '#'+s.id; a.textContent = s.dataset.toc; mbar.appendChild(a);
 });
-function selectPillar(i){
-  const p = PILLARS[i];
-  [...pEl.children].forEach((b,k) => { b.setAttribute('aria-selected', k===i); b.tabIndex = k===i ? 0 : -1; });
-  dEl.setAttribute('aria-labelledby','pil-'+i);
-  dEl.innerHTML = `<article class="card"><span class="k">${p.p} PROSENT AV INNHOLDET</span><h3 class="h-md">${p.t}</h3><p>${p.d}</p><p><b style="color:var(--text)">Hvorfor:</b> ${p.w}</p></article>
-  <ul class="ex-list">${p.ex.map(e => `<li><span class="play">${playIco}</span><span><b>${e[0]}</b><br>${e[1]}</span></li>`).join('')}</ul>`;
-}
-selectPillar(0);
+const tocLinks = [...toc.querySelectorAll('a')], barLinks = [...mbar.querySelectorAll('a')];
 
-const KPIS = {
-  'Kanalen': [
-    ['Fullføringsrate','Viser om innholdet holder på folk. Det viktigste signalet til algoritmen.','Over 30 %'],
-    ['Engasjementsrate','Likes, kommentarer, delinger og lagringer delt på visninger.','Over 6 %'],
-    ['Delinger og lagringer','Tegn på at noen sender videoen til en venn som burde søke.','Øker hver måned'],
-    ['Kommentarer om jobben','Spørsmål som «hvordan søker jeg?» er det beste tegnet på interesse.','Telles ukentlig'],
-    ['Publiseringsrytme','Jevnhet slår enkeltstående treff.','4 per uke, hver uke']
-  ],
-  'Annonsene': [
-    ['Hook rate','Andelen som ser forbi de første to sekundene. Sier om åpningen virker.','Over 25 %'],
-    ['Klikkrate','Andelen som trykker på søk.','Over 1 %'],
-    ['Pris per søknad','Hva én utfylt søknad koster.','Settes etter fase 1'],
-    ['Frekvens','Hvor ofte samme person ser annonsen. For høy betyr at vi må fornye.','Under 3 per uke']
-  ],
-  'Rekrutteringen': [
-    ['Andel som svarer på telefon','Viser om søkerne er reelle og om vi ringer raskt nok.','Over 60 %'],
-    ['Søknad til intervju','Kvaliteten på søknadene fra TikTok.','Settes etter fase 1'],
-    ['Intervju til ansatt','Om vi treffer riktige folk, ikke bare mange.','Lik eller bedre enn Finn'],
-    ['Fortsatt i jobb etter 90 dager','Det endelige beviset. Kobles til hovedmålet.','Lik eller bedre enn i dag']
-  ]
-};
-const tEl = document.getElementById('kpi-tabs'), kb = document.getElementById('kpi-body');
-Object.keys(KPIS).forEach((k,i) => {
-  const b = document.createElement('button');
-  b.className = 'kpi-tab'; b.type = 'button'; b.setAttribute('role','tab'); b.textContent = k;
-  b.addEventListener('click', () => selectKpi(k));
-  tEl.appendChild(b);
-});
-function selectKpi(k){
-  [...tEl.children].forEach(b => b.setAttribute('aria-selected', b.textContent === k));
-  kb.innerHTML = KPIS[k].map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="t">${r[2]}</td></tr>`).join('');
-}
-selectKpi('Kanalen');
-
-const heat = [.9,.35,.7,.8,.85,.3,.2,.95,.45,.7,.35,.2];
+const heat = [.95,.3,.75,.85,.9,.35,.2,1,.45,.75,.35,.15];
 const mn = ['jan','feb','mar','apr','mai','jun','jul','aug','sep','okt','nov','des'];
-document.getElementById('months').innerHTML = mn.map((m,i) => `<div class="m${heat[i]>.6?' hot':''}" title="${m}"><i style="height:${heat[i]*100}%"></i><span>${m}</span></div>`).join('');
+document.getElementById('months').innerHTML = mn.map((m,i) => `<div class="mo${heat[i]>.6?' hot':''}"><i style="height:${Math.round(heat[i]*80)}px"></i><span>${m}</span></div>`).join('');
 
-const hdr = document.getElementById('top-bar'), prog = document.getElementById('progress');
-const navLinks = [...document.querySelectorAll('.nav a')];
-const secs = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+// Gantt: [label, start, end, type]  type: a=aktivitet, d=løpende, m=milepæl, p=fase
+const G = [
+  ['Fundament',1,3,'p'],
+  ['Kartlegging og utgangspunkt',1,1,'a'],
+  ['Profil, sporing og skjema',1,2,'a'],
+  ['Rekruttere creator-team',1,2,'a'],
+  ['Innholdsbank, 20 videoer',2,3,'a'],
+  ['Kanalen er i gang',3,3,'m'],
+  ['Test',4,8,'p'],
+  ['Annonsetest, 12 varianter',4,6,'a'],
+  ['Kutt og ny runde',6,8,'a'],
+  ['Skjema mot landingsside',5,7,'a'],
+  ['Vinnerkonsepter klare',8,8,'m'],
+  ['Skaler',9,13,'p'],
+  ['Mer budsjett på vinnerne',9,13,'a'],
+  ['Faste serier',9,13,'a'],
+  ['90-dagersrapport',13,13,'m'],
+  ['Fire videoer i uka',3,13,'d'],
+  ['Ukerapport',2,13,'d']
+];
+let gh = '<div class="grow head"><div class="gl">Aktivitet</div>' + Array.from({length:13},(_,i)=>`<div>U${i+1}</div>`).join('') + '</div>';
+G.forEach(([l,s,e,t]) => {
+  if (t === 'p') { gh += `<div class="grow phase"><div class="gl">${l}</div>` + Array.from({length:13},(_,i)=>`<div class="wk">${i+1>=s&&i+1<=e?'•':''}</div>`).join('') + '</div>'; return; }
+  let cells = '';
+  for (let w=1; w<=13; w++) {
+    if (t === 'm') cells += `<div>${w===s?'<div class="ms" title="Milepæl"></div>':''}</div>`;
+    else if (w === s) cells += `<div style="grid-column:span ${e-s+1}"><div class="bar${t==='d'?' d':''}"></div></div>`, w = e;
+    else cells += '<div></div>';
+  }
+  gh += `<div class="grow"><div class="gl">${l}</div>${cells}</div>`;
+});
+document.getElementById('gantt').innerHTML = gh;
+
+const prog = document.getElementById('progress');
 function onScroll(){
-  const y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
-  hdr.classList.toggle('scrolled', y > 20);
-  prog.style.width = (h > 0 ? y / h * 100 : 0) + '%';
-  let cur = -1;
-  secs.forEach((s,i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = i; });
-  navLinks.forEach((a,i) => a.classList.toggle('active', i === cur));
+  const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+  prog.style.width = (h > 0 ? y/h*100 : 0) + '%';
+  let cur = 0;
+  secs.forEach((s,i) => { if (s.getBoundingClientRect().top < innerHeight*.3) cur = i; });
+  tocLinks.forEach((a,i) => a.classList.toggle('active', i===cur));
+  barLinks.forEach((a,i) => {
+    const on = i===cur;
+    if (on && !a.classList.contains('active')) mbar.scrollTo({left: a.offsetLeft - mbar.clientWidth/2 + a.offsetWidth/2, behavior:'smooth'});
+    a.classList.toggle('active', on);
+  });
 }
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-} else document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
 </script>
 </body>
 </html>

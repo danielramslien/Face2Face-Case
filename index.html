@@ -127,10 +127,6 @@ ul.dots li b{color:var(--text);font-weight:600}
 .chip-2{right:-6%;bottom:12%;animation-delay:-3s}
 @media (max-width:860px){.hero{min-height:auto}.hero-grid{grid-template-columns:1fr}.hero-visual{width:min(70vw,320px);order:-1}.chip-1{left:-6%}.chip-2{right:-4%}}
 @media (prefers-reduced-motion:reduce){.hero-visual,.float-chip{animation:none}}
-.hero-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,2.6vw,40px);list-style:none;margin:clamp(40px,6vh,72px) 0 0;padding:0}
-.hero-nav a{font-family:var(--font-display);font-weight:800;text-transform:uppercase;text-decoration:none;font-size:clamp(18px,2.1vw,32px);line-height:1;color:var(--bg);-webkit-text-stroke:2px rgba(255,255,255,.45);paint-order:stroke fill;transition:color .3s var(--ease),-webkit-text-stroke-color .3s var(--ease)}
-.hero-nav a:hover,.hero-nav a:focus-visible{color:var(--pink);-webkit-text-stroke-color:var(--pink)}
-@supports not (-webkit-text-stroke:1px #000){.hero-nav a{color:var(--text)}}
 .hero-scroll{align-self:center;display:grid;place-items:center;width:60px;height:46px;margin-top:24px;color:var(--pink);text-decoration:none;animation:scrollBob 1.8s ease-in-out infinite}
 .hero-scroll svg{width:40px;height:40px;filter:drop-shadow(0 0 8px rgba(236,0,140,.8))}
 @keyframes scrollBob{0%,100%{transform:translateY(-4px)}50%{transform:translateY(8px)}}
@@ -264,9 +260,10 @@ ul.dots li b{color:var(--text);font-weight:600}
 @media (max-width:860px){.how{grid-template-columns:1fr}}
 
 /* Ads */
-.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
-@media (max-width:1060px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.phones{grid-template-columns:1fr}}
+.phones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+@media (max-width:1060px){.phones{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.phones{grid-template-columns:1fr}}
 .ad{display:flex;flex-direction:column;gap:14px}
 .phone{position:relative;aspect-ratio:9/16;border-radius:26px;overflow:hidden;border:6px solid #050505;box-shadow:0 0 0 1px var(--line-strong),0 24px 60px rgba(0,0,0,.5);isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s}
 .ad:hover .phone{transform:translateY(-6px) rotate(-1.2deg);box-shadow:0 0 0 1px var(--pink-line),0 30px 70px rgba(236,0,140,.18)}
@@ -276,6 +273,7 @@ ul.dots li b{color:var(--text);font-weight:600}
 .ad-2 .bg{background:radial-gradient(circle at 70% 30%,#123a3a,#0a1414 60%,#050808)}
 .ad-3 .bg{background:radial-gradient(circle at 40% 30%,#23123d,#0e0915 60%,#050407)}
 .ad-4 .bg{background:radial-gradient(circle at 50% 25%,#3a3a3a,#141414 60%,#060606)}
+.ad-5 .bg{background:radial-gradient(circle at 60% 30%,#3d2a06,#161005 60%,#070502)}
 .phone .top{position:absolute;top:12px;left:0;right:0;display:flex;justify-content:center;gap:14px;font-size:11px;font-weight:600;color:rgba(255,255,255,.55)}
 .phone .top b{color:#fff;border-bottom:2px solid #fff;padding-bottom:2px}
 .phone .hook{position:absolute;left:12px;right:12px;top:26%;text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(16px,1.45vw,19px);line-height:1.15;color:#fff}
@@ -303,16 +301,29 @@ ul.dots li b{color:var(--text);font-weight:600}
 .fstep:last-child{background:linear-gradient(160deg,#3a0525,var(--bg-card))}
 @media (max-width:900px){.funnel{grid-template-columns:1fr}.fstep + .fstep{border-left:0;border-top:1px solid var(--line)}}
 
-.budget{display:flex;height:54px;border-radius:14px;overflow:hidden;gap:3px}
-.budget div{display:flex;align-items:center;padding:0 16px;font-family:var(--font-display);font-size:18px;font-weight:800;color:#fff;white-space:nowrap;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease)}
-.budget.in div{transform:scaleX(1)}
-.budget .b1{flex:70;background:var(--pink)}
-.budget .b2{flex:20;background:#fff;color:#000;transition-delay:.25s}
-.budget .b3{flex:10;background:#3a3a3a;transition-delay:.45s;padding:0 10px}
-.budget-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:14px;font-size:14.5px}
-.budget-key b{display:block;color:var(--text)}
-.budget-key span{color:var(--soft)}
-@media (max-width:700px){.budget-key{grid-template-columns:1fr}}
+/* Testmodell */
+.tm{display:grid;gap:10px}
+.tm-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:8px 24px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:20px;background:var(--bg-card)}
+.tm-head b{display:block;font-family:var(--font-display);font-weight:800;font-size:17px;line-height:1.2;margin:6px 0 2px}
+.tm-head small{font-size:13px;color:var(--muted)}
+.tm-step{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--pink-soft);border:1px solid var(--pink-line);color:var(--pink-lt)}
+.tm-bar{display:flex;gap:4px;height:56px}
+.tm-bar span{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 6px;border-radius:10px;background:#2a2a2a;color:var(--soft);font-size:13px;font-weight:600;line-height:1.2;transform:scaleY(0);transform-origin:bottom;opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease),background .5s,color .5s;transition-delay:calc(var(--i)*.1s)}
+.tm.in .tm-bar span{transform:none;opacity:1}
+.tm-bar.r2 span{background:rgba(236,0,140,.22);color:var(--text)}
+.tm-bar span.win{background:var(--pink);color:#fff;box-shadow:0 0 24px rgba(236,0,140,.45)}
+.tm-bar span.win::before{content:"★";margin-right:6px;font-size:12px}
+.tm-bar.r3 span{font-size:15px}
+.tm-note{grid-column:2;margin:0;font-size:14px;color:var(--soft)}
+.tm-arrow{display:grid;place-items:center;color:var(--pink);height:26px}
+.tm-arrow svg{width:22px;height:22px}
+@media (max-width:760px){
+  .tm-row{grid-template-columns:1fr;padding:16px}
+  .tm-note{grid-column:1}
+  .tm-bar{height:64px;gap:3px}
+  .tm-bar span{font-size:11.5px;padding:0 3px}
+  .tm-bar span.win::before{display:none}
+}
 
 .months{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;align-items:end;height:150px}
 .mo{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px}
@@ -455,13 +466,6 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <div class="float-chip chip-2"><span><b>24 timer</b>fra søknad til oppringing</span></div>
       </div>
     </div>
-    <ul class="hero-nav reveal" style="--d:.75s">
-      <li><a href="#situasjon">Innsikt</a></li>
-      <li><a href="#strategi">Strategi</a></li>
-      <li><a href="#annonser">Annonser</a></li>
-      <li><a href="#plan">Plan</a></li>
-      <li><a href="#maling">Måling</a></li>
-    </ul>
   </div>
   <a class="hero-scroll" href="#sammendrag" aria-label="Bla ned til sammendraget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
 </section>
@@ -482,7 +486,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
     <div class="stats reveal">
       <div class="stat"><span class="stat-num" data-count="4">4</span><span class="stat-label">videoer i uka fra et fast team av selgere</span></div>
-      <div class="stat"><span class="stat-num" data-count="12">12</span><span class="stat-label">annonsevarianter i første testrunde</span></div>
+      <div class="stat"><span class="stat-num" data-count="5">5</span><span class="stat-label">annonseformater testes mot hverandre først</span></div>
       <div class="stat"><span class="stat-num"><span data-count="24">24</span><small> t</small></span><span class="stat-label">fra søknad til en rekrutterer ringer</span></div>
       <div class="stat"><span class="stat-num"><small>under </small><span data-count="4000">4 000</span><small> kr</small></span><span class="stat-label">per ansettelse, ned fra 4 000 til 5 000 kr i dag</span></div>
     </div>
@@ -565,7 +569,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
     <div class="subgoals">
       <article class="card reveal"><span class="k">Delmål 1 · Kanalen</span><h3 class="h-md">Fire videoer i uka, hver uke</h3><p>Med engasjement over plattformsnittet på rundt 4 prosent.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Delmål 2 · Annonsene</span><h3 class="h-md">To til tre vinnerkonsepter</h3><p>Med en pris per søknad som holder hver ansettelse under 4 000 kroner.</p></article>
+      <article class="card reveal" style="--d:.08s"><span class="k">Delmål 2 · Annonsene</span><h3 class="h-md">Ett vinnerformat og én vinnerannonse</h3><p>Med en pris per søknad som holder hver ansettelse under 4 000 kroner.</p></article>
       <article class="card reveal" style="--d:.16s"><span class="k">Delmål 3 · Rekrutteringen</span><h3 class="h-md">TikTok som fast søkerkilde</h3><p>Like gode kandidater som fra Finn, målt fra søknad til ansettelse.</p></article>
     </div>
   </div>
@@ -611,7 +615,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <span class="k">Motor 2 · Betalt</span>
         <h3 class="h-md">Annonsene henter søknader</h3>
         <p>Rekrutteringsannonser bygget på videoer som allerede har bevist at de fungerer. Målet er søknader, ikke visninger.</p>
-        <ul class="dots"><li>Spark Ads av de beste videoene</li><li>Egne konsepter som testes systematisk</li><li>Kort søknadsskjema rett i TikTok</li></ul>
+        <ul class="dots"><li>Spark Ads av de beste videoene</li><li>Fem formater testes, så fem annonser i det beste</li><li>Kort søknadsskjema rett i TikTok</li></ul>
       </article>
     </div>
     <p class="oneliner reveal">Strategien i én setning: <span class="accent">Ekte selgere viser en ekte jobb, og vi bruker penger på det publikum allerede har sagt ja til.</span></p>
@@ -664,45 +668,81 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <div class="eyebrow reveal"><span class="dot"></span><span class="label">Betalte rekrutteringsannonser</span></div>
         <h2 class="display h-xl reveal" id="annonser-tittel">Annonser som ikke ser ut som annonser</h2>
       </div>
-      <p class="lead reveal">Fire konsepter i første runde. Hvert testes med tre ulike åpninger, til sammen tolv varianter.</p>
+      <p class="lead reveal">Først testes fem ulike annonseformater mot hverandre. Formatet som gir billigst søknader, brukes til å lage fem nye annonser.</p>
     </div>
+
+    <div class="sub reveal"><h3>Runde 1: Fem formater</h3><span class="label">Likt budsjett på alle fem</span></div>
     <div class="phones">
       <article class="ad ad-1 reveal">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept A</span>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 1</span>
           <p class="hook"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Første måned vs. nå. Ærlig talt.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
-        <h3 class="h-md">Første måned mot nå</h3>
-        <ul class="script"><li><b>Innhold</b>Opplæring, første salg og hvordan lønnen er satt sammen. Kun godkjente tall.</li><li><b>Mål</b>Fjerne frykten for å ikke være «en selgertype».</li></ul>
+        <h3 class="h-md">Rett i kamera</h3>
+        <ul class="script"><li><b>Slik</b>En selger forteller sin egen historie, filmet på mobil.</li><li><b>Tester</b>Om personlige historier bygger nok tillit.</li></ul>
       </article>
       <article class="ad ad-2 reveal" style="--d:.06s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept B</span>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 2</span>
           <p class="hook"><span>POV: Jobben din er å reise rundt i Norge med teamet ditt</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Tre uker, seks byer, én gjeng.<br><span class="sp">Sponset</span></div>
           <div class="cta">Bli med på turnéteamet</div></div>
-        <h3 class="h-md">Turnéteamet</h3>
-        <ul class="script"><li><b>Innhold</b>Montasje av tog, hotell, stand og middag med gjengen.</li><li><b>Mål</b>Selge opplevelsen. Treffer friårs-segmentet.</li></ul>
+        <h3 class="h-md">POV og montasje</h3>
+        <ul class="script"><li><b>Slik</b>Raske klipp fra en arbeidsdag eller turné, med tekst på skjermen.</li><li><b>Tester</b>Om opplevelsen selger bedre enn ord.</li></ul>
       </article>
       <article class="ad ad-3 reveal" style="--d:.12s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept C</span>
-          <p class="hook"><span>For [X] måneder siden var jeg ny. Nå leder jeg et team</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 3</span>
+          <p class="hook"><span>Svar til @bruker: «Er ikke dette bare dørselging?»</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Veien fra selger til teamleder.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Start din egen reise</div></div>
-        <h3 class="h-md">Fra selger til leder</h3>
-        <ul class="script"><li><b>Innhold</b>En ekte teamleder fra Campus forteller sin historie.</li><li><b>Mål</b>Vise at dette er en karriere. Treffer de ambisiøse.</li></ul>
+          <div class="meta"><b>@face2face</b>Vi svarer på det alle lurer på.<br><span class="sp">Sponset</span></div>
+          <div class="cta">Søk på 1 minutt</div></div>
+        <h3 class="h-md">Svar på kommentar</h3>
+        <ul class="script"><li><b>Slik</b>En selger svarer på en ekte, kritisk kommentar.</li><li><b>Tester</b>Om det å møte fordommene direkte gir flere søknader.</li></ul>
       </article>
       <article class="ad ad-4 reveal" style="--d:.18s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Konsept D</span>
-          <p class="hook"><span>Jeg fikk 30 nei i dag. Her er hvorfor jeg gleder meg til i morgen</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 4</span>
+          <p class="hook"><span>Vi spurte selgerne: Hvorfor begynte du her?</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Det ingen sier om feltsalg.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Prøv selv</div></div>
-        <h3 class="h-md">Det ingen sier</h3>
-        <ul class="script"><li><b>Innhold</b>Hvordan nei-ene håndteres og støtten fra teamet.</li><li><b>Mål</b>Bygge tillit gjennom ærlighet og sile ut de som ikke passer.</li></ul>
+          <div class="meta"><b>@face2face</b>Fem selgere, fem svar.<br><span class="sp">Sponset</span></div>
+          <div class="cta">Søk på 1 minutt</div></div>
+        <h3 class="h-md">Spørsmål til teamet</h3>
+        <ul class="script"><li><b>Slik</b>Ett spørsmål, mange korte svar fra ulike selgere.</li><li><b>Tester</b>Om bredden i teamet treffer flere typer søkere.</li></ul>
       </article>
+      <article class="ad ad-5 reveal" style="--d:.24s">
+        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 5</span>
+          <p class="hook"><span>Ting ingen sier om å jobbe med feltsalg</span></p>
+          <div class="rail"><i></i><i></i><i></i><i></i></div>
+          <div class="meta"><b>@face2face</b>Del med en som trenger jobb.<br><span class="sp">Sponset</span></div>
+          <div class="cta">Prøv selv</div></div>
+        <h3 class="h-md">Trend med tekst</h3>
+        <ul class="script"><li><b>Slik</b>En populær lyd med tekst på skjermen og teamet i bildet.</li><li><b>Tester</b>Om humor og gjenkjennelse gir billigst rekkevidde.</li></ul>
+      </article>
+    </div>
+
+    <div class="sub reveal"><h3>Testmodellen</h3><span class="label">Fra fem formater til én vinner</span></div>
+    <div class="tm" id="testmodel">
+      <div class="tm-row">
+        <div class="tm-head"><span class="tm-step">Runde 1</span><b>Fem formater</b><small>Uke 4 og 5</small></div>
+        <div class="tm-bar">
+          <span style="--i:0">Rett i kamera</span><span style="--i:1" class="win">POV</span><span style="--i:2">Svar på kommentar</span><span style="--i:3">Spørsmål</span><span style="--i:4">Trend</span>
+        </div>
+        <p class="tm-note">Likt budsjett på alle fem. Formatet med lavest pris per søknad som møter til intervju, vinner. Her er POV brukt som eksempel.</p>
+      </div>
+      <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="tm-row">
+        <div class="tm-head"><span class="tm-step">Runde 2</span><b>Fem annonser i vinnerformatet</b><small>Uke 6 og 7</small></div>
+        <div class="tm-bar r2">
+          <span style="--i:0">Annonse 1</span><span style="--i:1">Annonse 2</span><span style="--i:2" class="win">Annonse 3</span><span style="--i:3">Annonse 4</span><span style="--i:4">Annonse 5</span>
+        </div>
+        <p class="tm-note">Samme format, nytt innhold: Ulike selgere, åpninger og budskap. Likt budsjett igjen, og den beste annonsen vinner.</p>
+      </div>
+      <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="tm-row">
+        <div class="tm-head"><span class="tm-step">Skaler</span><b>Vinneren får budsjettet</b><small>Fra uke 8</small></div>
+        <div class="tm-bar r3"><span style="--i:0" class="win">Vinnerannonsen</span></div>
+        <p class="tm-note">Når vinneren begynner å miste effekt, lages fem nye annonser i samme format, og runde 2 kjøres på nytt.</p>
+      </div>
     </div>
 
     <div class="sub reveal"><h3>Oppsett</h3></div>
@@ -714,9 +754,9 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <li><b>9:16, 15 til 30 sekunder,</b> tekst på skjermen og tydelig åpning innen to sekunder.</li></ul></article>
       <article class="card reveal" style="--d:.08s"><span class="k">Konvertering og testing</span><h3 class="h-md">La tallene velge vinnerne</h3><ul class="dots">
         <li><b>Leadskjema i TikTok:</b> Navn, telefon, alder, by og når du kan starte.</li>
-        <li><b>To ukers test</b> med likt budsjett på alle tolv variantene.</li>
-        <li><b>Kutt og skaler:</b> Den svakeste halvparten slås av, vinnerne får gradvis mer.</li>
-        <li><b>Ny vri hver tredje uke</b> før publikum blir lei.</li></ul></article>
+        <li><b>Én ting testes om gangen:</b> Først formatet, så innholdet i det.</li>
+        <li><b>Vinneren avgjøres av pris per søknad</b> som møter til intervju, ikke av visninger.</li>
+        <li><b>Fem nye annonser</b> i vinnerformatet når den beste begynner å miste effekt.</li></ul></article>
     </div>
 
     <div class="sub reveal"><h3>Fra visning til ansettelse</h3></div>
@@ -726,14 +766,6 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <div class="fstep"><span class="k">STEG 3</span><b>Blir ringt</b><p>En rekrutterer ringer innen 24 timer.</p></div>
       <div class="fstep"><span class="k">STEG 4</span><b>Intervju</b><p>Booket direkte i samtalen.</p></div>
       <div class="fstep"><span class="k">MÅLET</span><b>En selger som blir</b><p>Fortsatt i jobb etter 90 dager.</p></div>
-    </div>
-
-    <div class="sub reveal"><h3>Budsjettfordeling</h3><span class="label">Etter testfasen</span></div>
-    <div class="budget" id="budget" role="img" aria-label="70 prosent på vinnere, 20 prosent på nye varianter, 10 prosent på nye ideer"><div class="b1">70 %</div><div class="b2">20 %</div><div class="b3">10 %</div></div>
-    <div class="budget-key reveal">
-      <div><b>Vinnere</b><span>Konsepter med dokumentert lav pris per søknad.</span></div>
-      <div><b>Varianter</b><span>Nye åpninger og vinklinger av vinnerne.</span></div>
-      <div><b>Nye ideer</b><span>Helt nye konsepter og formater.</span></div>
     </div>
 
     <div class="sub reveal"><h3>Når budsjettet bør være størst</h3></div>
@@ -759,8 +791,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
     <div class="phases">
       <article class="card phase reveal"><span class="wk">Uke 1 til 3</span><h3 class="h-md">Fundament</h3><p>Kartlegging, profil, creator-team, sporing og en innholdsbank på 20 videoer.</p><p class="goal"><b>Ferdig når:</b> Kanalen publiserer fire ganger i uka, og utgangspunktet er målt.</p></article>
-      <article class="card phase reveal" style="--d:.08s"><span class="wk">Uke 4 til 8</span><h3 class="h-md">Test</h3><p>Tolv annonsevarianter, ukentlige kutt og test av skjema mot landingsside.</p><p class="goal"><b>Ferdig når:</b> To til tre konsepter gir billigst søknader som møter til intervju.</p></article>
-      <article class="card phase reveal" style="--d:.16s"><span class="wk">Uke 9 til 13</span><h3 class="h-md">Skaler</h3><p>Mer budsjett på vinnerne, faste serier og den første 90-dagersrapporten.</p><p class="goal"><b>Ferdig når:</b> Pris per ansettelse er stabilt under 4 000 kroner.</p></article>
+      <article class="card phase reveal" style="--d:.08s"><span class="wk">Uke 4 til 8</span><h3 class="h-md">Test</h3><p>Fem formater mot hverandre, så fem nye annonser i formatet som vant. Skjema testes mot landingsside.</p><p class="goal"><b>Ferdig når:</b> Vi vet hvilket format og hvilken annonse som gir billigst søknader som møter til intervju.</p></article>
+      <article class="card phase reveal" style="--d:.16s"><span class="wk">Uke 9 til 13</span><h3 class="h-md">Skaler</h3><p>Vinnerannonsen får budsjettet, nye runder med fem annonser og den første 90-dagersrapporten.</p><p class="goal"><b>Ferdig når:</b> Pris per ansettelse er stabilt under 4 000 kroner.</p></article>
     </div>
 
     <div class="sub reveal"><h3>Tidslinje</h3><span class="label">Uke 1 til 13</span></div>
@@ -799,7 +831,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Rapportering</h3></div>
     <div class="rhythm">
       <article class="card reveal"><span class="k">Hver uke</span><h3 class="h-md">Kort status</h3><p>Hva som fungerte, hva som kuttes og hva som testes neste uke. Lesetid fem minutter.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Hver måned</span><h3 class="h-md">Læring og justering</h3><p>Hvilke pilarer og konsepter som gir best kandidater, og ny fordeling av budsjettet.</p></article>
+      <article class="card reveal" style="--d:.08s"><span class="k">Hver måned</span><h3 class="h-md">Læring og justering</h3><p>Hvilke pilarer og annonser som gir best kandidater, og hva neste testrunde skal handle om.</p></article>
       <article class="card reveal" style="--d:.16s"><span class="k">Etter 90 dager</span><h3 class="h-md">Status på hovedmålet</h3><p>Pris per ansatt som ble værende, sammenlignet med dagens 4 000 til 5 000 kroner.</p></article>
     </div>
   </div>
@@ -958,12 +990,14 @@ const G = [
   ['Innholdsbank, 20 videoer',2,3,'a'],
   ['Kanalen er i gang',3,3,'m'],
   ['Test',0,0,'p'],
-  ['Annonsetest, 12 varianter',4,6,'a'],
-  ['Kutt og ny runde',6,8,'a'],
+  ['Runde 1: Fem formater',4,5,'a'],
+  ['Vinnerformat valgt',5,5,'m'],
+  ['Runde 2: Fem annonser i vinnerformatet',6,7,'a'],
   ['Skjema mot landingsside',5,7,'a'],
-  ['Vinnerkonsepter klare',8,8,'m'],
+  ['Vinnerannonse klar',8,8,'m'],
   ['Skaler',0,0,'p'],
-  ['Mer budsjett på vinnerne',9,13,'a'],
+  ['Budsjett på vinnerannonsen',8,13,'a'],
+  ['Ny runde med fem annonser',11,12,'a'],
   ['Faste serier',9,13,'a'],
   ['90-dagersrapport',13,13,'m'],
   ['Løpende',0,0,'p'],
@@ -989,7 +1023,7 @@ document.getElementById('gantt-inner').innerHTML = gh;
 const RISKS = [
   ['Negative kommentarer om feltsalg',3,'Høy','Svares åpent, gjerne med en video. Kritikk blir ofte det beste innholdet.'],
   ['Selgerne mister motivasjonen for innhold',2,'Middels','Bonus per publisert video, rotasjon i teamet og synlige resultater.'],
-  ['Annonsetretthet',2,'Middels','Nye varianter hver tredje uke og overvåking av frekvens.'],
+  ['Annonsetretthet',2,'Middels','Fem nye annonser i vinnerformatet når den beste mister effekt, og overvåking av frekvens.'],
   ['Misvisende lønnsbudskap',1,'Lav','Alltid fastlønn pluss provisjon. Toppinntekter vises aldri som det normale.'],
   ['Kunder vises uten godkjenning',1,'Lav','Organisasjoner og merkevarer vises bare etter klarsignal. Alle i videoene har gitt samtykke.']
 ];
@@ -1004,7 +1038,7 @@ function countUp(el){
 }
 
 /* Scroll-animasjoner */
-const animated = '.reveal,.reveal-l,.pop,#wheel,#pillars,#budget,#months,#gantt';
+const animated = '.reveal,.reveal-l,.pop,#wheel,#pillars,#testmodel,#months,#gantt';
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;

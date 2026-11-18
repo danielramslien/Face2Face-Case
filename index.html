@@ -262,6 +262,10 @@ ul.dots li b{color:var(--text);font-weight:600}
 .ad:hover .phone{transform:translateY(-6px) rotate(-1.2deg);box-shadow:0 0 0 1px var(--pink-line),0 30px 70px rgba(236,0,140,.18)}
 @media (max-width:560px){.phone{max-width:280px;width:100%;margin:0 auto}}
 .phone .bg{position:absolute;inset:0;z-index:-1}
+.phone .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.phone .veil{position:absolute;left:-4%;right:-4%;-webkit-backdrop-filter:blur(16px) saturate(.9);backdrop-filter:blur(16px) saturate(.9);background:rgba(10,10,10,.18);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 22%,#000 78%,transparent)}
+.phone .shade{position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0));pointer-events:none}
+.phone .top{text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .ad-1 .bg{background:radial-gradient(circle at 30% 20%,#5a0a38,#1a0712 60%,#080305)}
 .ad-2 .bg{background:radial-gradient(circle at 70% 30%,#123a3a,#0a1414 60%,#050808)}
 .ad-3 .bg{background:radial-gradient(circle at 40% 30%,#23123d,#0e0915 60%,#050407)}
@@ -683,8 +687,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Runde 1: Fem formater</h3><span class="label">Likt budsjett på alle fem</span></div>
     <div class="phones">
       <article class="ad ad-1 reveal">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 1</span>
-          <p class="hook"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-1.webp" alt="" loading="lazy"><div class="veil" style="top:18%;height:13%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 1</span>
+          <p class="hook" style="top:19.5%"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Første måned vs. nå. Ærlig talt.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
@@ -692,8 +696,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <ul class="script"><li><b>Slik</b>En selger forteller sin egen historie, filmet på mobil.</li><li><b>Tester</b>Om personlige historier bygger nok tillit.</li></ul>
       </article>
       <article class="ad ad-2 reveal" style="--d:.06s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 2</span>
-          <p class="hook"><span>POV: Jobben din er å reise rundt i Norge med teamet ditt</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-2.png" alt="" loading="lazy"><div class="veil" style="top:19%;height:20%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 2</span>
+          <p class="hook" style="top:21%"><span>POV: Jobben din er å reise rundt i Norge med teamet ditt</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Tre uker, seks byer, én gjeng.<br><span class="sp">Sponset</span></div>
           <div class="cta">Bli med på turnéteamet</div></div>
@@ -701,8 +705,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <ul class="script"><li><b>Slik</b>Raske klipp fra en arbeidsdag eller turné, med tekst på skjermen.</li><li><b>Tester</b>Om opplevelsen selger bedre enn ord.</li></ul>
       </article>
       <article class="ad ad-3 reveal" style="--d:.12s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 3</span>
-          <p class="hook"><span>Svar til @bruker: «Får man betalt hvis man ikke selger?»</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-3.png" alt="" loading="lazy"><div class="veil" style="top:17%;height:14%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 3</span>
+          <p class="hook" style="top:18.5%"><span>Svar til @bruker: «Får man betalt hvis man ikke selger?»</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Vi svarer på det alle lurer på.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
@@ -728,6 +732,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <ul class="script"><li><b>Slik</b>En populær lyd med tekst på skjermen og teamet i bildet.</li><li><b>Tester</b>Om humor og gjenkjennelse gir billigst rekkevidde.</li></ul>
       </article>
     </div>
+
+    <p class="obj-note reveal">Bildene i format 1 til 3 er referanser fra andre TikTok-kontoer som viser stilen. I kampanjen filmes Face2face sine egne selgere.</p>
 
     <div class="sub reveal"><h3>Testmodellen</h3><span class="label">Fra fem formater til én vinner</span></div>
     <div class="tm" id="testmodel">

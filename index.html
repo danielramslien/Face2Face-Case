@@ -576,6 +576,24 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .ifm-priv{font-size:12px;font-weight:700;margin:12px 0 4px}
 .ifm-btn{margin:8px 14px 16px;padding:11px;border-radius:8px;background:var(--pink);color:#fff;text-align:center;font-weight:800;font-size:14px}
 @media (max-width:760px){.forms{grid-template-columns:1fr}}
+/* Instant Form: Animasjon */
+.ifm-field span{transition:border-color .3s,color .3s}
+.ifm-field.active span{border-color:var(--pink)}
+.ifm-field.active label{color:var(--pink)}
+.ifm-field span.typing::after{content:"";display:inline-block;width:1.5px;height:1em;margin-left:1px;vertical-align:-2px;background:var(--pink);animation:caret .8s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.ifm-btn{transition:background .35s,color .35s,transform .15s}
+.ifm-btn.off{background:#eee;color:#bbb}
+.ifm-btn.press{transform:scale(.96)}
+.ifm-tap{position:absolute;left:50%;bottom:30px;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:rgba(0,0,0,.25);transform:scale(0);opacity:0;pointer-events:none}
+.ifm-tap.go{animation:tap .6s ease-out}
+@keyframes tap{0%{transform:scale(.4);opacity:.6}100%{transform:scale(2.4);opacity:0}}
+.ifm-done{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#fff;text-align:center;padding:24px;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.ifm-done.show{opacity:1;transform:none}
+.ifm-check{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--pink);color:#fff;font-size:30px;font-weight:800;margin-bottom:8px;transform:scale(.4);transition:transform .5s cubic-bezier(.3,1.6,.5,1) .15s}
+.ifm-done.show .ifm-check{transform:scale(1)}
+.ifm-done b{font-size:18px;font-weight:800;color:#111}
+.ifm-done p{margin:0;font-size:13.5px;color:#666}
 </style>
 </head>
 <body>
@@ -850,12 +868,14 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
           <div class="ifm-sub">Bli promotør hos oss</div>
           <div class="ifm-body">
             <div class="ifm-q">Søk på 1 minutt. Vi ringer deg innen 24 timer.</div>
-            <div class="ifm-field"><label>Navn</label><span class="filled">Ola Nordmann</span></div>
-            <div class="ifm-field"><label>Telefon</label><span class="filled">912 34 567</span></div>
-            <div class="ifm-field"><label>Når kan du starte?</label><span>Velg</span></div>
+            <div class="ifm-field" id="ifm-f1"><label>Navn</label><span class="filled" data-val="Ola Nordmann">Ola Nordmann</span></div>
+            <div class="ifm-field" id="ifm-f2"><label>Telefon</label><span class="filled" data-val="912 34 567">912 34 567</span></div>
+            <div class="ifm-field" id="ifm-f3"><label>Når kan du starte?</label><span data-val="Neste uke">Velg</span></div>
             <div class="ifm-priv">Personvern</div>
           </div>
-          <div class="ifm-btn">Send søknad</div>
+          <div class="ifm-btn" id="ifm-btn">Send søknad</div>
+          <div class="ifm-done" id="ifm-done" aria-hidden="true"><span class="ifm-check">✓</span><b>Takk, Ola!</b><p>Vi ringer deg innen 24 timer.</p></div>
+          <span class="ifm-tap" id="ifm-tap" aria-hidden="true"></span>
         </div>
       </div>
       <div class="forms-cards">
@@ -1045,4 +1065,39 @@ function onScroll(){
 }
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
 toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+/* Instant Form: Spiller av utfyllingen i loop */
+(function(){
+  const box = document.querySelector('.ifm'); if (!box) return;
+  const f = [1,2,3].map(i => document.getElementById('ifm-f'+i));
+  const btn = document.getElementById('ifm-btn'), done = document.getElementById('ifm-done'), tap = document.getElementById('ifm-tap');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  let running = false, visible = false;
+  function reset(){
+    f.forEach((el,i) => { const s = el.querySelector('span'); el.classList.remove('active'); s.classList.remove('typing'); s.textContent = i === 2 ? 'Velg' : ''; s.classList.toggle('filled', false); });
+    btn.classList.add('off'); done.classList.remove('show');
+  }
+  async function type(el, speed){
+    const s = el.querySelector('span'), val = s.dataset.val;
+    el.classList.add('active'); s.classList.add('filled','typing'); s.textContent = '';
+    for (const ch of val) { s.textContent += ch; await wait(speed); }
+    s.classList.remove('typing'); await wait(250); el.classList.remove('active');
+  }
+  async function loop(){
+    if (running) return; running = true;
+    while (visible) {
+      reset(); await wait(900);
+      await type(f[0], 55); await type(f[1], 55);
+      const s3 = f[2].querySelector('span'); f[2].classList.add('active'); await wait(500);
+      s3.textContent = s3.dataset.val; s3.classList.add('filled'); await wait(400); f[2].classList.remove('active');
+      btn.classList.remove('off'); await wait(700);
+      tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
+      btn.classList.add('press'); await wait(160); btn.classList.remove('press'); await wait(350);
+      done.classList.add('show'); await wait(2600);
+    }
+    running = false;
+  }
+  if (reduce || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) loop(); }), {threshold:.4}).observe(box);
+})();
 </script>

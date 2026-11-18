@@ -397,7 +397,7 @@ ul.dots li b{color:var(--text);font-weight:600}
 @media (max-width:760px){.risk{grid-template-columns:1fr;gap:8px}}
 
 /* Author */
-.author{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.author{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:center}
 @media (max-width:860px){.author{grid-template-columns:1fr}}
 .creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .creds div{padding:22px 16px 22px 0}
@@ -407,8 +407,9 @@ ul.dots li b{color:var(--text);font-weight:600}
 @media (max-width:560px){.creds{grid-template-columns:1fr}.creds div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
 /* Contact */
-.contact{padding:clamp(96px,12vw,150px) 0 0;text-align:center}
-.me-cut{position:relative;width:min(380px,74vw);margin:56px auto 0;isolation:isolate}
+.contact{padding:clamp(96px,12vw,150px) 0 40px;text-align:center}
+.me-cut{position:relative;width:min(380px,100%);margin:0 auto;isolation:isolate}
+@media (max-width:860px){.me-cut{width:min(300px,70vw)}}
 .me-glow{position:absolute;left:50%;top:58%;width:170%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(236,0,140,.62) 0%,rgba(236,0,140,.3) 26%,rgba(236,0,140,.1) 48%,rgba(236,0,140,0) 68%);animation:glow 5s ease-in-out infinite}
 @keyframes glow{0%,100%{opacity:.85;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
 .me-cut img{width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent);mask-image:linear-gradient(to bottom,#000 78%,transparent)}
@@ -877,13 +878,12 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 <!-- OM MEG -->
 <section class="section" id="meg" aria-labelledby="meg-tittel">
   <div class="wrap author">
+    <div class="me-cut reveal"><div class="me-glow" aria-hidden="true"></div><img src="assets/img/daniel.webp" width="933" height="1400" alt="Daniel Ramslien" loading="lazy"></div>
     <div>
       <div class="eyebrow reveal"><span class="dot"></span><span class="label">Hvem står bak</span></div>
       <h2 class="display h-xl reveal" id="meg-tittel">Daniel Ramslien</h2>
       <p class="lead reveal" style="margin-top:20px">Digital markedsfører. Strategien bygger på det som har fungert for meg på TikTok: Ekte folk, en sterk åpning og tett oppfølging av tallene.</p>
-    </div>
-    <div class="reveal" style="--d:.1s">
-      <div class="creds">
+      <div class="creds reveal" style="--d:.1s;margin-top:32px">
         <div><b data-count="863000" data-suffix="+">863 000+</b><span>organiske visninger på fire TikTok-videoer</span></div>
         <div><b>9,1 %</b><span>engasjement, over dobbelt så høyt som snittet</span></div>
         <div><b>0 → 20</b><span>faste kunder for et musikkstudio via sosiale medier</span></div>
@@ -902,7 +902,6 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <a class="pill" href="tel:+4791168076">+47 911 68 076</a>
       <a class="pill pill--pink" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener"><span class="d"></span>Porteføljen min</a>
     </div>
-    <div class="me-cut reveal"><div class="me-glow" aria-hidden="true"></div><img src="assets/img/daniel.webp" width="933" height="1400" alt="Daniel Ramslien" loading="lazy"></div>
   </div>
 </section>
 </main>

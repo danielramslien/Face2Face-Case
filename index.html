@@ -601,6 +601,13 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .fstep b{font-family:var(--font-body)!important;font-style:normal;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-.01em;color:var(--text)!important;margin-bottom:6px}
 .fstep p{font-size:15px;line-height:1.5;color:var(--soft)}
 .fstep:last-child b{color:#fff!important}
+/* Kontakt: Sans e-post, telefon som tekst, glødende porteføljeknapp */
+.contact-email{font-family:var(--font-body)!important;font-style:normal;font-weight:700;letter-spacing:-.01em;margin:30px 0 6px}
+.contact-links{flex-direction:column;align-items:center;gap:22px}
+.contact-phone{color:var(--text);text-decoration:none;font-size:clamp(16px,1.4vw,19px);font-weight:500}
+.contact-phone:hover{color:var(--pink-lt)}
+.contact-port{display:inline-flex;align-items:center;padding:12px 26px;border-radius:999px;border:1px solid var(--pink-line);background:rgba(236,0,140,.12);color:#fff;text-decoration:none;font-weight:600;font-size:15px;box-shadow:0 0 24px rgba(236,0,140,.35),0 0 60px rgba(236,0,140,.15);transition:box-shadow .3s,background .3s,transform .2s}
+.contact-port:hover{background:var(--pink);box-shadow:0 0 34px rgba(236,0,140,.6),0 0 80px rgba(236,0,140,.25);transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -1009,8 +1016,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <p class="lead reveal">Takk for caset. Jeg går gjerne gjennom strategien sammen med dere.</p>
     <a class="contact-email reveal" href="mailto:danielramslien@gmail.com">danielramslien@gmail.com</a>
     <div class="contact-links reveal">
-      <a class="pill" href="tel:+4791168076">+47 911 68 076</a>
-      <a class="pill pill--pink" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener"><span class="d"></span>Porteføljen min</a>
+      <a class="contact-phone" href="tel:+4791168076">+47 911 68 076</a>
+      <a class="contact-port" href="https://portofolio-8jx.pages.dev/" target="_blank" rel="noopener">Porteføljen min</a>
     </div>
   </div>
 </section>

@@ -635,6 +635,16 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .usp h3{margin-bottom:8px}
 .usp p{margin:0;font-size:15px;color:var(--soft);line-height:1.55}
 @media (max-width:860px){.usps{grid-template-columns:1fr}}
+/* Kom i gang */
+.start-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(14px,1.6vw,22px)}
+@media (max-width:860px){.start-grid{grid-template-columns:1fr}}
+.phases .phase ul.dots{margin-top:12px}
+.targets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.targets div{padding:14px 16px;border-radius:20px;background:var(--bg-raised);border:1px solid var(--line)}
+.targets span{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+.targets b{display:block;font-size:19px;font-weight:800;color:var(--pink-lt);margin:4px 0 2px;letter-spacing:-.01em}
+.targets small{display:block;font-size:12.5px;color:var(--muted)}
+@media (max-width:480px){.targets{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -652,6 +662,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <a href="#annonser">Annonser</a>
       <a href="#grep">Prioritering</a>
       <a href="#maling">Måling</a>
+      <a href="#start">Kom i gang</a>
     </nav>
     <a class="hdr-cta" href="#kontakt">Ta kontakt</a>
   </div>
@@ -1015,6 +1026,56 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
     <div class="sub reveal"><h3>Fra kontakt til ansatt</h3></div>
     <div class="loop reveal"><div>Tok kontakt</div><div>Intervju</div><div>Ansatt</div><div>Cost per hire</div></div>
+  </div>
+</section>
+
+<!-- KOM I GANG -->
+<section class="section" id="start" aria-labelledby="start-tittel">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Kom i gang</span></div>
+        <h2 class="display h-xl reveal" id="start-tittel">De første 30 dagene</h2>
+      </div>
+      <p class="lead reveal">Alt som trengs for å starte i morgen. Tallene er startpunkt, og justeres når de første resultatene kommer.</p>
+    </div>
+
+    <div class="phases">
+      <article class="card phase reveal"><span class="wk">Uke 1</span><h3 class="h-md">Profilen på plass</h3><ul class="dots"><li>Ny bio og lenke til søknadsskjemaet</li><li>Tre festede videoer og tre spillelister</li><li>Velge 1 til 3 promotører som kreatører</li></ul></article>
+      <article class="card phase reveal" style="--d:.08s"><span class="wk">Uke 2</span><h3 class="h-md">Innhold i gang</h3><ul class="dots"><li>Én opptaksdag gir 8 til 10 videoer i banken</li><li>Fast publisering starter</li><li>Instant Form satt opp og testet</li></ul></article>
+      <article class="card phase reveal" style="--d:.16s"><span class="wk">Uke 3 og 4</span><h3 class="h-md">Annonsene ut</h3><ul class="dots"><li>Steg 1 i testmodellen: Fem formater</li><li>Rekrutterer følger opp skjemaene</li><li>Første rapport etter 30 dager</li></ul></article>
+    </div>
+
+    <div class="start-grid">
+      <article class="card reveal"><span class="k">Publisering</span><h3 class="h-md">Tre til fire videoer i uka</h3><ul class="dots">
+        <li><b>Faste dager,</b> så både seerne og algoritmen vet når det kommer noe nytt.</li>
+        <li><b>Én opptaksdag i uka</b> med kreatørene. Klipp og publisering samme uke.</li>
+        <li><b>Alle videoer</b> ender med en CTA til søknadsskjemaet.</li></ul></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">Testregler</span><h3 class="h-md">Når en vinner kåres</h3><ul class="dots">
+        <li><b>Likt budsjett</b> på alle fem formatene.</li>
+        <li><b>Minst sju dager</b> per testrunde, så resultatet ikke avgjøres av én god dag.</li>
+        <li><b>Vinneren</b> er formatet med lavest pris per søknad som møter til intervju.</li></ul></article>
+      <article class="card reveal"><span class="k">Annonseoppsett</span><h3 class="h-md">Slik settes kampanjen opp</h3><ul class="dots">
+        <li><b>Kampanjemål:</b> Leadgenerering med Instant Form.</li>
+        <li><b>Målretting:</b> Alle over 18 år i Norge, med egen annonsegruppe for Oslo.</li>
+        <li><b>Spark Ads:</b> Kreatørene gir tilgang til videoene sine, så annonsene vises fra ekte kontoer.</li></ul></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">Måltall etter 90 dager</span><h3 class="h-md">Slik vet vi at det lykkes</h3>
+        <div class="targets">
+          <div><span>Cost per hire</span><b>Under 4 000 kr</b><small>i dag 4 000 til 5 000 kr</small></div>
+          <div><span>Median visninger</span><b>Over 2 000</b><small>i dag rundt 1 300</small></div>
+          <div><span>Videoer med CTA</span><b>Alle</b><small>i dag 3 av 80</small></div>
+          <div><span>Møter til intervju</span><b>Settes etter 30 dager</b><small>når vi har tall</small></div>
+        </div></article>
+    </div>
+
+    <div class="sub reveal"><h3>Det jeg trenger fra dere</h3></div>
+    <div class="needs reveal">
+      <span class="pill">Tilgang til TikTok-kontoen og Ads Manager</span>
+      <span class="pill">1 til 3 promotører som vil være kreatører</span>
+      <span class="pill">Annonsebudsjett for testen</span>
+      <span class="pill">En rekrutterer som følger opp skjemaene</span>
+      <span class="pill">Godkjente tall om lønn og provisjon</span>
+    </div>
   </div>
 </section>
 

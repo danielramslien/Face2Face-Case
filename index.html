@@ -685,6 +685,11 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .idea p:not(.idea-hook){margin:0;font-size:14.5px;color:var(--soft);line-height:1.5}
 @media (max-width:980px){.ideas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.ideas{grid-template-columns:1fr}}
+/* Festede videoer: Ekte bilder, tittel i rosa blokk */
+.pin.pin-raw{background:var(--img) center/cover no-repeat!important;padding:0}
+.pin.pin-raw::before{z-index:2}
+.pin-t{position:absolute;left:8px;right:8px;z-index:1;padding:7px 9px;border-radius:12px;background:var(--pink);color:#fff;font-family:var(--font-body);font-weight:700;font-size:12.5px;line-height:1.2;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.pin.pin-raw:nth-child(2) .pin-t{bottom:10%}
 </style>
 </head>
 <body>
@@ -782,9 +787,9 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <p class="prof-bio">Field marketing i Norden 🌍 Bli promotør. Fastlønn + provisjon. Søk på 1 min 👇</p>
         <span class="prof-link">🔗 Søk jobb her</span>
         <div class="prof-pins">
-          <div class="pin" style="--img:url(assets/img/felt-kunde.jpg)">Hvem er vi?</div>
-          <div class="pin" style="--img:url(assets/img/felt-dress.jpg)">Hva lærer du som promotør?</div>
-          <div class="pin" style="--img:url(assets/img/stand.webp)">Bli en del av teamet vårt!</div>
+          <div class="pin pin-raw" style="--img:url(assets/img/tt-jobber.jpg)"><span class="pin-t" style="top:7%">Hvem er vi?</span></div>
+          <div class="pin pin-raw" style="--img:url(assets/img/stand.webp)"><span class="pin-t" style="bottom:10%">Hva lærer du som promotør?</span></div>
+          <div class="pin pin-raw" style="--img:url(assets/img/tt-pov.jpg)"><span class="pin-t" style="top:67%">Bli en del av teamet vårt!</span></div>
         </div>
         <div class="prof-lists"><span>Hvordan bli en god promotør</span><span>Vår hverdag</span><span>Jobbmuligheter</span></div>
       </article>

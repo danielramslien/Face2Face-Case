@@ -610,6 +610,14 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .contact-port:hover{background:#fff;color:var(--pink);border-color:#fff;box-shadow:0 0 34px rgba(236,0,140,.6),0 0 80px rgba(236,0,140,.25);transform:translateY(-2px)}
 /* Toppen: Face2face og navnet i lik stil */
 .brand small{font-size:inherit;font-weight:inherit;color:var(--text);margin-left:0}
+/* Ta kontakt-knapp i toppen og større til toppen-knapp */
+.hdr-cta{flex:none;display:inline-flex;align-items:center;height:40px;padding:0 20px;border-radius:999px;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 0 20px rgba(236,0,140,.4);transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.hdr-cta:hover{background:#fff;color:var(--pink);transform:translateY(-1px);box-shadow:0 0 28px rgba(236,0,140,.55)}
+.site-header .nav{margin-left:auto;margin-right:clamp(16px,2vw,28px)}
+@media (max-width:1060px){.hdr-cta{margin-left:auto;height:36px;padding:0 16px;font-size:13px}}
+.to-top{height:52px;padding:0 22px 0 18px;font-size:15px;gap:9px}
+.to-top svg{width:18px;height:18px}
+@media (max-width:640px){.to-top{height:50px}}
 </style>
 </head>
 <body>
@@ -628,6 +636,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <a href="#grep">Prioritering</a>
       <a href="#maling">Måling</a>
     </nav>
+    <a class="hdr-cta" href="#kontakt">Ta kontakt</a>
   </div>
 </header>
 

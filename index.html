@@ -557,6 +557,25 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .chain-step.win .n{background:var(--pink);color:#fff}
 @media (max-width:980px){.chain{grid-template-columns:repeat(2,minmax(0,1fr))}.chain-step::after{display:none}}
 @media (max-width:560px){.chain{grid-template-columns:1fr}}
+/* Instant Form-skisse */
+.forms{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(18px,3vw,44px);align-items:center}
+.forms-cards{display:grid;gap:clamp(14px,1.6vw,22px)}
+.ifm{width:100%;max-width:300px;margin:0 auto;padding:10px;border-radius:42px;background:#cfcfcf;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 60px rgba(236,0,140,.15)}
+.ifm-screen{position:relative;overflow:hidden;border-radius:34px;background:#fff;color:#111;font-family:var(--font-body);display:flex;flex-direction:column}
+.ifm-hero{height:150px;background-size:cover;background-position:30% 40%}
+.ifm-logo{width:58px;height:58px;margin:-29px auto 0;position:relative;border-radius:14px;background:var(--pink);border:3px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:7px;line-height:1.05}
+.ifm-logo span:last-child{transform:rotate(180deg)}
+.ifm-name{margin-top:8px;text-align:center;font-weight:800;font-size:15px}
+.ifm-sub{text-align:center;font-size:12px;color:#888;padding-bottom:12px;border-bottom:1px solid #eee;margin:2px 18px 0}
+.ifm-body{padding:14px 18px 6px}
+.ifm-q{font-weight:800;font-size:14px;line-height:1.3;margin-bottom:12px}
+.ifm-field{margin-bottom:10px}
+.ifm-field label{display:block;font-size:12px;font-weight:700;margin-bottom:4px}
+.ifm-field span{display:block;font-size:12.5px;color:#999;padding-bottom:6px;border-bottom:1.5px solid #222}
+.ifm-field span.filled{color:#111}
+.ifm-priv{font-size:12px;font-weight:700;margin:12px 0 4px}
+.ifm-btn{margin:8px 14px 16px;padding:11px;border-radius:8px;background:var(--pink);color:#fff;text-align:center;font-weight:800;font-size:14px}
+@media (max-width:760px){.forms{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -717,7 +736,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Slik blir innholdet</h3></div>
     <div class="principles">
       <article class="card reveal"><span class="k">Ansikter</span><h3 class="h-md">1 til 3 faste kreatører</h3><p>De samme personene i videoene gir et sterkt personlig merke og tillit. Folk vil jobbe med folk de liker å følge.</p></article>
-      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">Alle videoer ber om søknad</h3><p>Et tydelig og enkelt neste steg i hver video. Jo mindre handlingen krever av seeren, jo flere gjør den.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">CTA på slutten av hver video</h3><p>Hver video ender med et tydelig og enkelt neste steg: «Søk på 1 minutt». Jo mindre handlingen krever av seeren, jo flere gjør den.</p></article>
       <article class="card reveal" style="--d:.12s"><span class="k">Innvendinger</span><h3 class="h-md">Svar som motiverer</h3><p>Videoer som svarer på «utrygg lønn» og «salg tjener lite». Fastlønn og provisjon forklares ærlig, og svaret ender alltid med hva seeren kan få.</p></article>
       <article class="card reveal"><span class="k">Rådgivning</span><h3 class="h-md">Salg som ferdighet</h3><p>Salg er en av de mest verdifulle ferdighetene du kan ha i arbeidslivet. Innholdet gir råd, ikke bare humor.</p></article>
       <article class="card reveal" style="--d:.06s"><span class="k">Pitchen</span><h3 class="h-md">Promotører deler oppskriften</h3><p>Filmet på avstand, med forbipasserende anonymisert og stemmen deres gjort ugjenkjennelig. Viser hvordan jobben gjøres.</p></article>
@@ -822,9 +841,27 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
 
     <div class="sub reveal"><h3>TikTok Instant Forms</h3><span class="label">I alle annonsene</span></div>
-    <div class="setup">
+    <div class="forms">
+      <div class="ifm reveal" role="img" aria-label="Skisse av et TikTok Instant Form fra Face2face: Navn og telefon er ferdig utfylt, og knappen heter Send søknad.">
+        <div class="ifm-screen">
+          <div class="ifm-hero" style="background-image:url(assets/img/felt-team.jpg)"></div>
+          <div class="ifm-logo"><span>FACE2FACE</span><span>CREATIVES</span></div>
+          <div class="ifm-name">Face2face Creatives</div>
+          <div class="ifm-sub">Bli promotør hos oss</div>
+          <div class="ifm-body">
+            <div class="ifm-q">Søk på 1 minutt. Vi ringer deg innen 24 timer.</div>
+            <div class="ifm-field"><label>Navn</label><span class="filled">Ola Nordmann</span></div>
+            <div class="ifm-field"><label>Telefon</label><span class="filled">912 34 567</span></div>
+            <div class="ifm-field"><label>Når kan du starte?</label><span>Velg</span></div>
+            <div class="ifm-priv">Personvern</div>
+          </div>
+          <div class="ifm-btn">Send søknad</div>
+        </div>
+      </div>
+      <div class="forms-cards">
       <article class="card reveal"><span class="k">Lite friksjon</span><h3 class="h-md">Søk uten å forlate TikTok</h3><p>Instant Forms er den enkleste måten å melde interesse på. Skjemaet åpnes rett i appen, med feltene ferdig utfylt der det går.</p></article>
       <article class="card reveal" style="--d:.08s"><span class="k">Rask oppfølging</span><h3 class="h-md">Fra skjema til samtale</h3><p>Navn, telefon og når du kan starte. Svarene går rett til rekrutterer, som tar kontakt mens interessen er varm.</p></article>
+      </div>
     </div>
 
     <div class="sub reveal"><h3>Lite friksjon, mer motivasjon</h3><span class="label">Hvorfor det lønner seg</span></div>

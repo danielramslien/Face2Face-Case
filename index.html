@@ -537,6 +537,12 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .display.h-xl{font-size:clamp(32px,4.8vw,62px)}
 .hero-title em{font-style:italic}
 #mal{padding-top:clamp(40px,5vw,72px)}
+.aud2{display:flex;align-items:center;gap:clamp(18px,2.4vw,30px);padding:clamp(22px,2.6vw,34px);border-radius:999px;border:1px solid var(--line);background:var(--bg-card)}
+.aud2-ico{flex:none;display:grid;place-items:center;width:clamp(64px,7vw,88px);aspect-ratio:1;border-radius:50%;background:var(--pink);color:#fff;box-shadow:0 0 40px rgba(236,0,140,.35)}
+.aud2-ico svg{width:46%;height:46%}
+.aud2 b{display:block;font-family:"Inter Tight","Inter",sans-serif;font-style:italic;font-weight:800;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;line-height:1.05}
+.aud2 p{margin:6px 0 0;font-size:clamp(15px,1.4vw,18px);color:var(--soft)}
+@media (max-width:600px){.aud2{border-radius:32px;align-items:flex-start}}
 .hero{min-height:auto;padding-top:calc(var(--header-h) + clamp(36px,7vh,84px));padding-bottom:8px}
 </style>
 </head>
@@ -608,20 +614,11 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <div class="eyebrow reveal"><span class="dot"></span><span class="label">Målgruppe</span></div>
         <h2 class="display h-xl reveal" id="malgruppe-tittel">Unge som trenger en jobb</h2>
       </div>
-      <p class="lead reveal">Hele profilen og alt innholdet skal snakke til dem, ikke til bedriftskunder eller de som allerede har en kontorjobb.</p>
+      <p class="lead reveal">Hele profilen og alt innholdet skal snakke til dem.</p>
     </div>
-    <div class="aud reveal">
-      <div class="aud-age">18<span class="til">til</span>24<small>år</small></div>
-      <div>
-        <h3 class="h-md">Studenter og de som er ferdige med skolen</h3>
-        <p class="lead" style="margin-top:8px">De er ute etter en jobb på heltid eller deltid, og lurer først og fremst på hva de kan få: Lønn, folk å jobbe med og noe å lære.</p>
-        <div class="aud-chips">
-          <span class="pill pill--pink"><span class="d"></span>Studenter</span>
-          <span class="pill">Ferdig med skolen</span>
-          <span class="pill">Heltid eller deltid</span>
-          <span class="pill">Ingen erfaring</span>
-        </div>
-      </div>
+    <div class="aud2 reveal">
+      <span class="aud2-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+      <div><b>18 til 24 år</b><p>Studenter og de som er ferdige med skolen, på jakt etter jobb på heltid eller deltid.</p></div>
     </div>
   </div>
 </section>
@@ -641,6 +638,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <span class="prof-label">I dag</span>
         <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">face2facecreativesnorway</div><div class="prof-stats">2 694 følgere · 47 600 likes</div></div></div>
         <p class="prof-bio">Blending Strategy, Creativity, Tech and Brand Experience since 1999.</p>
+        <p class="prof-miss">Rettet mot bedriftskunder</p><br>
         <p class="prof-miss">Ingen lenke til å søke</p><br>
         <p class="prof-miss">Ingen festede videoer</p><br>
         <p class="prof-miss">Ingen spillelister</p>

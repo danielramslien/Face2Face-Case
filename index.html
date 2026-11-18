@@ -694,8 +694,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       </article>
       <article class="prof new reveal" style="--d:.08s">
         <span class="prof-label">Forslag</span>
-        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">Face2face · Jobb i salg</div><div class="prof-stats">@face2facecreativesnorway</div></div></div>
-        <p class="prof-bio">Jobb i salg uten erfaring 💸 Fastlønn + provisjon. Søk på 1 min 👇</p>
+        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">Face2face Creatives</div><div class="prof-stats">@face2facecreativesnorway</div></div></div>
+        <p class="prof-bio">Field marketing i Norden 🌍 Bli promotør. Fastlønn + provisjon. Søk på 1 min 👇</p>
         <span class="prof-link">🔗 Søk jobb her</span>
         <div class="prof-pins">
           <div class="pin" style="--img:url(assets/img/felt-kunde.jpg)">Hvem er vi?</div>
@@ -708,8 +708,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 
     <div class="sub reveal"><h3>To forslag til bio</h3><span class="label">Maks 80 tegn</span></div>
     <div class="bios">
-      <div class="bio-opt reveal">«Jobb i salg uten erfaring 💸 Fastlønn + provisjon. Søk på 1 min 👇»</div>
-      <div class="bio-opt reveal" style="--d:.06s">«Vi lærer deg salg. Du får fastlønn, provisjon og et team 🫶 Søk her 👇»</div>
+      <div class="bio-opt reveal">«Field marketing i Norden 🌍 Bli promotør. Fastlønn + provisjon. Søk på 1 min 👇»</div>
+      <div class="bio-opt reveal" style="--d:.06s">«Field marketing i Oslo, Stockholm og Helsingfors 🫶 Bli promotør hos oss 👇»</div>
     </div>
 
     <div class="sub reveal"><h3>Tre festede videoer</h3><span class="label">Bygger tillit på første besøk</span></div>
@@ -1070,7 +1070,6 @@ toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
   const box = document.querySelector('.ifm'); if (!box) return;
   const f = [1,2,3].map(i => document.getElementById('ifm-f'+i));
   const btn = document.getElementById('ifm-btn'), done = document.getElementById('ifm-done'), tap = document.getElementById('ifm-tap');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const wait = ms => new Promise(r => setTimeout(r, ms));
   let running = false, visible = false;
   function reset(){
@@ -1097,7 +1096,7 @@ toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
     }
     running = false;
   }
-  if (reduce || !('IntersectionObserver' in window)) return;
+  if (!('IntersectionObserver' in window)) return;
   new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) loop(); }), {threshold:.4}).observe(box);
 })();
 </script>

@@ -473,6 +473,8 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .pin{position:relative;aspect-ratio:3/4;border-radius:18px;padding:10px;display:flex;align-items:flex-end;font-family:var(--font-display);font-weight:600;font-size:13px;line-height:1.15;color:#fff;overflow:hidden;background:linear-gradient(160deg,#5a0a38,#1a0712)}
 .pin:nth-child(2){background:linear-gradient(160deg,#ec008c,#6b003f)}
 .pin:nth-child(3){background:linear-gradient(160deg,#333,#111)}
+.pin[style*="--img"]{background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.1) 55%,rgba(0,0,0,0)),var(--img) center/cover no-repeat}
+.phone .shot + .shade{height:55%}
 .pin::before{content:"Festet";position:absolute;top:8px;left:8px;font-family:var(--font-body);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:#fe2c55}
 .prof-lists{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .prof-lists span{font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px;border:1px solid var(--line-strong);color:var(--soft)}
@@ -648,9 +650,9 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <p class="prof-bio">Jobb i salg uten erfaring 💸 Fastlønn + provisjon. Søk på 1 min 👇</p>
         <span class="prof-link">🔗 Søk jobb her</span>
         <div class="prof-pins">
-          <div class="pin">Hvem er vi?</div>
-          <div class="pin">Hva tjener man egentlig?</div>
-          <div class="pin">Slik søker du</div>
+          <div class="pin" style="--img:url(assets/img/felt-kunde.jpg)">Hvem er vi?</div>
+          <div class="pin" style="--img:url(assets/img/felt-dress.jpg)">Hva tjener man egentlig?</div>
+          <div class="pin" style="--img:url(assets/img/stand.webp)">Slik søker du</div>
         </div>
         <div class="prof-lists"><span>Hvordan bli en god promotør</span><span>Vår hverdag</span><span>Jobbmuligheter</span></div>
       </article>
@@ -763,7 +765,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <ul class="script"><li><b>Slik</b>En promotør svarer på en ekte, kritisk kommentar.</li><li><b>Tester</b>Om ærlige svar om lønn gir flere søknader.</li></ul>
       </article>
       <article class="ad ad-4 reveal" style="--d:.18s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 4</span>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-team.jpg" alt="" loading="lazy" style="object-position:30% 50%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 4</span>
           <p class="hook"><span>Vi spurte promotørene: Hvorfor begynte du her?</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Fem promotører, fem svar.<br><span class="sp">Sponset</span></div>
@@ -772,7 +774,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <ul class="script"><li><b>Slik</b>Ett spørsmål, mange korte svar fra ulike promotører.</li><li><b>Tester</b>Om bredden i teamet treffer flere typer søkere.</li></ul>
       </article>
       <article class="ad ad-5 reveal" style="--d:.24s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 5</span>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-stand.jpg" alt="" loading="lazy" style="object-position:60% 40%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 5</span>
           <p class="hook"><span>Ting ingen sier om å selge på gata</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Del med en som trenger jobb.<br><span class="sp">Sponset</span></div>

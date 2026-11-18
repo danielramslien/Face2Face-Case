@@ -546,6 +546,17 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .aud2 p{margin:6px 0 0;font-size:clamp(15px,1.4vw,18px);color:var(--soft)}
 @media (max-width:600px){.aud2{border-radius:32px;align-items:flex-start}}
 .hero{min-height:auto;padding-top:calc(var(--header-h) + clamp(36px,7vh,84px));padding-bottom:8px}
+/* Kjede: Friksjon til provisjon */
+.chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,18px);counter-reset:c}
+.chain-step{position:relative;padding:clamp(20px,2.2vw,28px);border-radius:32px;border:1px solid var(--line);background:var(--bg-card)}
+.chain-step:not(:last-child)::after{content:"→";position:absolute;right:calc(-1 * clamp(12px,1.4vw,18px) / 2 - 12px);top:50%;transform:translateY(-50%);z-index:1;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;font-size:13px;font-weight:700}
+.chain-step .n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--pink-soft);border:1px solid var(--pink-line);color:var(--pink-lt);font-weight:800;margin-bottom:16px}
+.chain-step h3{margin-bottom:8px}
+.chain-step p{margin:0;font-size:14.5px;color:var(--soft);line-height:1.5}
+.chain-step.win{border-color:var(--pink-line);background:radial-gradient(circle at 100% 0%,rgba(236,0,140,.25),rgba(236,0,140,0) 60%),var(--bg-card)}
+.chain-step.win .n{background:var(--pink);color:#fff}
+@media (max-width:980px){.chain{grid-template-columns:repeat(2,minmax(0,1fr))}.chain-step::after{display:none}}
+@media (max-width:560px){.chain{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -687,7 +698,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <div class="stat"><span class="stat-num"><span data-count="3">3</span><small> av 80</small></span><span class="stat-label">videoer oppfordrer til å søke jobb</span></div>
       <div class="stat"><span class="stat-num" data-count="1270">1 270</span><span class="stat-label">visninger i median per video</span></div>
       <div class="stat"><span class="stat-num" data-count="77">77</span><span class="stat-label">videoer uten et neste steg</span></div>
-      <div class="stat"><span class="stat-num"><small>hver </small>3.</span><span class="stat-label">video skal oppfordre til å søke</span></div>
+      <div class="stat"><span class="stat-num">Alle</span><span class="stat-label">videoer skal oppfordre til å søke</span></div>
     </div>
 
     <div class="verdict" style="margin-top:clamp(18px,2vw,26px)">
@@ -706,20 +717,20 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Slik blir innholdet</h3></div>
     <div class="principles">
       <article class="card reveal"><span class="k">Ansikter</span><h3 class="h-md">1 til 3 faste kreatører</h3><p>De samme personene i videoene gir et sterkt personlig merke og tillit. Folk vil jobbe med folk de liker å følge.</p></article>
-      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">Hver tredje video ber om søknad</h3><p>Et tydelig neste steg, så underholdningen også gir søkere.</p></article>
-      <article class="card reveal" style="--d:.12s"><span class="k">Innvendinger</span><h3 class="h-md">Svar på «utrygg lønn»</h3><p>Videoer som svarer på at salg tjener lite eller gir usikker lønn, med fastlønn og provisjon forklart ærlig.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">Alle videoer ber om søknad</h3><p>Et tydelig og enkelt neste steg i hver video. Jo mindre handlingen krever av seeren, jo flere gjør den.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="k">Innvendinger</span><h3 class="h-md">Svar som motiverer</h3><p>Videoer som svarer på «utrygg lønn» og «salg tjener lite». Fastlønn og provisjon forklares ærlig, og svaret ender alltid med hva seeren kan få.</p></article>
       <article class="card reveal"><span class="k">Rådgivning</span><h3 class="h-md">Salg som ferdighet</h3><p>Salg er en av de mest verdifulle ferdighetene du kan ha i arbeidslivet. Innholdet gir råd, ikke bare humor.</p></article>
       <article class="card reveal" style="--d:.06s"><span class="k">Pitchen</span><h3 class="h-md">Promotører deler oppskriften</h3><p>Filmet på avstand, med forbipasserende anonymisert og stemmen deres gjort ugjenkjennelig. Viser hvordan jobben gjøres.</p></article>
       <article class="card reveal" style="--d:.12s"><span class="k">Spillelister</span><h3 class="h-md">Tre faste serier</h3><p>«Hvordan bli en god promotør», «Vår hverdag» og «Jobbmuligheter» samler svarene folk leter etter.</p></article>
     </div>
 
-    <div class="sub reveal"><h3>Positivt, ikke myter</h3></div>
+    <div class="sub reveal"><h3>Innvendinger, besvart positivt</h3></div>
     <div class="swap reveal">
       <span class="old">«Sales myths»</span>
       <span class="arr" aria-hidden="true">→</span>
-      <span class="new">De sterkeste grunnene til å jobbe med salg, med en CTA til slutt</span>
+      <span class="new">Svar på innvendingene som gir lyst til å søke, med en CTA til slutt</span>
     </div>
-    <p class="obj-note reveal">En serie om salgsmyter svarer på innvendinger, men seerne sitter igjen med det negative. Innholdet skal heller vise fordelene: Ferdigheten, kollegaene, coachingen, fastlønnen og provisjonen.</p>
+    <p class="obj-note reveal">Innvendingene skal besvares, men ikke som myter seeren sitter igjen med. Hvert svar ender med det positive: Ferdigheten, kollegaene, coachingen, fastlønnen og provisjonen. Da mister ikke seeren motivasjonen for å søke.</p>
   </div>
 </section>
 
@@ -816,6 +827,14 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <article class="card reveal" style="--d:.08s"><span class="k">Rask oppfølging</span><h3 class="h-md">Fra skjema til samtale</h3><p>Navn, telefon og når du kan starte. Svarene går rett til rekrutterer, som tar kontakt mens interessen er varm.</p></article>
     </div>
 
+    <div class="sub reveal"><h3>Lite friksjon, mer motivasjon</h3><span class="label">Hvorfor det lønner seg</span></div>
+    <div class="chain">
+      <article class="chain-step reveal"><span class="n">1</span><h3 class="h-md">Enkel handling</h3><p>Jo mer en video krever av seeren for å søke, jo mindre motivasjon blir det igjen. Derfor er det ett trykk og et ferdig utfylt skjema.</p></article>
+      <article class="chain-step reveal" style="--d:.08s"><span class="n">2</span><h3 class="h-md">De mest motiverte søker</h3><p>Når terskelen er lav og budskapet er ærlig, er det de som virkelig vil ha jobben, som søker.</p></article>
+      <article class="chain-step reveal" style="--d:.16s"><span class="n">3</span><h3 class="h-md">Lavere cost per hire</h3><p>Riktige kandidater fra start gir færre intervjuer som ikke fører fram, og flere som blir.</p></article>
+      <article class="chain-step win reveal" style="--d:.24s"><span class="n">4</span><h3 class="h-md">Mer provisjon</h3><p>En motivert promotør gir alt den kan, og tjener mer i provisjon. Det er bra for promotøren og for Face2face.</p></article>
+    </div>
+
     <div class="sub reveal"><h3>Fra visning til ansettelse</h3></div>
     <div class="funnel reveal">
       <div class="fstep"><span class="k">Steg 1</span><b>Ser videoen</b><p>Åpningen stopper scrollingen.</p></div>
@@ -873,7 +892,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <p class="lead reveal">Tallene fra TikTok viser hva som skjer i appen. Resten måles i rekrutteringen, helt fram til ansettelse.</p>
     </div>
     <div class="measure">
-      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Dagens cost per hire sammenlignes med kampanjens. Målet er at den går ned.</p></article>
+      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Dagens cost per hire sammenlignes med kampanjens. Den går ned når vi treffer de mest motiverte kandidatene.</p></article>
       <article class="card mcard reveal" style="--d:.06s"><span class="big">1 300<small>i dag</small></span><h3 class="h-md">Median visninger</h3><p>Median antall visninger per video i 2024 og 2025. Den skal opp når innholdet viser jobben.</p></article>
       <article class="card mcard reveal" style="--d:.12s"><span class="big">DM og skjema</span><h3 class="h-md">TikTok Insights</h3><p>Hvilke annonser fikk folk til å sende melding eller fylle ut skjemaet.</p></article>
       <article class="card mcard reveal"><span class="big">Hele løpet</span><h3 class="h-md">Fra kontakt til ansatt</h3><p>Data på alle som tok kontakt, kom på intervju og ble ansatt. Viser hvor godt det konverterer utenfor TikTok.</p></article>

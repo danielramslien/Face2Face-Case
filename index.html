@@ -431,23 +431,108 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .to-top.show{opacity:1;transform:none;pointer-events:auto}
 .to-top:hover{background:var(--pink)}
 .to-top:hover svg{color:#fff}
+
+/* Mål */
+.goals2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.goal2{position:relative;overflow:hidden;padding:clamp(26px,3vw,40px);border-radius:40px;border:1px solid var(--line);background:linear-gradient(160deg,#1c1c1c,var(--bg-card) 60%)}
+.goal2.ads{background:radial-gradient(circle at 100% 0%,rgba(236,0,140,.28),rgba(236,0,140,0) 55%),var(--bg-card);border-color:var(--pink-line)}
+.goal2 .tag2{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:15px;padding:6px 16px;border-radius:999px;background:var(--pink);color:#fff;margin-bottom:18px}
+.goal2.content .tag2{background:#fff;color:#000}
+.goal2 h3{margin:0 0 10px;font-family:var(--font-display);font-weight:600;font-size:clamp(22px,2.4vw,32px);line-height:1.15}
+.goal2 p{margin:0;color:var(--soft);font-size:16px}
+@media (max-width:760px){.goals2{grid-template-columns:1fr}}
+
+/* Målgruppe */
+.aud{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center;padding:clamp(24px,3vw,40px);border-radius:40px;border:1px solid var(--line);background:var(--bg-card)}
+.aud-age{font-family:var(--font-display);font-weight:600;font-size:clamp(54px,8vw,110px);line-height:.9;color:var(--pink);white-space:nowrap}
+.aud-age .til{font-size:.28em;margin:0 .18em;color:var(--muted);vertical-align:middle}
+.aud-age small{display:block;font-size:.22em;color:var(--muted);margin-top:8px;font-family:var(--font-body);font-weight:700}
+.aud-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.aud-chips .pill{font-size:14px;padding:7px 15px}
+@media (max-width:640px){.aud{grid-template-columns:1fr}}
+
+/* Profil før og etter */
+.profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.prof{border-radius:40px;border:1px solid var(--line);background:var(--bg-raised);padding:clamp(20px,2.4vw,30px)}
+.prof.new{border-color:var(--pink-line);background:radial-gradient(circle at 0% 0%,rgba(236,0,140,.16),rgba(236,0,140,0) 50%),var(--bg-raised)}
+.prof-label{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:14px;padding:5px 14px;border-radius:999px;margin-bottom:20px;background:#2a2a2a;color:var(--soft)}
+.prof.new .prof-label{background:var(--pink);color:#fff}
+.prof-top{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.prof-av{flex:none;width:72px;height:72px;border-radius:50%;background:var(--pink);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:var(--font-display);font-weight:600;font-size:8.5px;line-height:1.05}
+.prof-av span:last-child{transform:rotate(180deg)}
+.prof-name{font-family:var(--font-display);font-weight:600;font-size:18px;line-height:1.2}
+.prof-stats{font-size:13px;color:var(--muted);margin-top:3px}
+.prof-bio{margin:0 0 12px;font-size:15px;color:var(--text);line-height:1.45}
+.prof.old .prof-bio{color:var(--muted)}
+.prof-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--pink-lt);margin-bottom:16px}
+.prof-miss{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:#ff8a8a;margin:0 0 6px;font-weight:600}
+.prof-miss::before{content:"✕";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:rgba(255,90,90,.15);font-size:10px}
+.prof-pins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:6px}
+.pin{position:relative;aspect-ratio:3/4;border-radius:18px;padding:10px;display:flex;align-items:flex-end;font-family:var(--font-display);font-weight:600;font-size:13px;line-height:1.15;color:#fff;overflow:hidden;background:linear-gradient(160deg,#5a0a38,#1a0712)}
+.pin:nth-child(2){background:linear-gradient(160deg,#ec008c,#6b003f)}
+.pin:nth-child(3){background:linear-gradient(160deg,#333,#111)}
+.pin::before{content:"Festet";position:absolute;top:8px;left:8px;font-family:var(--font-body);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:#fe2c55}
+.prof-lists{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.prof-lists span{font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px;border:1px solid var(--line-strong);color:var(--soft)}
+.prof-lists span::before{content:"▶ ";color:var(--pink);font-size:10px}
+.bios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(14px,1.6vw,22px)}
+.bio-opt{padding:18px 22px;border-radius:999px;border:1px dashed var(--pink-line);font-family:var(--font-display);font-weight:600;font-size:clamp(15px,1.4vw,18px);text-align:center}
+@media (max-width:860px){.profiles,.bios{grid-template-columns:1fr}.bio-opt{border-radius:28px}}
+
+/* Innhold: fungerer og fungerer ikke */
+.verdict{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.vcard{padding:clamp(22px,2.6vw,32px);border-radius:36px;border:1px solid var(--line);background:var(--bg-card)}
+.vcard h3{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-family:var(--font-display);font-weight:600;font-size:21px}
+.vcard h3 i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;font-style:normal;font-size:15px;background:var(--pink);color:#fff}
+.vcard.bad h3 i{background:#fff;color:#000}
+.vcard ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.vcard li{font-size:15px;color:var(--soft);line-height:1.5}
+.vcard li b{display:block;color:var(--text);font-size:16px;margin-bottom:2px}
+@media (max-width:760px){.verdict{grid-template-columns:1fr}}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+@media (max-width:980px){.principles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.principles{grid-template-columns:1fr}}
+.swap{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:center;padding:clamp(20px,2.4vw,30px);border-radius:999px;border:1px dashed var(--pink-line)}
+.swap .old{text-align:right;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,90,90,.7);font-family:var(--font-display);font-weight:600;font-size:clamp(17px,1.8vw,22px)}
+.swap .new{font-family:var(--font-display);font-weight:600;font-size:clamp(17px,1.8vw,22px)}
+.swap .arr{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--pink);color:#fff;font-weight:700}
+@media (max-width:700px){.swap{grid-template-columns:1fr;border-radius:32px;text-align:left}.swap .old{text-align:left}.swap .arr{transform:rotate(90deg)}}
+
+/* Prioriterte grep */
+.prio5{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:p}
+.prio5 li{counter-increment:p;display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;align-items:center;padding:18px 26px 18px 18px;border-radius:999px;border:1px solid var(--line);background:var(--bg-card);transition:border-color .25s,transform .3s var(--ease)}
+.prio5 li:hover{border-color:var(--pink-line);transform:translateX(4px)}
+.prio5 li::before{content:counter(p);display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--pink);color:#fff;font-family:var(--font-display);font-weight:600;font-size:26px}
+.prio5 b{display:block;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);margin-bottom:2px}
+.prio5 span{font-size:15px;color:var(--soft)}
+@media (max-width:700px){.prio5 li{border-radius:32px;grid-template-columns:48px minmax(0,1fr);gap:14px}.prio5 li::before{width:48px;height:48px;font-size:20px}}
+
+/* Måling */
+.measure{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+@media (max-width:980px){.measure{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.measure{grid-template-columns:1fr}}
+.mcard .big{display:block;font-family:var(--font-display);font-weight:600;font-size:clamp(30px,3vw,42px);line-height:1;color:var(--pink);margin-bottom:12px}
+.mcard .big small{font-size:.45em;color:var(--muted)}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.loop div{position:relative;padding:16px 18px;border-radius:999px;background:var(--bg-card);border:1px solid var(--line);text-align:center;font-family:var(--font-display);font-weight:600;font-size:15px}
+.loop div:last-child{background:var(--pink);border-color:var(--pink);color:#fff}
+@media (max-width:760px){.loop{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<a class="skip" href="#sammendrag">Hopp til innholdet</a>
+<a class="skip" href="#mal">Hopp til innholdet</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="site-header" id="top-bar">
   <div class="wrap">
     <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true"></span>TikTok-strategi <small>× Face2face</small></a>
     <nav class="nav" aria-label="Seksjoner">
-      <a href="#sammendrag">Sammendrag</a>
-      <a href="#situasjon">Innsikt</a>
       <a href="#mal">Mål</a>
-      <a href="#strategi">Strategi</a>
+      <a href="#malgruppe">Målgruppe</a>
+      <a href="#profil">Profil</a>
       <a href="#innhold">Innhold</a>
       <a href="#annonser">Annonser</a>
-      <a href="#plan">Plan</a>
+      <a href="#grep">Prioritering</a>
       <a href="#maling">Måling</a>
     </nav>
   </div>
@@ -468,97 +553,21 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
           <span class="w" style="--i:0">La</span> <span class="w" style="--i:1">selgerne</span> <span class="w" style="--i:2"><em>vise</em></span> <span class="w" style="--i:3"><em>jobben.</em></span><br>
           <span class="w" style="--i:4">Annonsene</span> <span class="w" style="--i:5">gjør</span> <span class="w" style="--i:6">resten.</span>
         </h1>
-        <p class="lead reveal" style="--d:.5s">En TikTok-strategi som gir Face2face flere og bedre selgere, og en kanal folk faktisk vil følge.</p>
+        <p class="lead reveal" style="--d:.5s">Slik ville jeg lagt opp Face2face sin strategi på TikTok: Effektive rekrutteringsannonser og en kanal med relevant innhold, publisert jevnlig.</p>
         <div class="hero-meta reveal" style="--d:.6s">
           <div><b>Til</b>Margrethe Wam Solvang</div>
           <div><b>Fra</b>Daniel Ramslien</div>
-          <div><b>Dato</b>17. november 2026</div>
+          <div><b>Dato</b>18. november 2026</div>
         </div>
       </div>
       <div class="hero-visual pop" style="--d:.3s" aria-hidden="true">
         <div class="orb"><span>FACE2FACE</span><span>CREATIVES</span></div>
-        <div class="float-chip chip-1"><span class="ico"><svg viewBox="0 0 24 24"><path fill="#fff" d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.6c.27 0 .53.04.77.11V9.75a5.7 5.7 0 1 0 4.91 5.65V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.24-1.48z"/></svg></span><span><b>4 videoer</b>i uka, hver uke</span></div>
-        <div class="float-chip chip-2"><span><b>24 timer</b>fra søknad til oppringing</span></div>
+        <div class="float-chip chip-1"><span class="ico"><svg viewBox="0 0 24 24"><path fill="#fff" d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.6c.27 0 .53.04.77.11V9.75a5.7 5.7 0 1 0 4.91 5.65V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.24-1.48z"/></svg></span><span><b>Hver 3. video</b>oppfordrer til å søke</span></div>
+        <div class="float-chip chip-2"><span><b>Søk på 1 minutt</b>med skjema rett i TikTok</span></div>
       </div>
     </div>
   </div>
-  <a class="hero-scroll" href="#sammendrag" aria-label="Bla ned til sammendraget"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
-</section>
-
-
-<!-- SAMMENDRAG -->
-<section class="section" id="sammendrag" aria-labelledby="sammendrag-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Sammendrag</span></div>
-        <h2 class="display h-xl reveal" id="sammendrag-tittel">Strategien på én skjerm</h2>
-      </div>
-      <p class="lead reveal">Salg på gata er en bedre jobb enn ryktet tilsier. TikTok er stedet der Face2face kan vise det, og hente søknadene samtidig.</p>
-    </div>
-    <div class="stats reveal">
-      <div class="stat"><span class="stat-num" data-count="4">4</span><span class="stat-label">videoer i uka fra et fast team av selgere</span></div>
-      <div class="stat"><span class="stat-num" data-count="5">5</span><span class="stat-label">annonseformater testes mot hverandre først</span></div>
-      <div class="stat"><span class="stat-num"><span data-count="24">24</span><small> t</small></span><span class="stat-label">fra søknad til en rekrutterer ringer</span></div>
-      <div class="stat"><span class="stat-num"><small>under </small><span data-count="4000">4 000</span><small> kr</small></span><span class="stat-label">per ansettelse, ned fra 4 000 til 5 000 kr i dag</span></div>
-    </div>
-    <div class="summary" style="margin-top:clamp(18px,2vw,26px)">
-      <article class="card reveal"><span class="k">Utfordringen</span><h3 class="h-md">Et godt tilbud med et dårlig rykte</h3><p>Mange ser for seg masete selgere og avvisning, og lar være å søke før de vet hva jobben faktisk er.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Grepet</span><h3 class="h-md">Ekte selgere, ekte hverdag</h3><p>Organisk innhold bygger tillit. De beste videoene blir til rekrutteringsannonser.</p></article>
-      <article class="card reveal" style="--d:.16s"><span class="k">Målet</span><h3 class="h-md">Selgere som blir værende</h3><p>Ned fra dagens 4 000 til 5 000 kroner per ansettelse, med selgere som fortsatt er i jobb etter 90 dager.</p></article>
-    </div>
-    <ol class="prio reveal">
-      <li><div class="big">1</div><b>Folka foran kamera</b><span>Uten et creator-team blir det verken jevn publisering eller troverdige annonser.</span></li>
-      <li><div class="big">2</div><b>Raskt svar på søknader</b><span>Den beste annonsen er bortkastet hvis ingen ringer før det har gått en uke.</span></li>
-      <li><div class="big">3</div><b>Mål det som betyr noe</b><span>Visninger er hyggelig. Ansettelser som blir værende er målet.</span></li>
-    </ol>
-  </div>
-</section>
-
-<!-- SITUASJON -->
-<section class="section" id="situasjon" aria-labelledby="situasjon-tittel">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Situasjon og innsikt</span></div>
-        <h2 class="display h-xl reveal" id="situasjon-tittel">Jobben er bedre enn ryktet</h2>
-      </div>
-      <p class="lead reveal">Jobben er å selge produkter, tjenester og abonnementer på gater og torg. Ingen krav til erfaring, fastlønn pluss provisjon, ti dager opplæring, turnéteam og en vei til teamleder gjennom Face2face Campus. Lett å vise, vanskelig å forklare i en stillingsannonse.</p>
-    </div>
-    <div class="swot">
-      <div class="sw s reveal"><h3><span>S</span>Styrker</h3><ul>
-        <li>Tydelig tilbud: Ingen erfaring kreves, god lønn og opplæring</li>
-        <li>Sosial kultur med team, turné og konkurranser</li>
-        <li>Mange selgere som kan være stemmen til merkevaren</li>
-        <li>En selvironisk tone som passer TikTok</li></ul></div>
-      <div class="sw w reveal" style="--d:.08s"><h3><span>W</span>Svakheter</h3><ul>
-        <li>Salg på gata forbindes med masing og avvisning</li>
-        <li>Provisjon kan oppleves som usikker inntekt</li>
-        <li>Jobben er vanskelig å forstå uten å se den</li></ul></div>
-      <div class="sw o reveal" style="--d:.16s"><h3><span>O</span>Muligheter</h3><ul>
-        <li>Unge bruker TikTok til å finne jobber og arbeidsgivere</li>
-        <li>Spark Ads gjør organiske videoer om til annonser</li>
-        <li>Faste søknadstopper gjennom året</li>
-        <li>Ansattes egne historier gir troverdighet</li></ul></div>
-      <div class="sw t reveal" style="--d:.24s"><h3><span>T</span>Trusler</h3><ul>
-        <li>Negative kommentarer om salg på gata</li>
-        <li>Kamp om de samme unge fra andre arbeidsgivere</li>
-        <li>Annonsetretthet hvis innholdet ikke fornyes</li>
-        <li>Regler for hvordan lønn kan markedsføres</li></ul></div>
-    </div>
-    <div class="tension reveal">
-      <div><span class="label">Det de tror</span><p>«Det er sikkert stress, mye nei og dårlig betalt.»</p></div>
-      <div class="vs" aria-hidden="true">VS</div>
-      <div><span class="label">Det TikTok kan vise</span><p>Folk som har det gøy, lærer fort og tjener godt.</p></div>
-    </div>
-
-    <div class="sub reveal"><h3>Målgruppe</h3><span class="label">Tre segmenter</span></div>
-    <div class="segs">
-      <article class="card seg reveal"><span class="age">Studerer</span><h3 class="h-md">Studenten</h3><dl><dt>Lurer på</dt><dd>Passer det med studiene? Hva tjener jeg?</dd><dt>Budskap</dt><dd class="msg">Fleksibel jobb, god lønn og erfaring som teller på CV-en.</dd></dl></article>
-      <article class="card seg reveal" style="--d:.08s"><span class="age">Tar et friår</span><h3 class="h-md">Friåret</h3><dl><dt>Lurer på</dt><dd>Blir det gøy? Hvem skal jeg jobbe med?</dd><dt>Budskap</dt><dd class="msg">Turnéteam, nye byer og en gjeng du reiser med.</dd></dl></article>
-      <article class="card seg reveal" style="--d:.16s"><span class="age">Vil videre</span><h3 class="h-md">Den ambisiøse</h3><dl><dt>Lurer på</dt><dd>Kan jeg komme meg videre?</dd><dt>Budskap</dt><dd class="msg">Fra selger til teamleder gjennom Face2face Campus.</dd></dl></article>
-    </div>
-  </div>
+  <a class="hero-scroll" href="#mal" aria-label="Bla ned til målene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
 </section>
 
 <!-- MÅL -->
@@ -567,70 +576,88 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sec-head">
       <div>
         <div class="eyebrow reveal"><span class="dot"></span><span class="label">Mål</span></div>
-        <h2 class="display h-xl reveal" id="mal-tittel">Ett hovedmål, tre delmål</h2>
+        <h2 class="display h-xl reveal" id="mal-tittel">To mål, én kanal</h2>
       </div>
-      <p class="lead reveal">For de første 90 dagene. Utgangspunktet er dagens pris per ansettelse: 4 000 til 5 000 kroner.</p>
+      <p class="lead reveal">Caset spør hvordan jeg ville gått fram, hvilke grep jeg ville prioritert og hvordan jeg ville målt om strategien lykkes. Alt på denne siden svarer på ett av to mål.</p>
     </div>
-    <div class="north reveal">
-      <div class="star" aria-hidden="true"></div>
-      <div>
-        <span class="label">Hovedmålet</span>
-        <h3>Under 4 000 kroner per ansatt selger som fortsatt er i jobb etter 90 dager</h3>
-        <p>I dag koster en ansettelse 4 000 til 5 000 kroner. Billige søknader hjelper lite hvis folk slutter etter to uker, så prisen regnes bare på dem som blir værende. Det kobler TikTok direkte til det Face2face trenger.</p>
-      </div>
-    </div>
-    <div class="subgoals">
-      <article class="card reveal"><span class="k">Delmål 1 · Kanalen</span><h3 class="h-md">Fire videoer i uka, hver uke</h3><p>Med engasjement over plattformsnittet på rundt 4 prosent.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Delmål 2 · Annonsene</span><h3 class="h-md">Ett vinnerformat og én vinnerannonse</h3><p>Med en pris per søknad som holder hver ansettelse under 4 000 kroner.</p></article>
-      <article class="card reveal" style="--d:.16s"><span class="k">Delmål 3 · Rekrutteringen</span><h3 class="h-md">TikTok som fast søkerkilde</h3><p>Like gode kandidater som fra Finn, målt fra søknad til ansettelse.</p></article>
+    <div class="goals2">
+      <article class="goal2 ads reveal"><span class="tag2">Ads</span><h3>Effektive rekrutteringsannonser</h3><p>Utvikle og legge ut betalte annonser som gir søkere, ikke bare visninger.</p></article>
+      <article class="goal2 content reveal" style="--d:.08s"><span class="tag2">Content</span><h3>Relevant og engasjerende innhold</h3><p>En kanal med jevnlig publisering som viser jobben, og som folk på 18 til 24 år vil følge.</p></article>
     </div>
   </div>
 </section>
 
-<!-- STRATEGI -->
-<section class="section" id="strategi" aria-labelledby="strategi-tittel">
+<!-- MÅLGRUPPE -->
+<section class="section" id="malgruppe" aria-labelledby="malgruppe-tittel">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Strategi</span></div>
-        <h2 class="display h-xl reveal" id="strategi-tittel">To motorer, én kanal</h2>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Målgruppe</span></div>
+        <h2 class="display h-xl reveal" id="malgruppe-tittel">Unge som trenger en jobb</h2>
       </div>
-      <p class="lead reveal">Det organiske innholdet bygger tillit. Annonsene høster den. Og det beste innholdet blir til de neste annonsene.</p>
+      <p class="lead reveal">Hele profilen og alt innholdet skal snakke til dem, ikke til bedriftskunder eller de som allerede har en kontorjobb.</p>
     </div>
-    <div class="engine">
-      <article class="card reveal-l">
-        <span class="k">Motor 1 · Organisk</span>
-        <h3 class="h-md">Kanalen bygger tillit</h3>
-        <p>Selgerne er stemmen til Face2face. Innholdet viser kulturen, folka og hverdagen.</p>
-        <ul class="dots"><li>Fire videoer i uka</li><li>Laget av et fast team av selgere</li><li>Bygger følgere og varme målgrupper</li></ul>
-      </article>
-      <div class="wheel" id="wheel" role="img" aria-label="Svinghjul: Organisk video, Spark Ads, søknader og nye selgere som lager nytt innhold.">
-        <svg viewBox="0 0 400 400">
-          <defs><radialGradient id="og" cx="34%" cy="29%" r="75%"><stop offset="0" stop-color="#ffd6ee"/><stop offset=".3" stop-color="#ff4fb0"/><stop offset=".7" stop-color="#d4007f"/><stop offset="1" stop-color="#6b003f"/></radialGradient>
-          <marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#ec008c"/></marker></defs>
-          <circle class="ring" cx="200" cy="200" r="150"/>
-          <g class="spin"><circle cx="200" cy="50" r="6" fill="#ec008c"/><circle cx="350" cy="200" r="3" fill="#fff" opacity=".6"/></g>
-          <path class="arc" d="M268 72 A150 150 0 0 1 330 140" marker-end="url(#ar)"/>
-          <path class="arc" d="M330 262 A150 150 0 0 1 268 328" marker-end="url(#ar)"/>
-          <path class="arc" d="M132 328 A150 150 0 0 1 70 262" marker-end="url(#ar)"/>
-          <path class="arc" d="M70 140 A150 150 0 0 1 132 72" marker-end="url(#ar)"/>
-          <circle cx="200" cy="200" r="72" fill="url(#og)"/>
-          <text class="core-t" x="200" y="198">TikTok</text>
-          <text class="core-s" x="200" y="216">Face2face</text>
-          <g class="node"><rect x="140" y="28" width="120" height="44" rx="12"/><text class="n" x="200" y="45">1</text><text x="200" y="62">Organisk video</text></g>
-          <g class="node"><rect x="290" y="178" width="104" height="44" rx="12"/><text class="n" x="342" y="195">2</text><text x="342" y="212">Spark Ads</text></g>
-          <g class="node"><rect x="140" y="328" width="120" height="44" rx="12"/><text class="n" x="200" y="345">3</text><text x="200" y="362">Søknader</text></g>
-          <g class="node"><rect x="6" y="178" width="104" height="44" rx="12"/><text class="n" x="58" y="195">4</text><text x="58" y="212">Nye selgere</text></g>
-        </svg>
+    <div class="aud reveal">
+      <div class="aud-age">18<span class="til">til</span>24<small>år</small></div>
+      <div>
+        <h3 class="h-md">Studenter og de som er ferdige med skolen</h3>
+        <p class="lead" style="margin-top:8px">De er ute etter en jobb på heltid eller deltid, og lurer først og fremst på hva de kan få: Lønn, folk å jobbe med og noe å lære.</p>
+        <div class="aud-chips">
+          <span class="pill pill--pink"><span class="d"></span>Studenter</span>
+          <span class="pill">Ferdig med skolen</span>
+          <span class="pill">Heltid eller deltid</span>
+          <span class="pill">Ingen erfaring</span>
+        </div>
       </div>
-      <article class="card reveal" style="--d:.16s">
-        <span class="k">Motor 2 · Betalt</span>
-        <h3 class="h-md">Annonsene henter søknader</h3>
-        <p>Rekrutteringsannonser bygget på videoer som allerede har bevist at de fungerer. Målet er søknader, ikke visninger.</p>
-        <ul class="dots"><li>Spark Ads av de beste videoene</li><li>Fem formater testes, så fem annonser i det beste</li><li>Kort søknadsskjema rett i TikTok</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL -->
+<section class="section" id="profil" aria-labelledby="profil-tittel">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Profil</span></div>
+        <h2 class="display h-xl reveal" id="profil-tittel">En profil for jobbsøkere</h2>
+      </div>
+      <p class="lead reveal">I dag leser profilen som en «Om oss»-side for bedriftskunder. Den sier lite om jobben, og har ingen lenke til å søke.</p>
+    </div>
+    <div class="profiles">
+      <article class="prof old reveal">
+        <span class="prof-label">I dag</span>
+        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">face2facecreativesnorway</div><div class="prof-stats">2 694 følgere · 47 600 likes</div></div></div>
+        <p class="prof-bio">Blending Strategy, Creativity, Tech and Brand Experience since 1999.</p>
+        <p class="prof-miss">Ingen lenke til å søke</p><br>
+        <p class="prof-miss">Ingen festede videoer</p><br>
+        <p class="prof-miss">Ingen spillelister</p>
+      </article>
+      <article class="prof new reveal" style="--d:.08s">
+        <span class="prof-label">Forslag</span>
+        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">Face2face · Jobb i salg</div><div class="prof-stats">@face2facecreativesnorway</div></div></div>
+        <p class="prof-bio">Jobb i salg uten erfaring 💸 Fastlønn + provisjon. Søk på 1 min 👇</p>
+        <span class="prof-link">🔗 Søk jobb her</span>
+        <div class="prof-pins">
+          <div class="pin">Hvem er vi?</div>
+          <div class="pin">Hva tjener man egentlig?</div>
+          <div class="pin">Slik søker du</div>
+        </div>
+        <div class="prof-lists"><span>Hvordan bli en god selger</span><span>Vår hverdag</span><span>Jobbmuligheter</span></div>
       </article>
     </div>
-    <p class="oneliner reveal">Strategien i én setning: <span class="accent">Ekte selgere viser en ekte jobb, og vi bruker penger på det publikum allerede har sagt ja til.</span></p>
+
+    <div class="sub reveal"><h3>To forslag til bio</h3><span class="label">Maks 80 tegn</span></div>
+    <div class="bios">
+      <div class="bio-opt reveal">«Jobb i salg uten erfaring 💸 Fastlønn + provisjon. Søk på 1 min 👇»</div>
+      <div class="bio-opt reveal" style="--d:.06s">«Vi lærer deg salg. Du får fastlønn, provisjon og et team 🫶 Søk her 👇»</div>
+    </div>
+
+    <div class="sub reveal"><h3>Tre festede videoer</h3><span class="label">Bygger tillit på første besøk</span></div>
+    <div class="principles">
+      <article class="card reveal"><span class="k">Festet 1</span><h3 class="h-md">«Hvem er vi?»</h3><p>En ny versjon av videoen fra 2024 som fikk 514 700 visninger.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">Festet 2</span><h3 class="h-md">«Hva tjener man egentlig?»</h3><p>Ærlig om grunnlønn og provisjon. Svarer på spørsmålene folk stiller i kommentarfeltet.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="k">Festet 3</span><h3 class="h-md">«Slik søker du»</h3><p>Femten sekunder med et tydelig neste steg.</p></article>
+    </div>
   </div>
 </section>
 
@@ -639,46 +666,49 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Organisk innhold</span></div>
-        <h2 class="display h-xl reveal" id="innhold-tittel">Fem pilarer, fire videoer i uka</h2>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Innhold</span></div>
+        <h2 class="display h-xl reveal" id="innhold-tittel">Fra kontorhumor til jobben</h2>
       </div>
-      <p class="lead reveal">Hver video svarer på ett spørsmål en jobbsøker har. Trykk på en pilar for å se eksempler.</p>
+      <p class="lead reveal">Mange videoer faller i «relatable»-fella: Humor fra kontoret som er gøy for de ansatte, men ikke for dem som leter etter jobb. Folk scroller forbi.</p>
     </div>
-    <figure class="hero-shot reveal"><img src="assets/img/stand.webp" alt="En selger i samtale med en forbipasserende på gata" width="1200" height="800" loading="lazy"><figcaption><span class="pill pill--pink"><span class="d"></span>Gata uten filter</span><span class="cap">Hverdagen på gater og torg er det innholdet skal vise fram.</span></figcaption></figure>
-    <div class="pillars reveal" role="tablist" aria-label="Innholdspilarer" id="pillars"></div>
-    <div class="pillar-detail" id="pillar-detail" role="tabpanel" aria-live="polite"></div>
-
-    <div class="sub reveal"><h3>Innvendingene vi svarer på</h3><span class="label">Lønn er den største barrieren</span></div>
-    <div class="objs">
-      <article class="obj reveal"><p class="q">«Det er utrygg lønn»</p><p class="a"><b>Svaret:</b> Grunnlønnen er garantert, og provisjonen kommer i tillegg. En selger viser hvordan lønnen er satt sammen, med tall Face2face har godkjent.</p><span class="fmt">Rett i kamera</span></article>
-      <article class="obj reveal" style="--d:.06s"><p class="q">«Jeg får ikke betalt hvis jeg ikke selger»</p><p class="a"><b>Svaret:</b> Grunnlønnen kommer uansett. Videoen viser en uke der lite gikk, og hva som likevel kom på konto.</p><span class="fmt">Svar på kommentar</span></article>
-      <article class="obj reveal" style="--d:.12s"><p class="q">«Hva tjener man egentlig?»</p><p class="a"><b>Svaret:</b> Hva en vanlig selger tjener etter de første månedene, ikke toppselgeren. Regnestykket vises på skjermen.</p><span class="fmt">Trend med tekst</span></article>
-      <article class="obj reveal" style="--d:.18s"><p class="q">«Når får jeg pengene?»</p><p class="a"><b>Svaret:</b> Når lønnen utbetales og hvordan provisjonen beregnes, slik det står i arbeidsavtalen.</p><span class="fmt">Spørsmål til teamet</span></article>
-    </div>
-    <p class="obj-note reveal">Alle lønnstall i innholdet hentes fra Face2face og skal kunne dokumenteres.</p>
-
-    <div class="sub reveal"><h3>En vanlig uke</h3></div>
-    <div class="week-grid">
-      <div class="day reveal"><span class="dn">Man</span><div class="slot s-data">Ukerapport</div><div class="slot s-pub">Gata uten filter</div></div>
-      <div class="day reveal" style="--d:.05s"><span class="dn">Tir</span><div class="slot s-prod">Opptaksdag</div></div>
-      <div class="day reveal" style="--d:.1s"><span class="dn">Ons</span><div class="slot s-pub">Folka bak</div><div class="slot s-data">Svar på kommentarer</div></div>
-      <div class="day reveal" style="--d:.15s"><span class="dn">Tor</span><div class="slot s-prod">Klipp og godkjenning</div></div>
-      <div class="day reveal" style="--d:.2s"><span class="dn">Fre</span><div class="slot s-pub">Trend og humor</div></div>
-      <div class="day reveal" style="--d:.25s"><span class="dn">Lør</span><div class="slot s-pub">Veien videre eller produktene</div></div>
-      <div class="day reveal" style="--d:.3s"><span class="dn">Søn</span><div class="slot s-data">Svar på kommentarer</div></div>
-    </div>
-    <div class="legend">
-      <span><i style="background:var(--pink-soft);border-color:var(--pink-line)"></i>Publisering</span>
-      <span><i style="background:rgba(37,244,238,.08);border-color:rgba(37,244,238,.35)"></i>Produksjon</span>
-      <span><i style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22)"></i>Analyse og dialog</span>
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-num"><span data-count="3">3</span><small> av 80</small></span><span class="stat-label">videoer oppfordrer til å søke jobb</span></div>
+      <div class="stat"><span class="stat-num" data-count="1270">1 270</span><span class="stat-label">visninger i median per video</span></div>
+      <div class="stat"><span class="stat-num" data-count="77">77</span><span class="stat-label">videoer uten et neste steg</span></div>
+      <div class="stat"><span class="stat-num"><small>hver </small>3.</span><span class="stat-label">video skal oppfordre til å søke</span></div>
     </div>
 
-    <div class="sub reveal"><h3>Produksjonsmodell</h3></div>
-    <div class="how">
-      <article class="card reveal"><span class="k">Hvem lager det</span><h3 class="h-md">Et fast creator-team</h3><p>Seks til åtte selgere som liker å være foran kamera. Kort opplæring, en enkel mikrofon og bonus for innhold som publiseres. Jeg planlegger, regisserer og klipper.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Hvordan det holdes jevnt</span><h3 class="h-md">Én opptaksdag, en hel uke</h3><p>Alt planlagt innhold filmes samlet. Da er det rom for å hoppe på en trend innen 24 timer uten at planen sprekker.</p></article>
-      <article class="card reveal" style="--d:.16s"><span class="k">Hvordan det føles</span><h3 class="h-md">Face2face sin egen stemme</h3><p>«Ceci n'est pas une agence de publicité traditionnelle». Den selvironiske tonen passer TikTok, og skal ikke vaskes bort.</p></article>
+    <div class="verdict" style="margin-top:clamp(18px,2vw,26px)">
+      <article class="vcard reveal"><h3><i>✓</i>Det som funker</h3><ul>
+        <li><b>Unge ansatte i bildet</b>Mange ser ut til å være rundt 20 til 25 år. Målgruppen kan kjenne seg igjen i dem.</li>
+        <li><b>Faste ansikter</b>De samme personene går igjen, og det bygger gjenkjennelse.</li>
+      </ul></article>
+      <article class="vcard bad reveal" style="--d:.08s"><h3><i>✕</i>Det som ikke funker</h3><ul>
+        <li><b>Videoene viser feil jobb</b>Nesten alt er filmet på hovedkontoret. Den som søker, skal jobbe på gata og i turnéteamet.</li>
+        <li><b>Humor uten et neste steg</b>77 av 80 videoer gir ingen grunn til å søke.</li>
+        <li><b>Engelske tekster og hashtagger</b>#corporatelife passer kontorarbeidere, ikke en 19-åring som vil ha jobb i Norge.</li>
+        <li><b>Ingenting om lønn</b>Det første en jobbsøker lurer på, og det profilen sier minst om.</li>
+      </ul></article>
     </div>
+
+    <div class="sub reveal"><h3>Slik blir innholdet</h3></div>
+    <figure class="hero-shot reveal"><img src="assets/img/stand.webp" alt="En selger i samtale med en forbipasserende på gata" width="1200" height="800" loading="lazy"><figcaption><span class="pill pill--pink"><span class="d"></span>Folk i felten</span><span class="cap">Når seerne ser noen på sin egen alder i jobben, bygger det mer tillit enn fine ord.</span></figcaption></figure>
+    <div class="principles">
+      <article class="card reveal"><span class="k">Ansikter</span><h3 class="h-md">1 til 3 faste kreatører</h3><p>De samme personene i videoene gir et sterkt personlig merke og tillit. Folk vil jobbe med folk de liker å følge.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">Hver tredje video ber om søknad</h3><p>Et tydelig neste steg, så underholdningen også gir søkere.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="k">Innvendinger</span><h3 class="h-md">Svar på «utrygg lønn»</h3><p>Videoer som svarer på at salg tjener lite eller gir usikker lønn, med fastlønn og provisjon forklart ærlig.</p></article>
+      <article class="card reveal"><span class="k">Rådgivning</span><h3 class="h-md">Salg som ferdighet</h3><p>Salg er en av de mest verdifulle ferdighetene du kan ha i arbeidslivet. Innholdet gir råd, ikke bare humor.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">Pitchen</span><h3 class="h-md">Selgere deler oppskriften</h3><p>Filmet på avstand, med forbipasserende anonymisert og stemmen deres gjort ugjenkjennelig. Viser hvordan jobben gjøres.</p></article>
+      <article class="card reveal" style="--d:.12s"><span class="k">Spillelister</span><h3 class="h-md">Tre faste serier</h3><p>«Hvordan bli en god selger», «Vår hverdag» og «Jobbmuligheter» samler svarene folk leter etter.</p></article>
+    </div>
+
+    <div class="sub reveal"><h3>Positivt, ikke myter</h3></div>
+    <div class="swap reveal">
+      <span class="old">«Sales myths»</span>
+      <span class="arr" aria-hidden="true">→</span>
+      <span class="new">De sterkeste grunnene til å jobbe med salg, med en CTA til slutt</span>
+    </div>
+    <p class="obj-note reveal">En serie om salgsmyter svarer på innvendinger, men seerne sitter igjen med det negative. Innholdet skal heller vise fordelene: Ferdigheten, kollegaene, coachingen, fastlønnen og provisjonen.</p>
   </div>
 </section>
 
@@ -687,13 +717,13 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Betalte rekrutteringsannonser</span></div>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Ads</span></div>
         <h2 class="display h-xl reveal" id="annonser-tittel">Annonser som ikke ser ut som annonser</h2>
       </div>
-      <p class="lead reveal">Først testes fem ulike annonseformater mot hverandre. Formatet som gir billigst søknader, brukes til å lage fem nye annonser.</p>
+      <p class="lead reveal">Fem formater testes med likt budsjett. Vinneren får mer budsjett og fire nye videoer i samme format. Alle annonsene har TikTok Instant Forms.</p>
     </div>
 
-    <div class="sub reveal"><h3>Runde 1: Fem formater</h3><span class="label">Likt budsjett på alle fem</span></div>
+    <div class="sub reveal"><h3>Fem formater</h3><span class="label">Likt budsjett på alle fem</span></div>
     <div class="phones">
       <article class="ad ad-1 reveal">
         <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-1.webp" alt="" loading="lazy"><div class="veil" style="top:18%;height:13%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 1</span>
@@ -747,40 +777,32 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="sub reveal"><h3>Testmodellen</h3><span class="label">Fra fem formater til én vinner</span></div>
     <div class="tm" id="testmodel">
       <div class="tm-row">
-        <div class="tm-head"><span class="tm-step">Runde 1</span><b>Fem formater</b><small>Uke 4 og 5</small></div>
+        <div class="tm-head"><span class="tm-step">Steg 1</span><b>Fem formater</b><small>Likt budsjett</small></div>
         <div class="tm-bar">
           <span style="--i:0">Rett i kamera</span><span style="--i:1" class="win">POV</span><span style="--i:2">Svar på kommentar</span><span style="--i:3">Spørsmål</span><span style="--i:4">Trend</span>
         </div>
-        <p class="tm-note">Likt budsjett på alle fem. Formatet med lavest pris per søknad som møter til intervju, vinner. Her er POV brukt som eksempel.</p>
+        <p class="tm-note">Alle fem får likt budsjett. Formatet som gir flest søkere, vinner. Her er POV brukt som eksempel.</p>
       </div>
       <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
       <div class="tm-row">
-        <div class="tm-head"><span class="tm-step">Runde 2</span><b>Fem annonser i vinnerformatet</b><small>Uke 6 og 7</small></div>
+        <div class="tm-head"><span class="tm-step">Steg 2</span><b>Mer budsjett og fire nye videoer</b><small>Samme vinnerformat</small></div>
         <div class="tm-bar r2">
-          <span style="--i:0">Annonse 1</span><span style="--i:1">Annonse 2</span><span style="--i:2" class="win">Annonse 3</span><span style="--i:3">Annonse 4</span><span style="--i:4">Annonse 5</span>
+          <span style="--i:0" class="win">Vinneren</span><span style="--i:1">Ny 1</span><span style="--i:2">Ny 2</span><span style="--i:3">Ny 3</span><span style="--i:4">Ny 4</span>
         </div>
-        <p class="tm-note">Samme format, nytt innhold: Ulike selgere, åpninger og budskap. Likt budsjett igjen, og den beste annonsen vinner.</p>
+        <p class="tm-note">Budsjettet flyttes til vinnerformatet, og jeg lager fire nye videoer i samme format. If it ain't broke, don't fix it.</p>
       </div>
       <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
       <div class="tm-row">
-        <div class="tm-head"><span class="tm-step">Skaler</span><b>Vinneren får budsjettet</b><small>Fra uke 8</small></div>
-        <div class="tm-bar r3"><span style="--i:0" class="win">Vinnerannonsen</span></div>
-        <p class="tm-note">Når vinneren begynner å miste effekt, lages fem nye annonser i samme format, og runde 2 kjøres på nytt.</p>
+        <div class="tm-head"><span class="tm-step">Steg 3</span><b>Analyser og gjenta</b><small>Når effekten faller</small></div>
+        <div class="tm-bar r3"><span style="--i:0">Statistikk</span><span style="--i:1">KPI-analyse</span><span style="--i:2" class="win">Forbedrede formater</span></div>
+        <p class="tm-note">Når annonsen mister effekt, samler jeg statistikk og analyserer KPI-ene. Så starter steg 1 på nytt med formater som er forbedret ut fra innsikten.</p>
       </div>
     </div>
 
-    <div class="sub reveal"><h3>Oppsett</h3></div>
+    <div class="sub reveal"><h3>TikTok Instant Forms</h3><span class="label">I alle annonsene</span></div>
     <div class="setup">
-      <article class="card reveal"><span class="k">Målgruppe og format</span><h3 class="h-md">Bredt treff, sterkt innhold</h3><ul class="dots">
-        <li><b>Alle over 18 år i Norge,</b> uten øvre aldersgrense. Egen annonsegruppe for Oslo og en for turnéteamet i resten av landet.</li>
-        <li><b>Bred målretting.</b> På TikTok er det innholdet som finner riktige folk.</li>
-        <li><b>Spark Ads</b> fra ekte kontoer, med likes og kommentarer som sosialt bevis.</li>
-        <li><b>9:16, 15 til 30 sekunder,</b> tekst på skjermen og tydelig åpning innen to sekunder.</li></ul></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Konvertering og testing</span><h3 class="h-md">La tallene velge vinnerne</h3><ul class="dots">
-        <li><b>Leadskjema i TikTok:</b> Navn, telefon, by, når du kan starte og bekreftelse på at du er over 18.</li>
-        <li><b>Én ting testes om gangen:</b> Først formatet, så innholdet i det.</li>
-        <li><b>Vinneren avgjøres av pris per søknad</b> som møter til intervju, ikke av visninger.</li>
-        <li><b>Fem nye annonser</b> i vinnerformatet når den beste begynner å miste effekt.</li></ul></article>
+      <article class="card reveal"><span class="k">Lite friksjon</span><h3 class="h-md">Søk uten å forlate TikTok</h3><p>Instant Forms er den enkleste måten å melde interesse på. Skjemaet åpnes rett i appen, med feltene ferdig utfylt der det går.</p></article>
+      <article class="card reveal" style="--d:.08s"><span class="k">Rask oppfølging</span><h3 class="h-md">Fra skjema til samtale</h3><p>Navn, telefon og når du kan starte. Svarene går rett til rekrutterer, som tar kontakt mens interessen er varm.</p></article>
     </div>
 
     <div class="sub reveal"><h3>Fra visning til ansettelse</h3></div>
@@ -809,35 +831,23 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
   </div>
 </section>
 
-<!-- PLAN -->
-<section class="section" id="plan" aria-labelledby="plan-tittel">
+<!-- PRIORITERTE GREP -->
+<section class="section" id="grep" aria-labelledby="grep-tittel">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Gjennomføringsplan</span></div>
-        <h2 class="display h-xl reveal" id="plan-tittel">De første 90 dagene</h2>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Prioritering</span></div>
+        <h2 class="display h-xl reveal" id="grep-tittel">Grepene jeg ville prioritert</h2>
       </div>
-      <p class="lead reveal">Fundament først, så testing, så skalering. Ingen store summer før vi vet hva som virker.</p>
+      <p class="lead reveal">I denne rekkefølgen, fordi de første gir mest effekt for minst innsats.</p>
     </div>
-    <div class="phases">
-      <article class="card phase reveal"><span class="wk">Uke 1 til 3</span><h3 class="h-md">Fundament</h3><p>Kartlegging, profil, creator-team, sporing og en innholdsbank på 20 videoer.</p><p class="goal"><b>Ferdig når:</b> Kanalen publiserer fire ganger i uka, og utgangspunktet er målt.</p></article>
-      <article class="card phase reveal" style="--d:.08s"><span class="wk">Uke 4 til 8</span><h3 class="h-md">Test</h3><p>Fem formater mot hverandre, så fem nye annonser i formatet som vant. Skjema testes mot landingsside.</p><p class="goal"><b>Ferdig når:</b> Vi vet hvilket format og hvilken annonse som gir billigst søknader som møter til intervju.</p></article>
-      <article class="card phase reveal" style="--d:.16s"><span class="wk">Uke 9 til 13</span><h3 class="h-md">Skaler</h3><p>Vinnerannonsen får budsjettet, nye runder med fem annonser og den første 90-dagersrapporten.</p><p class="goal"><b>Ferdig når:</b> Pris per ansettelse er stabilt under 4 000 kroner.</p></article>
-    </div>
-
-    <div class="sub reveal"><h3>Tidslinje</h3><span class="label">Uke 1 til 13</span></div>
-    <div class="gantt reveal" id="gantt"><div class="gantt-scroll"><div class="gantt-inner" id="gantt-inner"></div></div></div>
-    <div class="legend"><span><i style="background:var(--pink);border-color:var(--pink)"></i>Aktivitet</span><span><i style="background:#fff;border-color:#fff"></i>Løpende</span><span><i style="background:#fff;border-color:#fff;transform:rotate(45deg) scale(.8)"></i>Milepæl</span></div>
-
-    <div class="sub reveal"><h3>Det jeg trenger fra dere</h3></div>
-    <div class="needs reveal">
-      <span class="pill">Tilgang til TikTok og Ads Manager</span>
-      <span class="pill">6 til 8 selgere som vil være med</span>
-      <span class="pill">Dagens tall på søknader og ansettelser</span>
-      <span class="pill">Godkjente lønnseksempler</span>
-      <span class="pill">En rekrutterer med tid til raske oppringinger</span>
-      <span class="pill">Annonsebudsjett fra uke 4</span>
-    </div>
+    <ol class="prio5">
+      <li class="reveal"><div><b>Frisk opp profilen</b><span>Rettet mot 18 til 24 år, med en bio som peker på lenken for å søke jobb.</span></div></li>
+      <li class="reveal" style="--d:.05s"><div><b>Gjør innholdet positivt</b><span>Vis de sterkeste grunnene til å jobbe med salg: Den beste ferdigheten i arbeidslivet, støttende kollegaer, coaching, fastlønn og provisjon.</span></div></li>
+      <li class="reveal" style="--d:.1s"><div><b>Bygg rundt 1 til 3 faste ansikter</b><span>Et sterkere personlig merke bygger tillit. Folk vil jobbe med folk de liker å følge.</span></div></li>
+      <li class="reveal" style="--d:.15s"><div><b>Film ekte promotere i jobb</b><span>Selgere som deler sin egen erfaring, så seerne får lyst til å gjøre det selv.</span></div></li>
+      <li class="reveal" style="--d:.2s"><div><b>Prioriter vinnerannonsene</b><span>Lag flere i samme format, og legg budsjettet på annonsen som gir flest søkere.</span></div></li>
+    </ol>
   </div>
 </section>
 
@@ -846,24 +856,21 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Måling og KPI-er</span></div>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Måling</span></div>
         <h2 class="display h-xl reveal" id="maling-tittel">Slik vet vi om det virker</h2>
       </div>
-      <p class="lead reveal">Tre lag med tall som alle leder opp til hovedmålet. Startmålene er forslag og justeres etter første fase.</p>
+      <p class="lead reveal">Tallene fra TikTok viser hva som skjer i appen. Resten måles i rekrutteringen, helt fram til ansettelse.</p>
     </div>
-    <div class="kpi-tabs reveal" role="tablist" aria-label="KPI-er" id="kpi-tabs"></div>
-    <div role="tabpanel" class="reveal">
-      <table class="kpi-table"><thead><tr><th>KPI</th><th>Hvorfor den betyr noe</th><th>Startmål</th></tr></thead><tbody id="kpi-body"></tbody></table>
+    <div class="measure">
+      <article class="card mcard reveal"><span class="big">4 000 til 5 000<small> kr i dag</small></span><h3 class="h-md">Pris per ansettelse</h3><p>Den gamle prisen per ansettelse sammenlignes med prisen i denne kampanjen. Målet er at den går ned.</p></article>
+      <article class="card mcard reveal" style="--d:.06s"><span class="big"><small>i dag </small>1 300</span><h3 class="h-md">Median visninger</h3><p>Median antall visninger per video i 2024 og 2025. Den skal opp når innholdet viser jobben.</p></article>
+      <article class="card mcard reveal" style="--d:.12s"><span class="big">DM og skjema</span><h3 class="h-md">TikTok Insights</h3><p>Hvilke annonser fikk folk til å sende melding eller fylle ut skjemaet.</p></article>
+      <article class="card mcard reveal"><span class="big">Hele løpet</span><h3 class="h-md">Fra kontakt til ansatt</h3><p>Data på alle som tok kontakt, kom på intervju og ble ansatt. Viser hvor godt det konverterer utenfor TikTok.</p></article>
+      <article class="card mcard reveal" style="--d:.06s"><span class="big">AI-analyse</span><h3 class="h-md">Videoanalyse med Claude Code</h3><p>Analyse av videoene for å finne hva som holder på seerne, og forbedre innholdet.</p></article>
+      <article class="card mcard reveal" style="--d:.12s"><span class="big">Konkurrenter</span><h3 class="h-md">Hva lykkes for andre</h3><p>Hva som fungerer og ikke fungerer hos andre som rekrutterer selgere på TikTok.</p></article>
     </div>
-    <p class="kpi-note">Engasjementsraten på TikTok ligger rundt 4 prosent i snitt. Med riktig innhold har jeg tidligere oppnådd 9,1 prosent, så startmålet på 6 prosent er realistisk.</p>
-    <p class="kpi-note">* Regneeksempel: Hvis én av ti søkere blir ansatt, kan en søknad koste opptil 400 kroner før ansettelsen passerer 4 000 kroner. Grensen justeres når vi kjenner den faktiske andelen fra søknad til ansettelse.</p>
-
-    <div class="sub reveal"><h3>Rapportering</h3></div>
-    <div class="rhythm">
-      <article class="card reveal"><span class="k">Hver uke</span><h3 class="h-md">Kort status</h3><p>Hva som fungerte, hva som kuttes og hva som testes neste uke. Lesetid fem minutter.</p></article>
-      <article class="card reveal" style="--d:.08s"><span class="k">Hver måned</span><h3 class="h-md">Læring og justering</h3><p>Hvilke pilarer og annonser som gir best kandidater, og hva neste testrunde skal handle om.</p></article>
-      <article class="card reveal" style="--d:.16s"><span class="k">Etter 90 dager</span><h3 class="h-md">Status på hovedmålet</h3><p>Pris per ansatt som ble værende, sammenlignet med dagens 4 000 til 5 000 kroner.</p></article>
-    </div>
+    <div class="sub reveal"><h3>Fra kontakt til ansatt</h3></div>
+    <div class="loop reveal"><div>Tok kontakt</div><div>Intervju</div><div>Ansatt</div><div>Pris per ansettelse</div></div>
   </div>
 </section>
 
@@ -917,139 +924,16 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 <button class="to-top" id="to-top" type="button" aria-label="Til toppen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg>Til toppen</button>
 
 <script>
-
-/* Pilarer */
-const PILLARS = [
-  {t:'Gata uten filter', p:30, q:'Hvordan er en vanlig dag?',
-   d:'Hverdagen slik den faktisk er: Morgenmøtet, de første samtalene, pausene og ja-et som gjør dagen. POV-formater filmet av selgerne selv.',
-   w:'Pilaren som tar ned fordommene, og den som oftest blir til annonser.',
-   ex:[['«En dag på Karl Johan»','POV fra morgen til kveld, 30 sekunder.'],['«Ting du lærer første uka»','Fem raske klipp med tekst på skjermen.'],['«Rangerer dagens samtaler»','Selgeren rangerer dagens møter, med humor.']]},
-  {t:'Folka bak', p:25, q:'Hvem skal jeg jobbe med?',
-   d:'Kulturen er det Face2face er best på, og det som er vanskeligst å forklare i en stillingsannonse. Afterwork, konkurranser og turnéteamet.',
-   w:'Folk søker seg til folk. Når seerne kjenner igjen ansiktene, stiger tilliten.',
-   ex:[['«Møt turnéteamet»','Serie der hvert medlem får 15 sekunder.'],['«Hvem i teamet …»','Trendformat der teamet peker på hverandre.'],['«Fredagskonkurransen»','Hva vinneren fikk, og hvordan.']]},
-  {t:'Veien videre', p:15, q:'Hvor kan dette ta meg?',
-   d:'Face2face Campus og veien fra selger til teamleder. Historier fra de som har gått den.',
-   w:'Gjør jobben til en karriere, og tiltrekker de ambisiøse.',
-   ex:[['«Fra ny til teamleder»','En ekte teamleder forteller sin historie.'],['«Hva lærer du på Campus?»','Tre ting på 20 sekunder.'],['«Salg er et superpower»','Hvordan ferdighetene brukes etterpå.']]},
-  {t:'Hva vi selger', p:15, q:'Hva skal jeg selge?',
-   d:'Produkter, tjenester og abonnementer fra kjente merkevarer. Når selgeren liker det som selges, blir samtalene enklere. Merkevarene vises når kundene godkjenner det.',
-   w:'Gjør jobben konkret, og viser at det er kjente merkevarer bak.',
-   ex:[['«Dette selger jeg i dag»','Kort presentasjon av dagens produkt eller abonnement.'],['«Hvorfor jeg liker det jeg selger»','Selgeren forteller hva som gjør det lett å anbefale.'],['«Ny kampanje i morgen»','Teamet forbereder seg til en ny merkevare.']]},
-  {t:'Trend og humor', p:15, q:'Er dette et sted jeg vil være?',
-   d:'Kjappe trendformater i Face2face sin selvironiske tone. Laget raskt, publisert mens trenden lever.',
-   w:'Gir rekkevidde og følgere, og viser en arbeidsplass med humor.',
-   ex:[['«Ceci n’est pas une pub»','En gjentakende spøk som blir en signatur.'],['«Ting selgere aldri sier»','Trendlyd med teamet i hovedrollene.'],['«Folk du møter på torget»','Gjenkjennelig humor uten å tråkke på noen.']]}
-];
-const playIco = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>';
-const pEl = document.getElementById('pillars'), dEl = document.getElementById('pillar-detail');
-PILLARS.forEach((p,i) => {
-  const b = document.createElement('button');
-  b.className = 'pillar'; b.type = 'button'; b.setAttribute('role','tab'); b.id = 'pil-'+i;
-  b.innerHTML = `<span class="pct">${p.p}<small> %</small></span><span class="pt">${p.t}</span><span class="q">${p.q}</span><span class="bar"><i style="width:${p.p/30*100}%"></i></span>`;
-  b.addEventListener('click', () => selectPillar(i));
-  b.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + PILLARS.length) % PILLARS.length;
-      selectPillar(n); document.getElementById('pil-'+n).focus();
-    }
-  });
-  pEl.appendChild(b);
-});
-function selectPillar(i){
-  const p = PILLARS[i];
-  [...pEl.children].forEach((b,k) => { b.setAttribute('aria-selected', k===i); b.tabIndex = k===i ? 0 : -1; });
-  dEl.setAttribute('aria-labelledby','pil-'+i);
-  dEl.style.animation = 'none'; dEl.offsetHeight; dEl.style.animation = '';
-  dEl.innerHTML = `<article class="card"><span class="k">${p.p} prosent av innholdet</span><h3 class="h-md">${p.t}</h3><p>${p.d}</p><p><b style="color:var(--text)">Hvorfor:</b> ${p.w}</p></article>
-  <ul class="ex-list">${p.ex.map(e => `<li><span class="play">${playIco}</span><span><b>${e[0]}</b><br>${e[1]}</span></li>`).join('')}</ul>`;
-}
-selectPillar(0);
-
-/* KPI */
-const KPIS = {
-  'Kanalen': [
-    ['Fullføringsrate','Viser om innholdet holder på folk. Viktigste signal til algoritmen.','Over 30 %'],
-    ['Engasjementsrate','Likes, kommentarer, delinger og lagringer delt på visninger.','Over 6 %'],
-    ['Delinger og lagringer','Noen sender videoen til en venn som burde søke.','Øker hver måned'],
-    ['Kommentarer om jobben','«Hvordan søker jeg?» er det beste tegnet på interesse.','Telles ukentlig'],
-    ['Publiseringsrytme','Jevnhet slår enkeltstående treff.','4 per uke']
-  ],
-  'Annonsene': [
-    ['Hook rate','Andelen som ser forbi de første to sekundene.','Over 25 %'],
-    ['Klikkrate','Andelen som trykker på søk.','Over 1 %'],
-    ['Pris per søknad','Hva én utfylt søknad koster. Må være lav nok til at ansettelsen havner under 4 000 kr.','Under 400 kr*'],
-    ['Frekvens','For høy betyr at innholdet må fornyes.','Under 3 per uke']
-  ],
-  'Rekrutteringen': [
-    ['Svar på telefon','Viser om søkerne er reelle og om vi ringer raskt nok.','Over 60 %'],
-    ['Søknad til intervju','Kvaliteten på søkerne fra TikTok.','Settes etter fase 1'],
-    ['Intervju til ansatt','Om vi treffer riktige folk, ikke bare mange.','Lik eller bedre enn Finn'],
-    ['Pris per ansettelse','Hovedmålet. I dag 4 000 til 5 000 kr.','Under 4 000 kr'],
-    ['I jobb etter 90 dager','Det endelige beviset, koblet til hovedmålet.','Lik eller bedre enn i dag']
-  ]
-};
-const tEl = document.getElementById('kpi-tabs'), kb = document.getElementById('kpi-body');
-Object.keys(KPIS).forEach(k => {
-  const b = document.createElement('button');
-  b.className = 'kpi-tab'; b.type = 'button'; b.setAttribute('role','tab'); b.textContent = k;
-  b.addEventListener('click', () => selectKpi(k));
-  tEl.appendChild(b);
-});
-function selectKpi(k){
-  [...tEl.children].forEach(b => b.setAttribute('aria-selected', b.textContent === k));
-  kb.innerHTML = KPIS[k].map((r,i) => `<tr style="--i:${i}"><td>${r[0]}</td><td>${r[1]}</td><td class="t">${r[2]}</td></tr>`).join('');
-}
-selectKpi('Kanalen');
-
 /* Sesong */
 const heat = [.95,.3,.75,.85,.9,.35,.2,1,.45,.75,.35,.15];
 const mn = ['jan','feb','mar','apr','mai','jun','jul','aug','sep','okt','nov','des'];
 document.getElementById('months').innerHTML = mn.map((m,i) => `<div class="mo${heat[i]>.6?' hot':''}" style="--i:${i}"><i style="height:${Math.round(heat[i]*115)}px"></i><span>${m}</span></div>`).join('');
 
-/* Gantt */
-const G = [
-  ['Fundament',0,0,'p'],
-  ['Kartlegging og utgangspunkt',1,1,'a'],
-  ['Profil, sporing og skjema',1,2,'a'],
-  ['Rekruttere creator-team',1,2,'a'],
-  ['Innholdsbank, 20 videoer',2,3,'a'],
-  ['Kanalen er i gang',3,3,'m'],
-  ['Test',0,0,'p'],
-  ['Runde 1: Fem formater',4,5,'a'],
-  ['Vinnerformat valgt',5,5,'m'],
-  ['Runde 2: Fem annonser i vinnerformatet',6,7,'a'],
-  ['Skjema mot landingsside',5,7,'a'],
-  ['Vinnerannonse klar',8,8,'m'],
-  ['Skaler',0,0,'p'],
-  ['Budsjett på vinnerannonsen',8,13,'a'],
-  ['Ny runde med fem annonser',11,12,'a'],
-  ['Faste serier',9,13,'a'],
-  ['90-dagersrapport',13,13,'m'],
-  ['Løpende',0,0,'p'],
-  ['Fire videoer i uka',3,13,'d'],
-  ['Ukerapport',2,13,'d']
-];
-let gh = '<div class="grow head"><div class="gl">Aktivitet</div>' + Array.from({length:13},(_,i)=>`<div>U${i+1}</div>`).join('') + '</div>';
-let gi = 0;
-G.forEach(([l,s,e,t]) => {
-  if (t === 'p') { gh += `<div class="grow phase-row"><div class="gl" style="grid-column:1/-1">${l}</div></div>`; return; }
-  gi++;
-  let cells = '';
-  for (let w=1; w<=13; w++) {
-    if (t === 'm') cells += `<div>${w===s?`<div class="ms" style="--i:${gi}"></div>`:''}</div>`;
-    else if (w === s) { cells += `<div style="grid-column:span ${e-s+1}"><div class="gbar${t==='d'?' d':''}" style="--i:${gi}"></div></div>`; w = e; }
-    else cells += '<div></div>';
-  }
-  gh += `<div class="grow"><div class="gl">${l}</div>${cells}</div>`;
-});
-document.getElementById('gantt-inner').innerHTML = gh;
-
 /* Risiko */
 const RISKS = [
   ['Negative kommentarer om salg på gata',3,'Høy','Svares åpent, gjerne med en video. Kritikk blir ofte det beste innholdet.'],
   ['Selgerne mister motivasjonen for innhold',2,'Middels','Bonus per publisert video, rotasjon i teamet og synlige resultater.'],
-  ['Annonsetretthet',2,'Middels','Fem nye annonser i vinnerformatet når den beste mister effekt, og overvåking av frekvens.'],
+  ['Annonsetretthet',2,'Middels','Ny analyse og nye, forbedrede formater når annonsen mister effekt.'],
   ['Misvisende lønnsbudskap',2,'Middels','Bare tall Face2face kan dokumentere, og som stemmer med arbeidsavtalen. Toppinntekter vises aldri som det normale.'],
   ['Annonser som stenger ute på grunn av alder',2,'Middels','Målretting mot alle over 18 år, uten øvre grense.'],
   ['Kunder vises uten godkjenning',1,'Lav','Merkevarene vises bare etter klarsignal. Alle i videoene har gitt samtykke.']
@@ -1065,7 +949,7 @@ function countUp(el){
 }
 
 /* Scroll-animasjoner */
-const animated = '.reveal,.reveal-l,.pop,#wheel,#pillars,#testmodel,#months,#gantt';
+const animated = '.reveal,.reveal-l,.pop,#testmodel,#months';
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
@@ -1095,5 +979,3 @@ function onScroll(){
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
 toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
 </script>
-</body>
-</html>

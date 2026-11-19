@@ -1442,7 +1442,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <article class="card reveal"><span class="k">Annonseoppsett</span><h3 class="h-md">Slik settes kampanjen opp</h3><ul class="dots">
         <li><b>Kampanjemål:</b> Leadgenerering med Instant Form.</li>
         <li><b>Målretting:</b> Alle over 18 år i Oslo og omegn, der kontoret ligger.</li>
-        <li><b>Spark Ads:</b> Promotørene gir tilgang til videoene sine, så annonsene vises fra ekte kontoer.</li>
+        <li><b>Spark Ads:</b> De beste organiske videoene på Face2face-kontoen brukes som annonser, så de beholder likes og kommentarer. Promotørene er med og filmer, men trenger ikke egne kontoer.</li>
         <li><b>Musikk:</b> Annonsene bruker bare lyder fra Commercial Music Library. Trendlyder fra vanlige videoer kan ikke alltid brukes i betalte annonser.</li></ul></article>
       <article class="card reveal" style="--d:.06s"><span class="k">Måltall etter 90 dager</span><h3 class="h-md">Slik vet vi at det lykkes</h3>
         <div class="targets">
@@ -1538,7 +1538,7 @@ document.getElementById('months').innerHTML = mn.map((m,i) => `<div class="mo${h
 /* Risiko */
 const RISKS = [
   ['Negative kommentarer om salg på gata',3,'Høy','Besvares med en Stitch-video som svarer på innvendingen og viser hvordan hverdagen er for en god promotør. Utfordringen vekker nysgjerrigheten hos dem som tror de har det som skal til.'],
-  ['Promotørene mister motivasjonen for innhold',2,'Middels','Bonus per publisert video, rotasjon i teamet og synlige resultater.'],
+  ['Promotørene vil ikke være med i videoene',2,'Middels','Jeg filmer, klipper og lager innholdet, så promotørene bare trenger å være med foran kamera. Det går på rundgang, og bare de som har lyst, blir med.'],
   ['Annonsetretthet',2,'Middels','Ny analyse og nye, forbedrede formater når annonsen mister effekt.']
 ];
 document.getElementById('risks').innerHTML = RISKS.map((r,i) => `<div class="risk reveal" style="--d:${i*.06}s"><b>${r[0]}</b><span class="lvl"><i>${[1,2,3].map(n=>`<span class="${n<=r[1]?'on':''}"></span>`).join('')}</i>${r[2]}</span><p>${r[3]}</p></div>`).join('');

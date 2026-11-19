@@ -748,6 +748,15 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 .st.pub{background:var(--pink);color:#fff}.st.cut{background:var(--pink-soft);color:var(--pink-lt)}.st.rec{background:rgba(255,255,255,.1);color:#fff}.st.idea{border:1px dashed rgba(255,255,255,.25);color:var(--soft)}
 @media(max-width:1000px){.cal{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:860px){.ib-grid,.hv{grid-template-columns:1fr}.cal{grid-template-columns:repeat(2,minmax(0,1fr))}.cal-day{min-height:0}.cal-row{grid-template-columns:1fr 1fr}.cal-head{display:none}.mix-bar{height:auto}.mix-bar i{padding:8px}}
+/* Telefoner: rosa tekstboks uten blur */
+.phone .hook span{display:flex;align-items:center;justify-content:center;min-height:var(--h,0);background:var(--pink);color:#fff;padding:8px 10px;border-radius:14px;line-height:1.25;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.phone .hook{--h:0}
+/* Idébank: nummer */
+.ib-top{justify-content:flex-start}
+.ib-n{flex:none;font-size:11.5px;font-weight:800;padding:5px 10px;border-radius:999px;background:#fff;color:#000}
+.ib-top .ib-tag{margin-left:auto}
+/* Profil i dag: skjul tallene i miniatyrbildene */
+.prof-thumbs img{aspect-ratio:300/312;object-position:top}
 </style>
 </head>
 <body>
@@ -831,9 +840,9 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     <div class="profiles">
       <article class="prof old reveal">
         <span class="prof-label">I dag</span>
-        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">face2facecreativesnorway</div><div class="prof-stats">2 694 følgere · 47 600 likes</div></div></div>
+        <div class="prof-top"><div class="prof-av" aria-hidden="true"><span>FACE2FACE</span><span>CREATIVES</span></div><div><div class="prof-name">face2facecreativesnorway</div><div class="prof-stats">Profil i dag</div></div></div>
         <p class="prof-bio">Blending Strategy, Creativity, Tech and Brand Experience since 1999.</p>
-        <div class="prof-thumbs"><img src="assets/img/tt-dagens-1.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor, 3 794 visninger" loading="lazy"><img src="assets/img/tt-dagens-2.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor, 3 809 visninger" loading="lazy"><img src="assets/img/tt-dagens-3.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor, 3 251 visninger" loading="lazy"></div>
+        <div class="prof-thumbs"><img src="assets/img/tt-dagens-1.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor" loading="lazy"><img src="assets/img/tt-dagens-2.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor" loading="lazy"><img src="assets/img/tt-dagens-3.jpg" alt="Miniatyrbilde fra Face2face sin TikTok: Kontorhumor" loading="lazy"></div>
         <p class="prof-miss">Rettet mot bedriftskunder</p><br>
         <p class="prof-miss">Snakker ikke til de som trenger en jobb</p><br>
         <p class="prof-miss">Ingen lenke til å søke</p><br>
@@ -883,7 +892,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </div>
     <div class="stats reveal">
       <div class="stat"><span class="stat-num"><span data-count="3">3</span><small> av 80</small></span><span class="stat-label">videoer oppfordrer til å søke jobb</span></div>
-      <div class="stat"><span class="stat-num" data-count="1270">1 270</span><span class="stat-label">visninger i median per video</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">lenker til søknadsskjemaet i profilen</span></div>
       <div class="stat"><span class="stat-num" data-count="77">77</span><span class="stat-label">videoer uten et neste steg</span></div>
       <div class="stat"><span class="stat-num">Alle</span><span class="stat-label">videoer skal oppfordre til å søke</span></div>
     </div>
@@ -928,40 +937,56 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
     </article>
 
     <div class="sub reveal"><h3>Idébank: Hook, opptak og caption</h3></div>
-    <p class="pins-lead reveal">Ferdige oppskrifter promotørene kan filme rett fra. Hooken står som tekst på skjermen og er det første som blir sagt. Alle videoene ender med en CTA.</p>
+    <p class="pins-lead reveal">Ferdige oppskrifter promotørene kan filme rett fra. Hooken står som tekst på skjermen og er det første som blir sagt. Alle videoene ender med en CTA. Idé 1 til 5 testes som annonser, og alle ideene kan byttes inn.</p>
     <div class="ib-grid">
-      <article class="ib reveal"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Ukens tips</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Det viktigste rådet jeg gir nye promotører»</dd>
-        <dt>Dette filmes</dt><dd>En erfaren promotør rett i kamera på torget. Ett konkret råd, et eksempel fra en ekte dag og CTA til slutt. 20 til 30 sekunder.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Ett råd som gjorde de første ukene mye lettere 💡 Lurer du på noe om jobben? Spør i kommentarene, eller søk på 1 min via lenken i bio. #promotør #deltidsjobb #jobbioslo</dd></dl></article>
-      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Pitchen min</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Dette er hele pitchen min. Den tar 20 sekunder»</dd>
-        <dt>Dette filmes</dt><dd>Pitchen filmet på avstand, med forbipasserende anonymisert. Promotøren forklarer hvert steg med voiceover og tekst på skjermen.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Åpning, spørsmål og avslutning. Slik er pitchen bygget opp 🎯 Vil du lære det selv? Lenken i bio. #salgstips #promotør #lærsalg</dd></dl></article>
-      <article class="ib reveal"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Pitch-duell</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Hvem av oss selger best? Dere bestemmer»</dd>
-        <dt>Dette filmes</dt><dd>To promotører pitcher den samme hverdagsgjenstanden, for eksempel en kulepenn, rett i kamera. Delt skjerm og poengtavle til slutt.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Runde 1 🥊 Stem i kommentarene. Neste uke møter vinneren en ny utfordrer. Bli med på laget via lenken i bio. #pitchduell #promotør #salg</dd></dl></article>
-      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Rangerer unnskyldningene</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Rangerer unnskyldningene jeg hører på gata»</dd>
-        <dt>Dette filmes</dt><dd>Promotøren holder opp lapper med vanlige svar som «Jeg har ikke tid» og «Jeg har allerede», og rangerer dem med glimt i øyet. Etter hver lapp: Slik svarer jeg. Ingen forbipasserende blir vist eller gjort narr av.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Nummer 1 hører jeg hver eneste dag 😅 Et nei er en del av jobben, og du lærer å takle det. Søk via lenken i bio. #promotør #salgstips #jobb</dd></dl></article>
-      <article class="ib reveal"><div class="ib-top"><span class="k">Vår hverdag</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Første dag og tredje uke</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«POV: Første dag som promotør vs. tredje uke»</dd>
-        <dt>Dette filmes</dt><dd>Samme promotør spiller begge rollene. Først nervøs med notatlapp, så rolig og trygg på torget. Avslutter med at hen fikk veiledning og hjelp underveis.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Alle starter et sted. Du får veiledning og hjelp hele veien 🙌 Søk på 1 min via lenken i bio. #førstejobb #promotør #deltidsjobb</dd></dl></article>
-      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Vår hverdag</span><span class="ib-tag d">Hverdag</span></div><h3 class="h-md">Morgenmøtet</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Slik starter vi hver dag»</dd>
-        <dt>Dette filmes</dt><dd>Raske klipp fra morgenmøtet: Dagens mål, high fives, kaffe og teamet som går ut på gata. Trendlyd og tekst på skjermen.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Morgenmøte, mål for dagen og ut på gata ☀️ Vil du være med? Lenken i bio. #vårhverdag #promotør #jobbioslo</dd></dl></article>
-      <article class="ib reveal"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Promotør og veileder</h3><dl>
+      <article class="ib reveal" id="ide-1"><div class="ib-top"><span class="ib-n">Idé 1</span><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Rett i kamera</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Jeg hadde aldri solgt noe før jeg begynte her»</dd>
+        <dt>Dette filmes</dt><dd>En promotør forteller sin egen historie rett i kamera, filmet på mobil: Hvordan den første måneden var, og hvordan det er nå.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Første måned mot nå. Ærlig talt 🙌 Har du aldri solgt før? Det hadde ikke jeg heller. Søk på 1 min via lenken i bio. #promotør #førstejobb #jobbioslo</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-2"><div class="ib-top"><span class="ib-n">Idé 2</span><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Spør en promotør</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">Svar til @bruker: «Kan jeg gjøre dette uten å ha solgt før?»</dd><dd class="ib-hook">Svar til @bruker: «Hva gjør du når ingen vil stoppe?»</dd>
+        <dt>Dette filmes</dt><dd>Svarvideo på en ekte kommentar. Promotøren svarer rett i kamera med ett konkret grep, og ber seerne stille neste spørsmål.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Godt spørsmål! Slik gjør jeg det 👇 Still ditt spørsmål i kommentarene, så svarer vi i neste video. #spørenpromotør #promotør #jobb</dd></dl></article>
+      <article class="ib reveal" id="ide-3"><div class="ib-top"><span class="ib-n">Idé 3</span><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Vi spurte promotørene</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Vi spurte promotørene: Hvorfor begynte du her?»</dd>
+        <dt>Dette filmes</dt><dd>Ett spørsmål og korte svar fra fem promotører, klippet etter hverandre på gata i Oslo.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Fem promotører, fem svar 💬 Hvilket svar kjenner du deg igjen i? Skriv i kommentarene. Søk via lenken i bio. #promotør #jobbioslo #deltidsjobb</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-4"><div class="ib-top"><span class="ib-n">Idé 4</span><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Promotør og veileder</h3><dl>
         <dt>Hook</dt><dd class="ib-hook">«Veilederen min ga meg dette rådet etter første pitch»</dd>
         <dt>Dette filmes</dt><dd>En promotør og veilederen står sammen på gata. Promotøren pitcher, veilederen gir ett konkret tips, og så prøver promotøren igjen. Viser at du får hjelp underveis.</dd>
         <dt>Caption</dt><dd class="ib-cap">Første forsøk mot andre forsøk 👀 Som ny står du aldri alene. Søk på 1 min via lenken i bio. #promotør #veiledning #jobbioslo</dd></dl></article>
-      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Spør en promotør</h3><dl>
-        <dt>Hook</dt><dd class="ib-hook">«Svar til @bruker: Hva gjør du når ingen vil stoppe?»</dd>
-        <dt>Dette filmes</dt><dd>Svarvideo på en ekte kommentar. Promotøren svarer rett i kamera med ett konkret grep, og ber seerne stille neste spørsmål.</dd>
-        <dt>Caption</dt><dd class="ib-cap">Godt spørsmål! Slik gjør jeg det 👇 Still ditt spørsmål i kommentarene, så svarer vi i neste video. #spørenpromotør #promotør #jobb</dd></dl></article>
+      <article class="ib reveal" id="ide-5"><div class="ib-top"><span class="ib-n">Idé 5</span><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Rangerer unnskyldningene</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Rangerer unnskyldningene jeg hører på gata»</dd>
+        <dt>Dette filmes</dt><dd>Promotøren holder opp lapper med vanlige svar som «Jeg har ikke tid» og «Jeg har allerede», og rangerer dem med glimt i øyet. Etter hver lapp: Slik svarer jeg. Ingen forbipasserende blir vist eller gjort narr av.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Nummer 1 hører jeg hver eneste dag 😅 Et nei er en del av jobben, og du lærer å takle det. Søk via lenken i bio. #promotør #salgstips #jobb</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-6"><div class="ib-top"><span class="ib-n">Idé 6</span><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Ukens tips</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Det viktigste rådet jeg gir nye promotører»</dd>
+        <dt>Dette filmes</dt><dd>En erfaren promotør rett i kamera på torget. Ett konkret råd, et eksempel fra en ekte dag og CTA til slutt. 20 til 30 sekunder.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Ett råd som gjorde de første ukene mye lettere 💡 Lurer du på noe om jobben? Spør i kommentarene, eller søk på 1 min via lenken i bio. #promotør #deltidsjobb #jobbioslo</dd></dl></article>
+      <article class="ib reveal" id="ide-7"><div class="ib-top"><span class="ib-n">Idé 7</span><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Pitchen min</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Dette er hele pitchen min. Den tar 20 sekunder»</dd>
+        <dt>Dette filmes</dt><dd>Pitchen filmet på avstand, med forbipasserende anonymisert. Promotøren forklarer hvert steg med voiceover og tekst på skjermen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Åpning, spørsmål og avslutning. Slik er pitchen bygget opp 🎯 Vil du lære det selv? Lenken i bio. #salgstips #promotør #lærsalg</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-8"><div class="ib-top"><span class="ib-n">Idé 8</span><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Pitch-duell</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Hvem av oss selger best? Dere bestemmer»</dd>
+        <dt>Dette filmes</dt><dd>To promotører pitcher den samme hverdagsgjenstanden, for eksempel en kulepenn, rett i kamera. Delt skjerm og poengtavle til slutt.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Runde 1 🥊 Stem i kommentarene. Neste uke møter vinneren en ny utfordrer. Bli med på laget via lenken i bio. #pitchduell #promotør #salg</dd></dl></article>
+      <article class="ib reveal" id="ide-9"><div class="ib-top"><span class="ib-n">Idé 9</span><span class="k">Vår hverdag</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Første dag og tredje uke</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«POV: Første dag som promotør vs. tredje uke»</dd>
+        <dt>Dette filmes</dt><dd>Samme promotør spiller begge rollene. Først nervøs med notatlapp, så rolig og trygg på torget. Avslutter med at hen fikk veiledning og hjelp underveis.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Alle starter et sted. Du får veiledning og hjelp hele veien 🙌 Søk på 1 min via lenken i bio. #førstejobb #promotør #deltidsjobb</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-10"><div class="ib-top"><span class="ib-n">Idé 10</span><span class="k">Vår hverdag</span><span class="ib-tag d">Hverdag</span></div><h3 class="h-md">Morgenmøtet</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Slik starter vi hver dag»</dd>
+        <dt>Dette filmes</dt><dd>Raske klipp fra morgenmøtet: Dagens mål, high fives, kaffe og teamet som går ut på gata. Trendlyd og tekst på skjermen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Morgenmøte, mål for dagen og ut på gata ☀️ Vil du være med? Lenken i bio. #vårhverdag #promotør #jobbioslo</dd></dl></article>
+      <article class="ib reveal" id="ide-11"><div class="ib-top"><span class="ib-n">Idé 11</span><span class="k">Vår hverdag</span><span class="ib-tag d">Hverdag</span></div><h3 class="h-md">En dag på gata</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«POV: Jobben din er på gata i Oslo med teamet ditt»</dd>
+        <dt>Dette filmes</dt><dd>Raske klipp fra en arbeidsdag i Oslo, fra morgenmøtet til siste salg, med tekst på skjermen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Nye folk hver dag, samme gjeng ☀️ Bli med på teamet via lenken i bio. #oslo #promotør #vårhverdag</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-12"><div class="ib-top"><span class="ib-n">Idé 12</span><span class="k">Vår hverdag</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Ting ingen sier om jobben</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Ting ingen sier om å jobbe på gata»</dd>
+        <dt>Dette filmes</dt><dd>En populær lyd med tekst på skjermen og teamet i bildet. Hvert punkt er noe positivt man ikke venter, for eksempel at du blir tryggere på deg selv.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Nummer 3 overrasket meg mest 😮 Del med en som trenger jobb. Søk via lenken i bio. #promotør #jobbioslo #deltidsjobb</dd></dl></article>
     </div>
 
     <p class="oneliner vps reveal">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
@@ -1024,73 +1049,73 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <article class="card reveal" style="--d:.08s"><span class="k">Ingen tvang</span><h3 class="h-md">Annonser som ikke føles som annonser</h3><p>Annonsene som ikke ser ut eller føles som reklame, gjør det best. Da klikker seeren fordi de er interessert, ikke fordi de blir presset.</p></article>
     </div>
 
-    <div class="sub reveal"><h3>Fem formater</h3></div>
-    <p class="pins-lead reveal">Alle fem får likt budsjett i testen.</p>
+    <div class="sub reveal"><h3>Fem ideer som annonser</h3></div>
+    <p class="pins-lead reveal">Idé 1 til 5 fra idébanken, laget som annonser. Alle fem får likt budsjett i testen.</p>
     <div class="phones">
       <article class="ad ad-1 reveal">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-1.webp" alt="" loading="lazy"><div class="veil" style="top:18%;height:13%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 1</span>
-          <p class="hook" style="top:19.5%"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-1.webp" alt="" loading="lazy"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Idé 1</span>
+          <p class="hook" style="top:18%;--h:4.6em"><span>Jeg hadde aldri solgt noe før jeg begynte her</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Første måned vs. nå. Ærlig talt.<br><span class="sp">Sponset</span></div>
+          <div class="meta"><b>@face2face</b>Første måned mot nå. Ærlig talt.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
         <h3 class="h-md">Rett i kamera</h3>
         <ul class="script"><li><b>Slik</b>En promotør forteller sin egen historie, filmet på mobil.</li><li><b>Tester</b>Om personlige historier bygger nok tillit.</li></ul>
       </article>
       <article class="ad ad-2 reveal" style="--d:.06s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-2.png" alt="" loading="lazy"><div class="veil" style="top:19%;height:20%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 2</span>
-          <p class="hook" style="top:21%"><span>POV: Jobben din er på gata i Oslo med teamet ditt</span></p>
-          <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Nye folk hver dag, samme gjeng.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Bli med på teamet</div></div>
-        <h3 class="h-md">POV og montasje</h3>
-        <ul class="script"><li><b>Slik</b>Raske klipp fra en arbeidsdag i Oslo, med tekst på skjermen.</li><li><b>Tester</b>Om opplevelsen selger bedre enn ord.</li></ul>
-      </article>
-      <article class="ad ad-3 reveal" style="--d:.12s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-3.png" alt="" loading="lazy"><div class="veil" style="top:17%;height:14%"></div><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 3</span>
-          <p class="hook" style="top:18.5%"><span>Svar til @bruker: «Kan jeg gjøre dette uten å ha solgt før?»</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-3.png" alt="" loading="lazy"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Idé 2</span>
+          <p class="hook" style="top:17%;--h:5.2em"><span>Svar til @bruker: «Kan jeg gjøre dette uten å ha solgt før?»</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Vi svarer på det alle lurer på.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
-        <h3 class="h-md">Svar på kommentar</h3>
-        <ul class="script"><li><b>Slik</b>En promotør svarer på en ekte, kritisk kommentar.</li><li><b>Tester</b>Om ærlige svar på innvendinger gir flere søknader.</li></ul>
+        <h3 class="h-md">Spør en promotør</h3>
+        <ul class="script"><li><b>Slik</b>En promotør svarer på en ekte kommentar.</li><li><b>Tester</b>Om svar på innvendinger gir flere søknader.</li></ul>
       </article>
-      <article class="ad ad-4 reveal" style="--d:.18s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-team.jpg" alt="" loading="lazy" style="object-position:30% 50%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 4</span>
-          <p class="hook"><span>Vi spurte promotørene: Hvorfor begynte du her?</span></p>
+      <article class="ad ad-3 reveal" style="--d:.12s">
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-team.jpg" alt="" loading="lazy" style="object-position:30% 50%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Idé 3</span>
+          <p class="hook" style="top:22%"><span>Vi spurte promotørene: Hvorfor begynte du her?</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
           <div class="meta"><b>@face2face</b>Fem promotører, fem svar.<br><span class="sp">Sponset</span></div>
           <div class="cta">Søk på 1 minutt</div></div>
-        <h3 class="h-md">Spørsmål til teamet</h3>
-        <ul class="script"><li><b>Slik</b>Ett spørsmål, mange korte svar fra ulike promotører.</li><li><b>Tester</b>Om bredden i teamet treffer flere typer søkere.</li></ul>
+        <h3 class="h-md">Vi spurte promotørene</h3>
+        <ul class="script"><li><b>Slik</b>Ett spørsmål, korte svar fra ulike promotører.</li><li><b>Tester</b>Om bredden i teamet treffer flere typer søkere.</li></ul>
+      </article>
+      <article class="ad ad-4 reveal" style="--d:.18s">
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-stand.jpg" alt="" loading="lazy" style="object-position:60% 40%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Idé 4</span>
+          <p class="hook" style="top:22%"><span>Veilederen min ga meg dette rådet etter første pitch</span></p>
+          <div class="rail"><i></i><i></i><i></i><i></i></div>
+          <div class="meta"><b>@face2face</b>Første forsøk mot andre forsøk.<br><span class="sp">Sponset</span></div>
+          <div class="cta">Søk på 1 minutt</div></div>
+        <h3 class="h-md">Promotør og veileder</h3>
+        <ul class="script"><li><b>Slik</b>Veilederen gir ett tips mellom to pitcher.</li><li><b>Tester</b>Om trygghet og veiledning får flere til å søke.</li></ul>
       </article>
       <article class="ad ad-5 reveal" style="--d:.24s">
-        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/felt-stand.jpg" alt="" loading="lazy" style="object-position:60% 40%"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Format 5</span>
-          <p class="hook"><span>Ting ingen sier om å selge på gata</span></p>
+        <div class="phone" aria-hidden="true"><div class="bg"></div><img class="shot" src="assets/img/ref-2.png" alt="" loading="lazy"><div class="shade"></div><div class="top"><span>Følger</span><b>For deg</b></div><span class="tag">Idé 5</span>
+          <p class="hook" style="top:19%;--h:6.4em"><span>Rangerer unnskyldningene jeg hører på gata</span></p>
           <div class="rail"><i></i><i></i><i></i><i></i></div>
-          <div class="meta"><b>@face2face</b>Del med en som trenger jobb.<br><span class="sp">Sponset</span></div>
-          <div class="cta">Prøv selv</div></div>
-        <h3 class="h-md">Trend med tekst</h3>
-        <ul class="script"><li><b>Slik</b>En populær lyd med tekst på skjermen og teamet i bildet.</li><li><b>Tester</b>Om humor og gjenkjennelse gir billigst rekkevidde.</li></ul>
+          <div class="meta"><b>@face2face</b>Nummer 1 hører jeg hver dag 😅<br><span class="sp">Sponset</span></div>
+          <div class="cta">Søk på 1 minutt</div></div>
+        <h3 class="h-md">Rangerer unnskyldningene</h3>
+        <ul class="script"><li><b>Slik</b>Humor i starten og et konkret svar på hver unnskyldning.</li><li><b>Tester</b>Om humor med verdi gir billigere søknader.</li></ul>
       </article>
     </div>
 
-    <p class="obj-note reveal">Bildene i format 1 til 3 er referanser fra andre TikTok-kontoer som viser stilen. I kampanjen filmes Face2face sine egne promotører.</p>
+    <p class="obj-note reveal">Bildene på idé 1, 2 og 5 er referanser fra andre TikTok-kontoer som viser stilen. I kampanjen filmes Face2face sine egne promotører.</p>
 
     <div class="sub reveal"><h3>Testmodellen</h3></div>
-    <p class="pins-lead reveal">Testen går fra fem formater til én vinner.</p>
+    <p class="pins-lead reveal">Testen går fra fem ideer til én vinner.</p>
     <div class="tm" id="testmodel">
       <div class="tm-row">
-        <div class="tm-head"><span class="tm-step">Steg 1</span><b>Fem formater</b><small>Likt budsjett</small></div>
+        <div class="tm-head"><span class="tm-step">Steg 1</span><b>Fem ideer</b><small>Likt budsjett</small></div>
         <div class="tm-bar">
-          <span style="--i:0">Rett i kamera</span><span style="--i:1" class="win">POV</span><span style="--i:2">Svar på kommentar</span><span style="--i:3">Spørsmål</span><span style="--i:4">Trend</span>
+          <span style="--i:0">Idé 1</span><span style="--i:1" class="win">Idé 2</span><span style="--i:2">Idé 3</span><span style="--i:3">Idé 4</span><span style="--i:4">Idé 5</span>
         </div>
-        <p class="tm-note">Alle fem får likt budsjett. Formatet som gir flest søkere, vinner. Her er POV brukt som eksempel.</p>
+        <p class="tm-note">Alle fem får likt budsjett. Ideen som gir flest søkere, vinner. Her er idé 2 brukt som eksempel.</p>
       </div>
       <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
       <div class="tm-row">
         <div class="tm-head"><span class="tm-step">Steg 2</span><b>Mer budsjett og fire nye videoer</b><small>Samme vinnerformat</small></div>
         <div class="tm-bar r2">
-          <span style="--i:0" class="win">Vinneren</span><span style="--i:1">Ny 1</span><span style="--i:2">Ny 2</span><span style="--i:3">Ny 3</span><span style="--i:4">Ny 4</span>
+          <span style="--i:0" class="win">Idé 2</span><span style="--i:1">Ny 1</span><span style="--i:2">Ny 2</span><span style="--i:3">Ny 3</span><span style="--i:4">Ny 4</span>
         </div>
         <p class="tm-note">Budsjettet flyttes til vinnerformatet, og jeg lager fire nye videoer i samme format. If it ain't broke, don't fix it.</p>
       </div>
@@ -1194,7 +1219,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       <p class="lead reveal">Tallene fra TikTok viser hva som skjer i appen. Resten måles i rekrutteringen, helt fram til ansettelse.</p>
     </div>
     <div class="measure">
-      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Dagens cost per hire sammenlignes med kampanjens. Den går ned når vi treffer de mest motiverte kandidatene.</p></article>
+      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Regnes som et gjennomsnitt: Hele annonsebudsjettet delt på antall ansatte. Her er snittet riktig mål, fordi hver krone skal fordeles på hver ansettelse. Dagens cost per hire sammenlignes med kampanjens, og den går ned når vi treffer de mest motiverte kandidatene.</p></article>
       <article class="card mcard reveal" style="--d:.06s"><span class="big">1 300<small>i dag</small></span><h3 class="h-md">Median visninger</h3><p>Median, ikke gjennomsnitt: Én viral video trekker snittet opp og gir et urealistisk bilde. Medianen viser hva en vanlig video faktisk får, og den skal opp når innholdet viser jobben.</p></article>
       <article class="card mcard reveal" style="--d:.12s"><span class="big">DM og skjema</span><h3 class="h-md">TikTok Insights</h3><p>Hvilke annonser fikk folk til å sende melding eller fylle ut skjemaet.</p></article>
       <article class="card mcard reveal"><span class="big">Hele løpet</span><h3 class="h-md">Fra kontakt til ansatt</h3><p>Data på alle som tok kontakt, kom på intervju og ble ansatt. Viser hvor godt det konverterer utenfor TikTok.</p></article>

@@ -859,6 +859,10 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 .ib-more-wrap{display:flex;justify-content:center;margin-top:clamp(16px,1.8vw,22px)}
 .ib-more{font:700 15px/1 var(--font-body);color:#fff;background:var(--pink);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 8px 24px rgba(236,0,140,.35);transition:background .2s,color .2s,transform .2s}
 .ib-more:hover{background:#fff;color:var(--pink);transform:translateY(-2px)}
+.principles.p4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mg-top{grid-template-columns:minmax(0,1fr)!important;max-width:720px}
+.budget{margin-bottom:clamp(28px,3vw,44px)}
+@media(max-width:760px){.principles.p4{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -958,7 +962,6 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <span class="aud2-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
         <div><b>Unge som<br><span class="accent" style="white-space:nowrap">trenger en jobb</span></b><p>18 til 24 år i Oslo, der kontoret ligger. Studenter og de som er ferdige med skolen, på jakt etter jobb på heltid eller deltid.</p></div>
       </div>
-      <blockquote class="aud-quote reveal">«Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.»</blockquote>
       </div>
     </div>
   </div>
@@ -1052,7 +1055,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <span class="arr" aria-hidden="true">→</span>
       <span class="new">Svar på innvendingene som gir lyst til å søke, med en CTA til slutt</span>
     </div>
-    <p class="obj-note reveal">Dette er en feil i innholdet i dag, og derfor kommer det først. Innvendingene skal besvares, men ikke som myter seeren sitter igjen med. Hvert svar ender med det positive: Ferdigheten, kollegaene, veiledningen og belønningen. Da mister ikke seeren motivasjonen for å søke.</p>
+    <p class="obj-note reveal">Dette er den største feilen i innholdet i dag, og derfor kommer det først. Hvert svar ender med det positive: Ferdigheten, kollegaene, veiledningen og belønningen.</p>
 
     <div class="sub reveal"><h3>Det målgruppen lurer på</h3></div>
     <p class="pins-lead reveal">Dette er spørsmålene og bekymringene unge har før de søker. Innholdet svarer på dem.</p>
@@ -1083,11 +1086,9 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
     </div>
 
     <div class="sub reveal"><h3>Slik blir innholdet</h3></div>
-    <div class="principles">
-      <article class="card reveal"><span class="k">Rotasjon</span><h3 class="h-md">Promotørene bytter på</h3><p>Promotørene bytter på å dele tips og erfaring foran kamera. Mange synes det er gøy, og det gir dem erfaring med markedsføring. Ingen ekstra ansettelser trengs.</p></article>
-      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">CTA på slutten av hver video</h3><p>Hver video ender med et tydelig og enkelt neste steg: «Søk på 1 minutt». Jo mindre handlingen krever av seeren, jo flere gjør den.</p></article>
-      <article class="card reveal" style="--d:.12s"><span class="k">Innvendinger</span><h3 class="h-md">Svar som motiverer</h3><p>Videoer som svarer på innvendinger som «jeg har aldri solgt før» og «salg er ikke for meg». Svaret ender alltid med hva seeren kan få. Lønn tas i samtalen med rekrutterer, ikke i videoene.</p></article>
-      <article class="card reveal"><span class="k">Rådgivning</span><h3 class="h-md">Salg som ferdighet</h3><p>Salg er en av de mest verdifulle ferdighetene du kan ha i arbeidslivet. Innholdet gir råd, ikke bare humor.</p></article>
+    <div class="principles p4">
+      <article class="card reveal"><span class="k">Rotasjon</span><h3 class="h-md">Promotørene bytter på</h3><p>Promotørene bytter på å dele tips og erfaring foran kamera. Jeg filmer og klipper.</p></article>
+      <article class="card reveal" style="--d:.06s"><span class="k">CTA</span><h3 class="h-md">CTA på slutten av hver video</h3><p>Hver video ender med et tydelig neste steg: «Søk på 1 minutt».</p></article>
       <article class="card reveal" style="--d:.06s"><span class="k">Pitchen</span><h3 class="h-md">Promotører deler oppskriften</h3><p>De ansatte deler pitchen sin rett i kamera og forklarer hvorfor den virker. Ekte salgssamtaler filmes bare med promotører som er komfortable med det, og kunden blir alltid anonymisert.</p></article>
       <article class="card reveal" style="--d:.12s"><span class="k">Spillelister</span><h3 class="h-md">Én spilleliste per pilar</h3><p>«Hvordan bli en god promotør», «Vår hverdag» og «Jobbmuligheter» samler svarene folk leter etter.</p></article>
     </div>
@@ -1176,11 +1177,9 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
     </div>
     <div class="ib-more-wrap"><button type="button" class="ib-more" id="ib-more" aria-expanded="false" aria-controls="ib-grid">Se alle 16 ideer</button></div>
 
-    <p class="oneliner vps reveal">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
-    <p class="obj-note reveal" style="text-align:center;max-width:720px;margin:14px auto 0;font-size:15.5px;color:var(--soft)">Videoer med fakta og mye verdi blir delt, lagret og kommentert mer enn videoer som bare prøver å være morsomme. Engasjementet i kommentarfeltet får algoritmen til å spre videoen videre. Det gir flere visninger, større rekkevidde på både innlegg og annonser, og flere som søker.</p>
 
     <div class="sub reveal"><h3>Humor med et budskap</h3></div>
-    <p class="pins-lead reveal">Humor er et av de sterkeste virkemidlene i kommunikasjon. Det er ikke enten humor eller verdi, men hvor humoren brukes og hva den kobles til. Humoren skal handle om jobben og budskapet vårt, ikke være relaterbar humor fra arbeidslivet som bare er gøy for de ansatte. Derfor er alle videoene bygget opp på samme måte.</p>
+    <p class="pins-lead reveal">Humoren skal handle om jobben og budskapet, ikke være relaterbar humor fra arbeidslivet. Alle videoene er bygget opp på samme måte.</p>
     <div class="hv reveal">
       <div class="hv-step"><span>1</span><b>Hook</b><p>Noe visuelt du gjør eller noe du sier, som stopper seeren de første 2 sekundene. Innen 3 til 5 sekunder er det tydelig at det handler om en jobb hos Face2face, så de som klikker, er de som faktisk er interessert.</p></div>
       <div class="hv-step"><span>2</span><b>Kjerne</b><p>Verdi: Et tips, et svar på en innvending eller et ekte innblikk i jobben.</p></div>
@@ -1236,7 +1235,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
     </div>
 
     <div class="setup" style="margin-bottom:clamp(8px,1vw,14px)">
-      <article class="card reveal"><span class="k">Organisk først</span><h3 class="h-md">Vi pusher det som allerede virker</h3><p>De organiske videoene som gjør det best, blir annonser med Spark Ads. Så lager vi mer av det formatet.</p></article>
+      <article class="card reveal"><span class="k">Organisk først</span><h3 class="h-md">Først organisk, så annonse</h3><p>Idé 1 til 5 publiseres først på Face2face-kontoen, og blir så annonser med Spark Ads. Da tar annonsene med seg likes og kommentarer.</p></article>
       <article class="card reveal" style="--d:.08s"><span class="k">Ingen tvang</span><h3 class="h-md">Annonser som ikke føles som annonser</h3><p>Annonsene som ikke ser ut eller føles som reklame, gjør det best. Da klikker seeren fordi de er interessert, ikke fordi de blir presset.</p></article>
     </div>
 
@@ -1308,14 +1307,22 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <div class="tm-bar r2">
           <span style="--i:0" class="win">Idé 2</span><span style="--i:1">Ny hook 1</span><span style="--i:2">Ny hook 2</span><span style="--i:3">Ny hook 3</span><span style="--i:4">Ny hook 4</span>
         </div>
-        <p class="tm-note">Vinneren flyttes til en egen skaleringskampanje med mer budsjett og Smart+, og får gå i fred. Fire nye varianter testes i en egen testkampanje, så de får en rettferdig sjanse. De beholder 80 % av vinnervideoen, og bare åpningen, de første 3 sekundene, eller CTA-en er ny. Da vet vi hva som gjør forskjellen. Bare nye vinnere flyttes inn i skaleringskampanjen. If it ain't broke, don't fix it.</p>
+        <p class="tm-note">Vinneren flyttes til en egen skaleringskampanje med mer budsjett og Smart+, og får gå i fred. Fire nye varianter testes i en egen testkampanje. De beholder 80 % av vinnervideoen, og bare åpningen eller CTA-en er ny. Bare nye vinnere flyttes inn i skaleringskampanjen.</p>
       </div>
       <div class="tm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
       <div class="tm-row">
         <div class="tm-head"><span class="tm-step">Steg 3</span><b>Analyser og test hele tiden</b><small>10 til 20 % av budsjettet</small></div>
         <div class="tm-bar r3"><span style="--i:0">Statistikk</span><span style="--i:1">KPI-analyse</span><span style="--i:2" class="win">Nye ideer</span></div>
-        <p class="tm-note">Annonser på TikTok blir fort utslitt. Derfor venter jeg ikke til effekten faller: 10 til 20 % av budsjettet går alltid til å teste nye ideer fra idébanken, så det er en ny vinner klar før den gamle mister effekt. KPI-ene forteller hvorfor en idé vant eller tapte, og innsikten brukes i neste runde.</p>
+        <p class="tm-note">Annonser på TikTok blir fort utslitt. Derfor går 10 til 20 % av budsjettet alltid til å teste nye ideer fra idébanken, så en ny vinner er klar før den gamle mister effekt.</p>
       </div>
+    </div>
+
+    <div class="sub reveal"><h3>Budsjettforslag</h3></div>
+    <p class="pins-lead reveal">Budsjettet styres av hvor mange promotører dere trenger. Tallene er et forslag til start, og justeres når de første resultatene kommer. Innholdet krever ingen ekstra produksjon, fordi jeg filmer og klipper selv.</p>
+    <div class="measure budget">
+      <article class="card mcard reveal"><span class="big">400 kr</span><h3 class="h-md">Målpris per søknad</h3><p>Målet er cost per hire under 4 000 kr. Hvis rundt 1 av 10 søkere blir ansatt, kan én søknad koste opptil 400 kr. Andelen justeres når vi vet hvor mange søkere som faktisk blir ansatt.</p></article>
+      <article class="card mcard reveal" style="--d:.06s"><span class="big">14 000 kr</span><h3 class="h-md">Steg 1: Testen</h3><p>Fem ideer × 200 kr per dag × 14 dager. 200 kr per dag er på nivå med TikToks minstebudsjett per annonsegruppe, og gir hver idé rundt 2 800 kr, nok til å vurdere den mot målprisen.</p></article>
+      <article class="card mcard reveal" style="--d:.12s"><span class="big">ca. 25 000 kr<small> / mnd</small></span><h3 class="h-md">Etter testen</h3><p>Rundt 85 % går til skaleringskampanjen med vinneren, og 10 til 20 % til nye tester. Med cost per hire under 4 000 kr gir det rundt seks ansettelser i måneden.</p></article>
     </div>
 
     <div class="forms">
@@ -1342,15 +1349,6 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <article class="card reveal"><span class="k">Lite friksjon</span><h3 class="h-md">Søk uten å forlate TikTok</h3><p>Instant Forms er den enkleste måten å melde interesse på. Skjemaet åpnes rett i appen, med feltene ferdig utfylt der det går.</p></article>
       <article class="card reveal" style="--d:.08s"><span class="k">Rask oppfølging</span><h3 class="h-md">Fra skjema til samtale</h3><p>Navn, telefon og når du kan starte. Svarene går rett til rekrutterer, som tar kontakt mens interessen er varm.</p></article>
       </div>
-    </div>
-
-    <div class="sub reveal"><h3>Lite friksjon, mer motivasjon</h3></div>
-    <p class="pins-lead reveal">Hvorfor det lønner seg å gjøre det enkelt å søke.</p>
-    <div class="chain">
-      <article class="chain-step reveal"><span class="n">1</span><h3 class="h-md">Enkel handling</h3><p>Jo mer en video krever av seeren for å søke, jo mindre motivasjon blir det igjen. Derfor er det ett trykk og et ferdig utfylt skjema.</p></article>
-      <article class="chain-step reveal" style="--d:.08s"><span class="n">2</span><h3 class="h-md">De mest motiverte søker</h3><p>Når terskelen er lav og budskapet er ærlig, er det de som virkelig vil ha jobben, som søker.</p></article>
-      <article class="chain-step reveal" style="--d:.16s"><span class="n">3</span><h3 class="h-md">Lavere cost per hire</h3><p>Riktige kandidater fra start gir færre intervjuer som ikke fører fram, og flere som blir.</p></article>
-      <article class="chain-step win reveal" style="--d:.24s"><span class="n">4</span><h3 class="h-md">Mer provisjon</h3><p>En motivert promotør gir alt den kan, og tjener mer i provisjon. Det er bra for promotøren og for Face2face.</p></article>
     </div>
 
     <div class="sub reveal"><h3>Fra visning til ansettelse</h3></div>
@@ -1390,11 +1388,11 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <p class="lead reveal">I denne rekkefølgen, fordi de første gir mest effekt for minst innsats.</p>
     </div>
     <ol class="prio5">
-      <li class="reveal"><div><b>Frisk opp profilen</b><span>Rettet mot 18 til 24 år i Oslo, med en bio som peker på lenken for å søke jobb.</span></div></li>
-      <li class="reveal" style="--d:.05s"><div><b>Gjør innholdet positivt</b><span>Vis de sterkeste grunnene til å jobbe med salg: Den beste ferdigheten i arbeidslivet, støttende kollegaer, veiledning, fastlønn og provisjon.</span></div></li>
-      <li class="reveal" style="--d:.1s"><div><b>Rotasjon foran kamera</b><span>Promotørene bytter på å dele tips og erfaring. Ansikter som går igjen bygger tillit, uten at noen må ansettes for det.</span></div></li>
-      <li class="reveal" style="--d:.15s"><div><b>La promotørene dele erfaringene sine</b><span>Ikke bare filming av jobben på gata. Promotørene forteller om sin egen jobberfaring og deler tips, så seerne lærer noe og får lyst til å prøve selv.</span></div></li>
-      <li class="reveal" style="--d:.2s"><div><b>Prioriter vinnerannonsene</b><span>Lag flere i samme format, og legg budsjettet på annonsen som gir flest søkere.</span></div></li>
+      <li class="reveal"><div><b>Frisk opp profilen</b><span>Bio rettet mot 18 til 24 år i Oslo, lenke til søknaden, tre festede videoer og én spilleliste per pilar.</span></div></li>
+      <li class="reveal" style="--d:.05s"><div><b>CTA i alle videoer</b><span>I dag ber bare 3 av 80 videoer seeren søke. Nå ender hver video med «Søk på 1 minutt».</span></div></li>
+      <li class="reveal" style="--d:.1s"><div><b>Svar på innvendingene</b><span>Den største feilen i innholdet i dag. Svarene ender med det positive, så seeren får lyst til å søke.</span></div></li>
+      <li class="reveal" style="--d:.15s"><div><b>Promotørene deler erfaring og tips</b><span>Faste ansikter på rundgang foran kamera. Jeg filmer og klipper.</span></div></li>
+      <li class="reveal" style="--d:.2s"><div><b>Test fem ideer, og skaler vinneren</b><span>Ideen med lavest pris per søknad flyttes til en egen skaleringskampanje, mens nye ideer testes hele tiden.</span></div></li>
     </ol>
   </div>
 </section>
@@ -1410,10 +1408,10 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <p class="lead reveal">Tallene fra TikTok viser hva som skjer i appen. Resten måles i rekrutteringen, helt fram til ansettelse.</p>
     </div>
     <div class="measure">
-      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Regnes som et gjennomsnitt: Hele annonsebudsjettet delt på antall ansatte. Her er snittet riktig mål, fordi hver krone skal fordeles på hver ansettelse. Dagens cost per hire sammenlignes med kampanjens, og den går ned når vi treffer de mest motiverte kandidatene.</p></article>
-      <article class="card mcard reveal" style="--d:.06s"><span class="big">1 300<small>i dag</small></span><h3 class="h-md">Median visninger</h3><p>Median, ikke gjennomsnitt: Én viral video trekker snittet opp og gir et urealistisk bilde. Medianen viser hva en vanlig video faktisk får, og den skal opp når innholdet viser jobben.</p></article>
+      <article class="card mcard reveal"><span class="big">4 000 til 5 000 kr<small>i dag</small></span><h3 class="h-md">Cost per hire</h3><p>Hele annonsebudsjettet delt på antall ansatte. Dagens tall sammenlignes med kampanjens, og målet er at det går ned.</p></article>
+      <article class="card mcard reveal" style="--d:.06s"><span class="big">1 300<small>i dag</small></span><h3 class="h-md">Median visninger</h3><p>Median, ikke gjennomsnitt, så én viral video ikke gir et urealistisk bilde. Den skal opp når innholdet viser jobben.</p></article>
       <article class="card mcard reveal" style="--d:.12s"><span class="big">DM og skjema</span><h3 class="h-md">TikTok Insights</h3><p>Hvilke annonser fikk folk til å sende melding eller fylle ut skjemaet.</p></article>
-      <article class="card mcard reveal"><span class="big">Hele løpet</span><h3 class="h-md">Fra kontakt til ansatt</h3><p>Data på alle som tok kontakt, kom på intervju og ble ansatt. Viser hvor godt det konverterer utenfor TikTok.</p></article>
+      <article class="card mcard reveal"><span class="big">Hele løpet</span><h3 class="h-md">Fra kontakt til ansatt</h3><p>Data på alle som tok kontakt, kom på intervju, ble ansatt og fortsatt jobber etter 90 dager. Viser hvor godt det konverterer utenfor TikTok.</p></article>
       <article class="card mcard reveal" style="--d:.06s"><span class="big">AI-analyse</span><h3 class="h-md">Videoanalyse med Claude Code</h3><p>Claude Code går gjennom videoene og finner hva som holder på seerne, støttet av statistikken fra TikTok Insights, som seertid og hvor folk faller av. Claude er koblet til andre AI-verktøy som samler data og innsikt, for eksempel om trender og konkurrenter. Funnene brukes til å forbedre neste video.</p></article>
     </div>
   </div>
@@ -1451,7 +1449,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <span role="cell" data-d="Tirsdag"><a class="pl-c" href="#ide-9"><b>Idé 9</b>Promotør og veileder</a></span>
         <span role="cell" data-d="Torsdag"><a class="pl-c" href="#ide-5"><b>Idé 5</b>Første dag og tredje uke</a></span>
         <span role="cell" data-d="Søndag"><a class="pl-c" href="#ide-7"><b>Idé 7</b>Spør en promotør</a></span>
-        <span class="pl-ad" role="cell" data-d="Annonser">Fredag, når alle fem er publisert, starter steg 1: Idé 1 til 5 som Spark Ads med likt budsjett i 10 til 14 dager.</span></div>
+        <span class="pl-ad" role="cell" data-d="Annonser">Fredag, når alle fem er publisert, starter steg 1: Idé 1 til 5 som Spark Ads med 200 kr per idé per dag i 10 til 14 dager.</span></div>
     </div>
 
     <div class="start-grid">
@@ -1462,7 +1460,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       <article class="card reveal" style="--d:.06s"><span class="k">Testregler</span><h3 class="h-md">Når en vinner kåres</h3><ul class="dots">
         <li><b>Alt annet er likt:</b> Samme målgruppe, Instant Form, CTA og budsjett i alle fem. Da er det ideen som testes.</li>
         <li><b>10 til 14 dager</b> per testrunde, fordi det tar tid fra noen søker til de møter til intervju.</li>
-        <li><b>Ingen endringer underveis:</b> Budsjettet endres ikke, og vinneren kåres ikke før testen er ferdig. Hver idé må ha brukt minst det dobbelte av målprisen per søknad før den vurderes.</li>
+        <li><b>Ingen endringer underveis:</b> Budsjettet endres ikke, og vinneren kåres ikke før testen er ferdig. Hver idé må ha brukt minst det dobbelte av målprisen per søknad, altså 800 kr, før den vurderes.</li>
         <li><b>Vinneren</b> er ideen med lavest pris per søknad som møter til intervju. Mange søkere til for høy pris er ingen vinner.</li>
         <li><b>Tidlige tegn:</b> Hvor mange som ser de første 3 sekundene (gjerne over 25 til 30 %), hvor lenge de ser og hvor mange som klikker. Det forklarer hvorfor en idé vant eller tapte.</li>
         <li><b>Manuelt budsjett i steg 1,</b> så testen blir rettferdig. Smart+ slås først på i steg 2, når vinneren er kåret.</li></ul></article>
@@ -1523,14 +1521,15 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <div class="eyebrow reveal"><span class="dot"></span><span class="label">Argumentene</span></div>
         <h2 class="display h-xl reveal" id="hvorfor-tittel">Hvorfor jeg vet at tiltakene funker</h2>
       </div>
-      <p class="lead reveal">Hvert tiltak i strategien bygger på et av disse prinsippene.</p>
+      <p class="lead reveal">Begrunnelsen for tiltakene, samlet på ett sted. Hvert tiltak i strategien bygger på et av disse prinsippene.</p>
     </div>
+    <p class="oneliner vps reveal" style="margin:0 auto clamp(24px,3vw,40px)">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
     <ol class="why">
-      <li class="reveal"><span>1</span><div><b>Konvertering er viktigere enn likes</b><p>Målet er ansettelser, ikke visninger. Derfor måles cost per hire, og hver video ender med en CTA.</p></div></li>
+      <li class="reveal"><span>1</span><div><b>Konvertering er viktigere enn likes</b><p>Målet er ansettelser, ikke visninger. Derfor måles cost per hire hele veien til ansettelse, og hver video ender med en CTA.</p></div></li>
       <li class="reveal" style="--d:.05s"><span>2</span><div><b>Verdi per sekund er mer verdifullt enn sekunder per verdi</b><p>Videoer med fakta og verdi blir delt, lagret og kommentert. Det er signalene algoritmen ser etter, så de når lenger og gir flere søknader enn videoer som bare er morsomme.</p></div></li>
       <li class="reveal" style="--d:.1s"><span>3</span><div><b>Engasjement sprer innholdet</b><p>Svar i kommentarfeltet og Stitch-videoer på kritiske kommentarer gir mer engasjement, og vekker nysgjerrigheten hos dem som tviler.</p></div></li>
       <li class="reveal"><span>4</span><div><b>En smal målgruppe treffer bedre</b><p>Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.</p></div></li>
-      <li class="reveal" style="--d:.05s"><span>5</span><div><b>Lite friksjon gir de mest motiverte søkerne</b><p>Når det er enkelt å søke, søker de som virkelig vil ha jobben. Det gir lavere cost per hire, og promotører som selger mer og tjener mer provisjon.</p></div></li>
+      <li class="reveal" style="--d:.05s"><span>5</span><div><b>Lite friksjon gir de mest motiverte søkerne</b><p>Jo mer det krever å søke, jo mindre motivasjon blir det igjen. Med ett trykk og et ferdig utfylt skjema søker de som virkelig vil ha jobben. Det gir færre intervjuer som ikke fører fram, lavere cost per hire, og promotører som selger mer og tjener mer provisjon.</p></div></li>
       <li class="reveal" style="--d:.1s"><span>6</span><div><b>Ekte folk bygger tillit</b><p>Promotører som deler egne erfaringer og et ekte arbeidsmiljø virker ikke fake. Folk vil jobbe med folk de liker å følge, og annonser som ikke føles som reklame får bedre respons.</p></div></li>
       <li class="reveal"><span>7</span><div><b>Skaler det som virker</b><p>If it ain't broke, don't fix it. Vinneren får gå i fred i en egen skaleringskampanje, mens nye ideer testes ved siden av, hele tiden.</p></div></li>
       <li class="reveal" style="--d:.05s"><span>8</span><div><b>Riktige tall gir riktige beslutninger</b><p>Median for visninger, fordi én viral video trekker snittet opp. Gjennomsnitt for cost per hire, fordi hver krone skal fordeles på hver ansettelse. Videoanalysen støttes av statistikk.</p></div></li>

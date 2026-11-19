@@ -795,6 +795,41 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 @media(max-width:1000px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:860px){.pillars{grid-template-columns:1fr}}
 @media(max-width:520px){.flow{grid-template-columns:1fr}}
+/* Utgangspunkt og merkevare */
+#utgangspunkt{padding-top:clamp(48px,6vw,96px)}
+#utgangspunkt h2{margin:14px 0 clamp(20px,2.4vw,30px)}
+.scs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.scs-card{padding:clamp(20px,2.2vw,28px);border-radius:28px;border:1px solid var(--line);background:var(--bg-card)}
+.scs-card.bad{border-color:rgba(255,90,90,.35)}
+.scs-card.good{border-color:var(--pink-line);background:radial-gradient(circle at 100% 0%,rgba(236,0,140,.2),rgba(236,0,140,0) 60%),var(--bg-card)}
+.scs-card .k,.vision .k,.value .k,.pains .k,.comp-card .k{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.scs-card p{margin:0;font-size:15.5px;line-height:1.55;color:var(--soft)}
+.vision{padding:clamp(22px,2.6vw,34px);border-radius:28px;border:1px solid var(--pink-line);background:radial-gradient(circle at 0% 50%,rgba(236,0,140,.22),rgba(236,0,140,0) 55%),var(--bg-card);margin-bottom:clamp(12px,1.4vw,18px)}
+.vision-q{margin:0 0 10px!important;font-family:var(--font-display);font-size:clamp(26px,3vw,40px)!important;line-height:1.15;color:#fff!important}
+.vision p{margin:0;max-width:760px;font-size:15.5px;line-height:1.55;color:var(--soft)}
+.values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.value{display:flex;flex-direction:column;gap:6px;padding:clamp(18px,2vw,24px);border-radius:24px;border:1px solid var(--line);background:var(--bg-card)}
+.value h3{font-size:17px!important;line-height:1.3}
+.value p{margin:0;font-size:14px;line-height:1.5;color:var(--soft);flex:1}
+.value small{align-self:flex-start;margin-top:8px;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--pink-soft);border:1px solid var(--pink-line);color:var(--pink-lt)}
+.voice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px);margin-top:clamp(12px,1.4vw,18px)}
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.dodont b{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.dodont .do{background:var(--pink);color:#fff}.dodont .dont{background:rgba(255,255,255,.1);color:var(--soft)}
+.dodont ul{margin:0;padding-left:18px;font-size:14px;line-height:1.5;color:var(--soft)}
+/* Pain points */
+.pains{margin-top:clamp(16px,1.8vw,22px);padding:clamp(18px,2vw,24px);border-radius:24px;border:1px solid var(--line);background:var(--bg-card)}
+.pains ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pains li{font-size:14px;line-height:1.45;color:var(--soft)}
+.pains li b{display:block;color:#fff;font-size:14.5px}
+/* Konkurrenter */
+.comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.comp-card p{margin:0 0 10px}
+.comp-take{padding-top:10px;border-top:1px solid var(--line);color:var(--text)!important}
+.comp-take b{color:var(--pink-lt)}
+@media(max-width:1000px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.scs,.comp,.voice-grid{grid-template-columns:1fr}.dodont{grid-template-columns:1fr}}
+@media(max-width:520px){.values{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -805,6 +840,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   <div class="wrap">
     <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true"></span>Face2face <small>× Daniel Ramslien</small></a>
     <nav class="nav" aria-label="Seksjoner">
+      <a href="#utgangspunkt">Utgangspunkt</a>
       <a href="#mal">Mål</a>
       <a href="#malgruppe">Målgruppe</a>
       <a href="#profil">Profil</a>
@@ -843,6 +879,38 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   <a class="hero-scroll" href="#mal" aria-label="Bla ned til målene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
 </section>
 
+<!-- UTGANGSPUNKT OG MERKEVARE -->
+<section class="section" id="utgangspunkt" aria-labelledby="utg-tittel">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="dot"></span><span class="label">Utgangspunkt</span></div>
+    <h2 class="display h-xl reveal" id="utg-tittel">Kort fortalt</h2>
+    <div class="scs">
+      <article class="scs-card reveal"><span class="k">Situasjon</span><p>Face2face trenger stadig nye promotører, og i dag koster hver ansettelse 4 000 til 5 000 kr. TikTok-kontoen har 80 videoer, men bare 3 av dem oppfordrer til å søke.</p></article>
+      <article class="scs-card bad reveal" style="--d:.06s"><span class="k">Problem</span><p>Innholdet er kontorhumor rettet mot bedriftskunder, ikke mot unge som trenger en jobb. Profilen har ingen lenke for å søke, og annonsene har ingen fast testmetode.</p></article>
+      <article class="scs-card good reveal" style="--d:.12s"><span class="k">Løsning</span><p>Ekte promotører som viser jobben på gata i Oslo, en CTA i hver video og annonser som testes fra fem ideer til én vinner, med søknad rett i TikTok. Målet er lavere cost per hire.</p></article>
+    </div>
+
+    <div class="sub reveal"><h3>Merkevaren på TikTok</h3></div>
+    <p class="pins-lead reveal">Face2face kombinerer strategi, konseptutvikling, salg og teknologi, og har laget kampanjer for merkevarer som Apple, Telia og American Express siden 1999. På TikTok skal merkevaren snakke til dem som skal bli promotører, ikke til bedriftskundene. Visjonen og verdiene under er hentet fra Face2face sin egen karriereside.</p>
+    <article class="vision reveal"><span class="k">Visjon</span><p class="vision-q">«Vi skal opp, og vi skal ha deg med»</p><p>Budskapet fra karrieresiden passer rett inn på TikTok. Det sier både at selskapet vokser, og at den som søker, får være med på reisen.</p></article>
+    <div class="values">
+      <article class="value reveal"><span class="k">Fellesskap</span><h3 class="h-md">«Ung, gnistrende arbeidsplass»</h3><p>De ansatte beskriver Face2face som en stor familie.</p><small>Pilar 2: Vår hverdag</small></article>
+      <article class="value reveal" style="--d:.05s"><span class="k">Læring</span><h3 class="h-md">«Bransjens mest solide opplæring»</h3><p>Teori, ti dager praksis med egen teamleder og videre utvikling i Face2face Campus.</p><small>Pilar 1: Hvordan bli en god promotør</small></article>
+      <article class="value reveal" style="--d:.1s"><span class="k">Belønning</span><h3 class="h-md">«Tjen gode penger fordi du gjør en god jobb»</h3><p>Garantilønn og provisjon. Tallene tas i samtalen med rekrutterer.</p><small>Pilar 3: Jobbmuligheter</small></article>
+      <article class="value reveal" style="--d:.15s"><span class="k">Muligheter</span><h3 class="h-md">Fra promotør til leder</h3><p>De fleste salgsdirektørene hos Face2face startet selv som promotører.</p><small>Pilar 3: Jobbmuligheter</small></article>
+    </div>
+    <div class="voice-grid">
+      <article class="card voice reveal"><span class="k">Tone of voice</span><h3 class="h-md">Positiv og motiverende</h3><p>For dem som vil jobbe og tjene penger. Samme energi som karrieresiden, men sagt av promotørene selv.</p>
+        <div class="dodont"><div><b class="do">Slik</b><ul><li>Snakk som en kollega, i du-form og på norsk</li><li>Ærlig og energisk, med ekte eksempler</li><li>«Du trenger ikke kunne noe fra før»</li></ul></div><div><b class="dont">Ikke slik</b><ul><li>Overselge eller love tall</li><li>Kontorsjargong og engelske hashtagger</li><li>Snakke ned til seeren</li></ul></div></div></article>
+      <article class="card voice reveal" style="--d:.06s"><span class="k">Visuell stil</span><h3 class="h-md">Gjenkjennelig i hver video</h3><ul class="dots">
+        <li>Hooken i rosa tekstboks med hvit tekst, i Face2face sin rosa farge</li>
+        <li>Samme font og norske undertekster i alle videoene</li>
+        <li>Filmet på mobil i 9:16, med ekte promotører på gata</li>
+        <li>Logo og CTA først på slutten, så det ikke føles som reklame</li></ul></article>
+    </div>
+  </div>
+</section>
+
 <!-- MÅL OG MÅLGRUPPE -->
 <section class="section" id="mal" aria-labelledby="mal-tittel">
   <div class="wrap mm">
@@ -861,6 +929,16 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <div><b>Unge som<br><span class="accent" style="white-space:nowrap">trenger en jobb</span></b><p>18 til 24 år i Oslo, der kontoret ligger. Studenter og de som er ferdige med skolen, på jakt etter jobb på heltid eller deltid.</p></div>
       </div>
       <blockquote class="aud-quote reveal">«Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.»</blockquote>
+      <div class="pains reveal">
+        <span class="k">Det de lurer på, og svaret i innholdet</span>
+        <ul>
+          <li><b>«Jeg har aldri solgt noe før»</b>Du trenger ikke kunne noe fra før. Opplæringen starter fra bunnen.</li>
+          <li><b>«Jeg er redd for å få nei»</b>Et nei er en del av jobben, og du lærer å takle det.</li>
+          <li><b>«Jeg trenger penger nå»</b>Fastlønn og provisjon, så innsatsen lønner seg.</li>
+          <li><b>«Er dette en ordentlig jobb?»</b>Ekte promotører, kjente merkevarer og egen teamleder.</li>
+          <li><b>«Jeg kjenner ingen der»</b>Du blir en del av et team fra første dag.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -947,6 +1025,15 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
       </ul></article>
     </div>
 
+    <div class="sub reveal"><h3>Konkurrentanalyse: Stjel som en kunstner</h3></div>
+    <p class="pins-lead reveal">Markedsførere lærer av dem som allerede lager innhold for den samme målgruppen. Ikke for å kopiere, men for å finne ut hva som fungerer, og hvorfor. Dette fant jeg da jeg søkte på TikTok etter promotørjobber.</p>
+    <div class="comp">
+      <article class="card comp-card reveal"><span class="k">Norske field marketing-byråer</span><h3 class="h-md">Nesten ikke på TikTok</h3><p>Byråer som AB Marketing og Brand Impact rekrutterer promotører via Finn, Karrierestart og egne sider. Jeg fant ingen aktive TikTok-kontoer der de rekrutterer.</p><p class="comp-take"><b>Mulighet:</b> Face2face kan bli det første byrået unge i Oslo ser på TikTok.</p></article>
+      <article class="card comp-card reveal" style="--d:.06s"><span class="k">Promotører i andre land</span><h3 class="h-md">Bak kulissene får klikk</h3><p>Videoer som lover et ærlig innblikk i promotørjobben får mye engasjement. En video som avslører hva promotører i Miami egentlig tjener, har over 25 000 likes.</p><p class="comp-take"><b>Lær:</b> Nysgjerrighet i hooken. Lønnstall tas fortsatt i samtalen, ikke i videoen.</p></article>
+      <article class="card comp-card reveal" style="--d:.12s"><span class="k">Norske jobbskapere</span><h3 class="h-md">Rett i kamera, på norsk</h3><p>Unge nordmenn som snakker om deltidsjobber og å tjene penger ved siden av studiene, når målgruppen med ærlige og personlige videoer.</p><p class="comp-take"><b>Lær:</b> Personlige historier rett i kamera, slik som idé 1.</p></article>
+    </div>
+    <p class="obj-note reveal">Hver fredag søker jeg på #promotør, #deltidsjobb og #sommerjobb, og sjekker trender og lyder i TikToks Insights Spotlight. Jeg noterer hook, format og engasjement, og de beste funnene blir nye ideer i idébanken.</p>
+
     <div class="sub reveal"><h3>USP-er: Det beste med å være promotør</h3></div>
     <p class="pins-lead reveal">Unique selling points, de sterkeste grunnene til å bli promotør. Disse brukes i innholdet.</p>
     <div class="usps">
@@ -985,7 +1072,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <dt>Ideer</dt><dd class="pl-ideas"><a href="#ide-9">Idé 9</a><a href="#ide-10">Idé 10</a><a href="#ide-11">Idé 11</a><a href="#ide-12">Idé 12</a><a href="#ide-13">Idé 13</a></dd></dl></article>
       <article class="pillar reveal" style="--d:.12s"><span class="pl-n">3</span><h3 class="h-md">Jobbmuligheter</h3><dl>
         <dt>Formål</dt><dd>Svare på innvendingene og gjøre seere til søkere. Her er CTA-en tydeligst.</dd>
-        <dt>Ideer</dt><dd class="pl-ideas"><a href="#ide-1">Idé 1</a><a href="#ide-2">Idé 2</a><a href="#ide-3">Idé 3</a></dd></dl></article>
+        <dt>Ideer</dt><dd class="pl-ideas"><a href="#ide-1">Idé 1</a><a href="#ide-2">Idé 2</a><a href="#ide-3">Idé 3</a><a href="#ide-14">Idé 14</a></dd></dl></article>
     </div>
 
     <div class="sub reveal"><h3>Idébank: Hook, opptak og caption</h3></div>
@@ -1043,16 +1130,12 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <dt>Hook</dt><dd class="ib-hook">«Kollegaene mine i lunsjpausen»</dd>
         <dt>Dette filmes</dt><dd>Ekte øyeblikk der promotørene har det kjekt sammen: Lunsj, prat i pausen og turen til jobb. Ikke regissert, bare filmet som det er. Det viser et godt arbeidsmiljø uten at det føles fake.</dd>
         <dt>Caption</dt><dd class="ib-cap">Lunsjpausen er det beste med dagen 😂 Vil du bli en av oss? Lenken i bio. #kollegaer #promotør #jobbioslo</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s" id="ide-14"><div class="ib-top"><span class="ib-n">Idé 14</span><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Fra promotør til leder</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Jeg startet som promotør. Nå leder jeg et team»</dd>
+        <dt>Dette filmes</dt><dd>En teamleder som startet som promotør, forteller kort om veien dit, filmet på gata med teamet i bakgrunnen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">De fleste salgsdirektørene hos oss startet som promotører 🚀 Hvor vil du være om ett år? Søk via lenken i bio. #karriere #promotør #jobbioslo</dd></dl></article>
     </div>
 
-    <article class="selfie steal reveal">
-      <div class="selfie-ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 50l22-22"/><path d="M36 28l6-14 8 8-14 6"/><path d="M10 54l4-4"/><circle cx="46" cy="46" r="8"/><path d="M46 42v8M42 46h8"/></svg></div>
-      <div>
-        <span class="k">Inspirasjon</span>
-        <h3 class="h-md">Stjel som en kunstner</h3>
-        <p>Jeg følger med på hva som fungerer og ikke fungerer hos andre som rekrutterer promotører på TikTok: Hooks, formater og hva kommentarfeltet reagerer på. Hver fredag sjekker jeg også nye trender og lyder i TikToks Insights Spotlight. Det beste tilpasses Face2face sin stil og blir nye ideer i idébanken.</p>
-      </div>
-    </article>
     <p class="oneliner vps reveal">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
     <p class="obj-note reveal" style="text-align:center;max-width:720px;margin:14px auto 0;font-size:15.5px;color:var(--soft)">Videoer med fakta og mye verdi blir delt, lagret og kommentert mer enn videoer som bare prøver å være morsomme. Engasjementet i kommentarfeltet får algoritmen til å spre videoen videre. Det gir flere visninger, større rekkevidde på både innlegg og annonser, og flere som søker.</p>
 

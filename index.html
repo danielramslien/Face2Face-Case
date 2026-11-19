@@ -1178,7 +1178,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <dt>Dette filmes</dt><dd>En promotør som er komfortabel med å bli filmet, har mikrofon på og svarer kunder live på gata. Kunden sensureres, får mørkere stemme og blir anonymisert, slik som i TV-programmer som Grensevakten. Da trenger vi ikke spørre kunden om tillatelse. Etterpå forklarer promotøren hva hen gjorde, og hvorfor.</dd>
         <dt>Caption</dt><dd class="ib-cap">En ekte samtale fra gata i dag 🎤 Hva ville du sagt? Skriv i kommentarene. Søk på 1 min via lenken i bio. #promotør #salgstips #jobbioslo</dd></dl></article>
     </div>
-    <div class="ib-more-wrap"><button type="button" class="ib-more" id="ib-more" aria-expanded="false" aria-controls="ib-grid">Se mer</button></div>
+    <div class="ib-more-wrap"><button type="button" class="ib-more" id="ib-more" aria-expanded="false" aria-controls="ib-grid">Se 12 til</button></div>
 
 
     <div class="sub reveal"><h3>Humor med et budskap</h3></div>
@@ -1629,7 +1629,7 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
   function set(open){
     grid.classList.toggle('collapsed', !open);
     btn.setAttribute('aria-expanded', open);
-    btn.textContent = open ? 'Vis færre' : 'Se mer';
+    btn.textContent = open ? 'Vis færre' : 'Se ' + (total - 4) + ' til';
     grid.querySelectorAll('.ib').forEach(el => el.classList.add('in'));
   }
   btn.addEventListener('click', () => {

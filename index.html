@@ -855,6 +855,10 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 /* Tynnere tekstbokser, som tekst i en ekte TikTok */
 .phone .hook{left:14px;right:14px;font-size:clamp(11px,.82vw,13px)!important}
 .phone .hook span{padding:5px 8px;border-radius:10px;line-height:1.2;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.ib-grid.collapsed .ib:nth-child(n+5){display:none}
+.ib-more-wrap{display:flex;justify-content:center;margin-top:clamp(16px,1.8vw,22px)}
+.ib-more{font:700 15px/1 var(--font-body);color:#fff;background:var(--pink);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 8px 24px rgba(236,0,140,.35);transition:background .2s,color .2s,transform .2s}
+.ib-more:hover{background:#fff;color:var(--pink);transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -1104,7 +1108,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 
     <div class="sub reveal"><h3>Idébank: Hook, opptak og caption</h3></div>
     <p class="pins-lead reveal">Ferdige oppskrifter promotørene kan filme rett fra. Hooken står som tekst på skjermen og er det første som blir sagt. Alle videoene ender med en CTA. Idé 1 til 5 testes som annonser, og alle ideene kan byttes inn.</p>
-    <div class="ib-grid">
+    <div class="ib-grid collapsed" id="ib-grid">
       <article class="ib reveal" id="ide-1"><div class="ib-top"><span class="ib-n">Idé 1</span><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Selfie fra gata</h3><dl>
         <dt>Hook</dt><dd class="ib-hook">«Derfor jobber jeg som promotør»</dd><dd class="ib-hook">«Pitchen jeg bruker når folk allerede har sagt nei i dag»</dd><dd class="ib-hook">«Folk sier at promotering er svindel»</dd>
         <dt>Dette filmes</dt><dd>Promotøren holder nettbrettet i den ene hånden og mobilen i den andre, og filmer seg selv mens hen forteller fakta og det beste med jobben. Det ser ut som en helt vanlig video fra en person, ikke som reklame.</dd>
@@ -1170,6 +1174,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <dt>Dette filmes</dt><dd>En promotør som er komfortabel med å bli filmet, har mikrofon på og svarer kunder live på gata. Kunden sensureres, får mørkere stemme og blir anonymisert, slik som i TV-programmer som Grensevakten. Da trenger vi ikke spørre kunden om tillatelse. Etterpå forklarer promotøren hva hen gjorde, og hvorfor.</dd>
         <dt>Caption</dt><dd class="ib-cap">En ekte samtale fra gata i dag 🎤 Hva ville du sagt? Skriv i kommentarene. Søk på 1 min via lenken i bio. #promotør #salgstips #jobbioslo</dd></dl></article>
     </div>
+    <div class="ib-more-wrap"><button type="button" class="ib-more" id="ib-more" aria-expanded="false" aria-controls="ib-grid">Se alle 16 ideer</button></div>
 
     <p class="oneliner vps reveal">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
     <p class="obj-note reveal" style="text-align:center;max-width:720px;margin:14px auto 0;font-size:15.5px;color:var(--soft)">Videoer med fakta og mye verdi blir delt, lagret og kommentert mer enn videoer som bare prøver å være morsomme. Engasjementet i kommentarfeltet får algoritmen til å spre videoen videre. Det gir flere visninger, større rekkevidde på både innlegg og annonser, og flere som søker.</p>
@@ -1627,6 +1632,25 @@ function railUpdate(){
   rail.classList.toggle('show', ref >= tops[0] - innerHeight*.3);
 }
 addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize', railUpdate); addEventListener('load', railUpdate); railUpdate();
+/* Idébank: Vis fire ideer, og alle ved klikk */
+(function(){
+  const grid = document.getElementById('ib-grid'), btn = document.getElementById('ib-more'); if (!grid || !btn) return;
+  const total = grid.querySelectorAll('.ib').length;
+  function set(open){
+    grid.classList.toggle('collapsed', !open);
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Vis færre' : 'Se alle ' + total + ' ideer';
+    grid.querySelectorAll('.ib').forEach(el => el.classList.add('in'));
+  }
+  btn.addEventListener('click', () => {
+    const open = grid.classList.contains('collapsed');
+    set(open);
+    if (!open) grid.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  function openFor(hash){ if (/^#ide-\d+$/.test(hash) && grid.classList.contains('collapsed')) set(true); }
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#ide-"]'); if (a) openFor(a.getAttribute('href')); }, true);
+  openFor(location.hash);
+})();
 /* Instant Form: Spiller av utfyllingen i loop */
 (function(){
   const box = document.querySelector('.ifm'); if (!box) return;

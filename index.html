@@ -830,6 +830,15 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 @media(max-width:1000px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:860px){.scs,.comp,.voice-grid{grid-template-columns:1fr}.dodont{grid-template-columns:1fr}}
 @media(max-width:520px){.values{grid-template-columns:1fr}}
+/* Hvorfor det funker */
+.why{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.why li{display:flex;gap:14px;padding:clamp(18px,2vw,24px);border-radius:24px;border:1px solid var(--line);background:var(--bg-card)}
+.why li:last-child{border-color:var(--pink-line);background:radial-gradient(circle at 100% 0%,rgba(236,0,140,.2),rgba(236,0,140,0) 60%),var(--bg-card)}
+.why li>span{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--pink);color:#fff;font-weight:800;font-size:14px}
+.why b{display:block;font-size:16px;line-height:1.3;margin-bottom:6px}
+.why p{margin:0;font-size:14px;line-height:1.5;color:var(--soft)}
+@media(max-width:1000px){.why{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.why{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1029,7 +1038,7 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
     <p class="pins-lead reveal">Markedsførere lærer av dem som allerede lager innhold for den samme målgruppen. Ikke for å kopiere, men for å finne ut hva som fungerer, og hvorfor. Dette fant jeg da jeg søkte på TikTok etter promotørjobber.</p>
     <div class="comp">
       <article class="card comp-card reveal"><span class="k">Norske field marketing-byråer</span><h3 class="h-md">Nesten ikke på TikTok</h3><p>Byråer som AB Marketing og Brand Impact rekrutterer promotører via Finn, Karrierestart og egne sider. Jeg fant ingen aktive TikTok-kontoer der de rekrutterer.</p><p class="comp-take"><b>Mulighet:</b> Face2face kan bli det første byrået unge i Oslo ser på TikTok.</p></article>
-      <article class="card comp-card reveal" style="--d:.06s"><span class="k">Promotører i andre land</span><h3 class="h-md">Bak kulissene får klikk</h3><p>Videoer som lover et ærlig innblikk i promotørjobben får mye engasjement. En video som avslører hva promotører i Miami egentlig tjener, har over 25 000 likes.</p><p class="comp-take"><b>Lær:</b> Nysgjerrighet i hooken. Lønnstall tas fortsatt i samtalen, ikke i videoen.</p></article>
+      <article class="card comp-card reveal" style="--d:.06s"><span class="k">Nattklubbpromotører i USA</span><h3 class="h-md">Avsløring i intervjuform</h3><p>En podkastvideo der en nattklubbpromotør i Miami forteller hva han tjener, har 25 900 likes og over 1 300 lagringer. Det er en annen jobb enn hos Face2face, men formatet virker.</p><p class="comp-take"><b>Lær:</b> Intervju og en «avsløring» i hooken skaper nysgjerrighet. Lønnstall tas fortsatt i samtalen, ikke i videoen.</p></article>
       <article class="card comp-card reveal" style="--d:.12s"><span class="k">Norske jobbskapere</span><h3 class="h-md">Rett i kamera, på norsk</h3><p>Unge nordmenn som snakker om deltidsjobber og å tjene penger ved siden av studiene, når målgruppen med ærlige og personlige videoer.</p><p class="comp-take"><b>Lær:</b> Personlige historier rett i kamera, slik som idé 1.</p></article>
     </div>
     <p class="obj-note reveal">Hver fredag søker jeg på #promotør, #deltidsjobb og #sommerjobb, og sjekker trender og lyder i TikToks Insights Spotlight. Jeg noterer hook, format og engasjement, og de beste funnene blir nye ideer i idébanken.</p>
@@ -1483,6 +1492,30 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
         <div><b>0 → 20</b><span>faste kunder for et musikkstudio via sosiale medier</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- HVORFOR DET FUNKER -->
+<section class="section" id="hvorfor" aria-labelledby="hvorfor-tittel">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow reveal"><span class="dot"></span><span class="label">Argumentene</span></div>
+        <h2 class="display h-xl reveal" id="hvorfor-tittel">Hvorfor jeg vet at tiltakene funker</h2>
+      </div>
+      <p class="lead reveal">Hvert tiltak i strategien bygger på et av disse prinsippene.</p>
+    </div>
+    <ol class="why">
+      <li class="reveal"><span>1</span><div><b>Konvertering er viktigere enn likes</b><p>Målet er ansettelser, ikke visninger. Derfor måles cost per hire, og hver video ender med en CTA.</p></div></li>
+      <li class="reveal" style="--d:.05s"><span>2</span><div><b>Verdi per sekund er mer verdifullt enn sekunder per verdi</b><p>Videoer med fakta og verdi blir delt, lagret og kommentert. Det er signalene algoritmen ser etter, så de når lenger og gir flere søknader enn videoer som bare er morsomme.</p></div></li>
+      <li class="reveal" style="--d:.1s"><span>3</span><div><b>Engasjement sprer innholdet</b><p>Svar i kommentarfeltet og Stitch-videoer på kritiske kommentarer gir mer engasjement, og vekker nysgjerrigheten hos dem som tviler.</p></div></li>
+      <li class="reveal"><span>4</span><div><b>En smal målgruppe treffer bedre</b><p>Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.</p></div></li>
+      <li class="reveal" style="--d:.05s"><span>5</span><div><b>Lite friksjon gir de mest motiverte søkerne</b><p>Når det er enkelt å søke, søker de som virkelig vil ha jobben. Det gir lavere cost per hire, og promotører som selger mer og tjener mer provisjon.</p></div></li>
+      <li class="reveal" style="--d:.1s"><span>6</span><div><b>Ekte folk bygger tillit</b><p>Promotører som deler egne erfaringer og et ekte arbeidsmiljø virker ikke fake. Folk vil jobbe med folk de liker å følge, og annonser som ikke føles som reklame får bedre respons.</p></div></li>
+      <li class="reveal"><span>7</span><div><b>Skaler det som virker</b><p>If it ain't broke, don't fix it. Budsjettet flyttes til ideen som gir flest søkere, og nye videoer lages i samme format.</p></div></li>
+      <li class="reveal" style="--d:.05s"><span>8</span><div><b>Riktige tall gir riktige beslutninger</b><p>Median for visninger, fordi én viral video trekker snittet opp. Gjennomsnitt for cost per hire, fordi hver krone skal fordeles på hver ansettelse. Videoanalysen støttes av statistikk.</p></div></li>
+      <li class="reveal" style="--d:.1s"><span>9</span><div><b>Det har fungert for meg</b><p>Med de samme prinsippene har jeg fått over 863 000 organiske visninger på fire TikTok-videoer og 9,1 % engasjement, over dobbelt så høyt som snittet.</p></div></li>
+    </ol>
   </div>
 </section>
 

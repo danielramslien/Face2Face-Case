@@ -843,6 +843,14 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 .comp-link:hover{text-decoration:underline}
 .plan-row{grid-template-columns:1fr 1.25fr 1.25fr 1.25fr 1.5fr}
 @media(max-width:860px){.plan-row{grid-template-columns:1fr 1fr}}
+/* Mål over målgruppe */
+.mm{grid-template-columns:1fr!important;gap:clamp(40px,5vw,72px)}
+.mm-goals{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+#malgruppe{padding-top:0!important}
+.mg-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,36px);align-items:center}
+.mg-top .aud-quote{margin:0}
+.pains ul{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 22px}
+@media(max-width:860px){.mm-goals,.mg-top{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -937,11 +945,13 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
     </div>
     <div class="mm-col" id="malgruppe">
       <h2 class="display h-xl reveal" id="malgruppe-tittel">Målgruppe</h2>
+      <div class="mg-top">
       <div class="aud2 mm-aud reveal">
         <span class="aud2-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
         <div><b>Unge som<br><span class="accent" style="white-space:nowrap">trenger en jobb</span></b><p>18 til 24 år i Oslo, der kontoret ligger. Studenter og de som er ferdige med skolen, på jakt etter jobb på heltid eller deltid.</p></div>
       </div>
       <blockquote class="aud-quote reveal">«Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.»</blockquote>
+      </div>
       <div class="pains reveal">
         <span class="k">Det de lurer på, og svaret i innholdet</span>
         <ul>

@@ -703,6 +703,51 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
 @media(min-width:1560px){.prail a.active span{opacity:1;transform:translate(0,-50%);color:#fff}}
 @media(max-width:899px){.prail{display:none}}
 .aud-quote{margin:clamp(18px,2vw,26px) 0 0;padding:4px 0 4px 18px;border-left:3px solid var(--pink);font-family:var(--font-display);font-size:clamp(20px,1.9vw,26px);line-height:1.3;color:var(--text)}
+/* Idébank */
+.ib-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.ib{padding:clamp(20px,2.2vw,28px);border-radius:28px;border:1px solid var(--line);background:var(--bg-card);transition:border-color .3s,transform .35s var(--ease)}
+.ib:hover{border-color:var(--pink-line);transform:translateY(-3px)}
+.ib-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.ib .k{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pink);margin:0}
+.ib-tag{flex:none;font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;white-space:nowrap}
+.ib-tag.v,.cal-day.v .cal-d,.mix-bar .v{background:var(--pink);color:#fff}
+.ib-tag.h,.mix-bar .h{background:var(--pink-soft);color:var(--pink-lt);border:1px solid var(--pink-line)}
+.ib-tag.d,.mix-bar .d{background:rgba(255,255,255,.08);color:var(--soft);border:1px solid var(--line)}
+.ib h3{margin-bottom:12px}
+.ib dl{margin:0;display:grid;gap:4px}
+.ib dt{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.ib dd{margin:0;font-size:14.5px;line-height:1.5;color:var(--soft)}
+.ib dd.ib-hook{font-weight:700;color:var(--pink-lt);font-size:15.5px}
+.ib dd.ib-cap{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.14);color:#e9e9e9}
+/* Humor eller verdi */
+.hv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.hv-step{padding:clamp(20px,2.2vw,26px);border-radius:24px;border:1px solid var(--line);background:var(--bg-card)}
+.hv-step span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--pink);color:#fff;font-weight:800;margin-bottom:12px}
+.hv-step b{display:block;font-size:17px;margin-bottom:6px}
+.hv-step p{margin:0;font-size:14.5px;color:var(--soft);line-height:1.5}
+.mix{margin-top:clamp(14px,1.6vw,20px)}
+.mix-bar{display:flex;gap:6px;height:42px}
+.mix-bar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:700;border-radius:12px;padding:0 8px;text-align:center;line-height:1.15}
+.mix p{margin:10px 0 0;font-size:14.5px;color:var(--soft)}
+/* Innholdskalender */
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.cal-day{display:flex;flex-direction:column;gap:6px;min-height:170px;padding:14px;border-radius:20px;border:1px solid var(--line);background:var(--bg-card)}
+.cal-d{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--soft)}
+.cal-day.h .cal-d{background:var(--pink-soft);color:var(--pink-lt);border:1px solid var(--pink-line)}
+.cal-day.rec{border-color:var(--pink-line);background:radial-gradient(circle at 50% 0%,rgba(236,0,140,.2),rgba(236,0,140,0) 70%),var(--bg-card)}
+.cal-day.off{background:transparent;border-style:dashed}
+.cal-t{font-size:12.5px;font-weight:700;color:var(--pink-lt)}
+.cal-day b{font-size:15px;line-height:1.3}
+.cal-day p{margin:0;font-size:13px;color:var(--soft);line-height:1.45}
+.cal-sheet{margin-top:clamp(14px,1.6vw,20px);padding:clamp(18px,2vw,24px);border-radius:24px;border:1px solid var(--line);background:var(--bg-card)}
+.cal-sheet-t{margin:0 0 14px;font-size:15px;color:var(--soft)}
+.cal-table{display:grid;font-size:13.5px}
+.cal-row{display:grid;grid-template-columns:.8fr 1fr 2fr 1fr .8fr 1fr;gap:12px;padding:10px 4px;border-top:1px solid var(--line);align-items:center;color:var(--soft)}
+.cal-head{border-top:0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.st{font-style:normal;font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.st.pub{background:var(--pink);color:#fff}.st.cut{background:var(--pink-soft);color:var(--pink-lt)}.st.rec{background:rgba(255,255,255,.1);color:#fff}.st.idea{border:1px dashed rgba(255,255,255,.25);color:var(--soft)}
+@media(max-width:1000px){.cal{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:860px){.ib-grid,.hv{grid-template-columns:1fr}.cal{grid-template-columns:repeat(2,minmax(0,1fr))}.cal-day{min-height:0}.cal-row{grid-template-columns:1fr 1fr}.cal-head{display:none}.mix-bar{height:auto}.mix-bar i{padding:8px}}
 </style>
 </head>
 <body>
@@ -768,7 +813,7 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
         <span class="aud2-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
         <div><b>Unge som<br><span class="accent" style="white-space:nowrap">trenger en jobb</span></b><p>18 til 24 år. Studenter og de som er ferdige med skolen, på jakt etter jobb på heltid eller deltid.</p></div>
       </div>
-      <blockquote class="aud-quote reveal">«Jo mer spesifikk og smal målgruppen er, jo lettere er det å lage målrettet innhold og å finne kandidatene vi ønsker.»</blockquote>
+      <blockquote class="aud-quote reveal">«Jo smalere og mer spesifikk målgruppen er, desto lettere er det å lage målrettet innhold og finne de kandidatene vi ønsker.»</blockquote>
     </div>
   </div>
 </section>
@@ -882,18 +927,76 @@ footer{padding:40px 0 30px;text-align:center;font-size:13px;color:var(--faint)}
       </div>
     </article>
 
-    <div class="sub reveal"><h3>Flere innholdsideer</h3></div>
-    <p class="pins-lead reveal">Alle videoene ender med en CTA.</p>
-    <div class="ideas">
-      <article class="idea reveal"><span class="k">Hvordan bli en god promotør</span><h3 class="h-md">Ukens tips</h3><p class="idea-hook">«Det viktigste rådet jeg gir nye promotører»</p><p>En erfaren promotør gir ett konkret råd.</p></article>
-      <article class="idea reveal" style="--d:.05s"><span class="k">Hvordan bli en god promotør</span><h3 class="h-md">Pitchen min</h3><p class="idea-hook">«Dette er hele pitchen min»</p><p>Filmet på avstand, med forbipasserende anonymisert.</p></article>
-      <article class="idea reveal" style="--d:.1s"><span class="k">Hvordan bli en god promotør</span><h3 class="h-md">Pitch-duell</h3><p class="idea-hook">«Hvem av oss selger best? Dere bestemmer»</p><p>To promotører pitcher samme produkt, og kommentarfeltet kårer en vinner.</p></article>
-      <article class="idea reveal"><span class="k">Vår hverdag</span><h3 class="h-md">Morgenmøtet</h3><p class="idea-hook">«Slik starter vi hver dag»</p><p>Energien, målene for dagen og teamet.</p></article>
-      <article class="idea reveal" style="--d:.05s"><span class="k">Vår hverdag</span><h3 class="h-md">Turnéteamet</h3><p class="idea-hook">«Tre byer på én uke»</p><p>Reise, nye byer, torg og middag med gjengen.</p></article>
+    <div class="sub reveal"><h3>Idébank: Hook, opptak og caption</h3></div>
+    <p class="pins-lead reveal">Ferdige oppskrifter promotørene kan filme rett fra. Hooken står som tekst på skjermen og er det første som blir sagt. Alle videoene ender med en CTA.</p>
+    <div class="ib-grid">
+      <article class="ib reveal"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Ukens tips</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Det viktigste rådet jeg gir nye promotører»</dd>
+        <dt>Dette filmes</dt><dd>En erfaren promotør rett i kamera på torget. Ett konkret råd, et eksempel fra en ekte dag og CTA til slutt. 20 til 30 sekunder.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Ett råd som gjorde de første ukene mye lettere 💡 Lurer du på noe om jobben? Spør i kommentarene, eller søk på 1 min via lenken i bio. #promotør #deltidsjobb #jobbioslo</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Pitchen min</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Dette er hele pitchen min. Den tar 20 sekunder»</dd>
+        <dt>Dette filmes</dt><dd>Pitchen filmet på avstand, med forbipasserende anonymisert. Promotøren forklarer hvert steg med voiceover og tekst på skjermen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Åpning, spørsmål og avslutning. Slik er pitchen bygget opp 🎯 Vil du lære det selv? Lenken i bio. #salgstips #promotør #lærsalg</dd></dl></article>
+      <article class="ib reveal"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Pitch-duell</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Hvem av oss selger best? Dere bestemmer»</dd>
+        <dt>Dette filmes</dt><dd>To promotører pitcher den samme hverdagsgjenstanden, for eksempel en kulepenn, rett i kamera. Delt skjerm og poengtavle til slutt.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Runde 1 🥊 Stem i kommentarene. Neste uke møter vinneren en ny utfordrer. Bli med på laget via lenken i bio. #pitchduell #promotør #salg</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Hvordan bli en god promotør</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Rangerer unnskyldningene</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Rangerer unnskyldningene jeg hører på gata»</dd>
+        <dt>Dette filmes</dt><dd>Promotøren holder opp lapper med vanlige svar som «Jeg har ikke tid» og «Jeg har allerede», og rangerer dem med glimt i øyet. Etter hver lapp: Slik svarer jeg. Ingen forbipasserende blir vist eller gjort narr av.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Nummer 1 hører jeg hver eneste dag 😅 Et nei er en del av jobben, og du lærer å takle det. Søk via lenken i bio. #promotør #salgstips #jobb</dd></dl></article>
+      <article class="ib reveal"><div class="ib-top"><span class="k">Vår hverdag</span><span class="ib-tag h">Humor med verdi</span></div><h3 class="h-md">Første dag og tredje uke</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«POV: Første dag som promotør vs. tredje uke»</dd>
+        <dt>Dette filmes</dt><dd>Samme promotør spiller begge rollene. Først nervøs med notatlapp, så rolig og trygg på torget. Avslutter med at hen fikk veiledning og hjelp underveis.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Alle starter et sted. Du får veiledning og hjelp hele veien 🙌 Søk på 1 min via lenken i bio. #førstejobb #promotør #deltidsjobb</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Vår hverdag</span><span class="ib-tag d">Hverdag</span></div><h3 class="h-md">Morgenmøtet</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Slik starter vi hver dag»</dd>
+        <dt>Dette filmes</dt><dd>Raske klipp fra morgenmøtet: Dagens mål, high fives, kaffe og teamet som går ut på gata. Trendlyd og tekst på skjermen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Morgenmøte, mål for dagen og ut på gata ☀️ Vil du være med? Lenken i bio. #vårhverdag #promotør #jobbioslo</dd></dl></article>
+      <article class="ib reveal"><div class="ib-top"><span class="k">Vår hverdag</span><span class="ib-tag d">Hverdag</span></div><h3 class="h-md">Turnéteamet</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Tre byer på én uke med jobben»</dd>
+        <dt>Dette filmes</dt><dd>Vlogg fra en turnéuke: Reisen, torget i en ny by, pausene og middag med gjengen.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Ny by, nytt torg, samme gjeng 🚆 Søk via lenken i bio. #turné #promotør #jobbinorge</dd></dl></article>
+      <article class="ib reveal" style="--d:.06s"><div class="ib-top"><span class="k">Jobbmuligheter</span><span class="ib-tag v">Verdi</span></div><h3 class="h-md">Spør en promotør</h3><dl>
+        <dt>Hook</dt><dd class="ib-hook">«Svar til @bruker: Hva gjør du når ingen vil stoppe?»</dd>
+        <dt>Dette filmes</dt><dd>Svarvideo på en ekte kommentar. Promotøren svarer rett i kamera med ett konkret grep, og ber seerne stille neste spørsmål.</dd>
+        <dt>Caption</dt><dd class="ib-cap">Godt spørsmål! Slik gjør jeg det 👇 Still ditt spørsmål i kommentarene, så svarer vi i neste video. #spørenpromotør #promotør #jobb</dd></dl></article>
     </div>
 
     <p class="oneliner vps reveal">Verdi per sekund er mer verdifullt enn <span class="accent">sekunder per verdi.</span></p>
     <p class="obj-note reveal" style="text-align:center;max-width:720px;margin:14px auto 0;font-size:15.5px;color:var(--soft)">Videoer med fakta og mye verdi gir langt flere søknader enn morsomme og humoristiske videoer, selv om de humoristiske går viralt eller får flere visninger.</p>
+
+    <div class="sub reveal"><h3>Humor eller verdi?</h3></div>
+    <p class="pins-lead reveal">Begge, men i riktig rekkefølge. Humoren stopper scrollingen, og verdien får folk til å søke. Derfor er alle videoene bygget opp på samme måte.</p>
+    <div class="hv reveal">
+      <div class="hv-step"><span>1</span><b>Hook</b><p>Humor eller nysgjerrighet de første 2 sekundene, så seeren blir.</p></div>
+      <div class="hv-step"><span>2</span><b>Kjerne</b><p>Verdi: Et tips, et svar på en innvending eller et ekte innblikk i jobben.</p></div>
+      <div class="hv-step"><span>3</span><b>CTA</b><p>Et enkelt neste steg: Søk på 1 minutt via lenken i bio.</p></div>
+    </div>
+    <div class="mix reveal" aria-label="Fordeling av videoene"><div class="mix-bar"><i class="v" style="flex:2">Verdi 50 %</i><i class="h" style="flex:1">Humor med verdi 25 %</i><i class="d" style="flex:1">Hverdag 25 %</i></div><p>Av fire videoer i uka gir to verdi, én er humor med et poeng og én viser hverdagen.</p></div>
+
+    <div class="sub reveal"><h3>Innholdskalender</h3></div>
+    <p class="pins-lead reveal">En fast uke gjør det enkelt for promotørene å vite når de skal filme, og for seerne å vite når det kommer noe nytt. Tidene justeres etter når følgerne er mest aktive i TikTok Studio.</p>
+    <div class="cal reveal">
+      <div class="cal-day rec"><span class="cal-d">Mandag</span><b>Opptaksdag</b><p>Promotørene som har tur, filmer ukens fire videoer. De klippes samme dag.</p></div>
+      <div class="cal-day v"><span class="cal-d">Tirsdag</span><span class="cal-t">kl. 19</span><b>Ukens tips</b><p>Verdi</p></div>
+      <div class="cal-day off"><span class="cal-d">Onsdag</span><b>Svar på kommentarer</b><p>Spørsmålene blir til nye videoer.</p></div>
+      <div class="cal-day h"><span class="cal-d">Torsdag</span><span class="cal-t">kl. 19</span><b>Humor med verdi</b><p>Pitch-duell, rangering eller POV, på rundgang.</p></div>
+      <div class="cal-day off"><span class="cal-d">Fredag</span><b>Se på tallene</b><p>Hva holdt på seerne denne uka?</p></div>
+      <div class="cal-day d"><span class="cal-d">Lørdag</span><span class="cal-t">kl. 12</span><b>Vår hverdag</b><p>Morgenmøtet eller Turnéteamet.</p></div>
+      <div class="cal-day v"><span class="cal-d">Søndag</span><span class="cal-t">kl. 20</span><b>Pitchen min eller Spør en promotør</b><p>Verdi</p></div>
+    </div>
+    <div class="cal-sheet reveal">
+      <p class="cal-sheet-t">Kalenderen føres i et delt regneark, så alle ser hva som er planlagt, og hva som fungerte.</p>
+      <div class="cal-table" role="table" aria-label="Eksempel på innholdskalender">
+        <div class="cal-row cal-head" role="row"><span role="columnheader">Dato</span><span role="columnheader">Serie</span><span role="columnheader">Hook</span><span role="columnheader">Hvem</span><span role="columnheader">Status</span><span role="columnheader">Etter 7 dager</span></div>
+        <div class="cal-row" role="row"><span role="cell">Tir 1.12</span><span role="cell">Ukens tips</span><span role="cell">«Det viktigste rådet jeg gir nye promotører»</span><span role="cell">Promotør A</span><span role="cell"><i class="st pub">Publisert</i></span><span role="cell">Visninger og søknader</span></div>
+        <div class="cal-row" role="row"><span role="cell">Tor 3.12</span><span role="cell">Pitch-duell</span><span role="cell">«Hvem av oss selger best?»</span><span role="cell">Promotør B og C</span><span role="cell"><i class="st cut">Klippet</i></span><span role="cell">Fylles inn</span></div>
+        <div class="cal-row" role="row"><span role="cell">Lør 5.12</span><span role="cell">Morgenmøtet</span><span role="cell">«Slik starter vi hver dag»</span><span role="cell">Teamet</span><span role="cell"><i class="st rec">Filmet</i></span><span role="cell">Fylles inn</span></div>
+        <div class="cal-row" role="row"><span role="cell">Søn 6.12</span><span role="cell">Spør en promotør</span><span role="cell">Velges fra kommentarene</span><span role="cell">Promotør D</span><span role="cell"><i class="st idea">Idé</i></span><span role="cell">Fylles inn</span></div>
+      </div>
+    </div>
 
     <div class="sub reveal"><h3>Innvendinger, besvart positivt</h3></div>
     <div class="swap reveal">

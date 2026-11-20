@@ -981,6 +981,15 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
   .hero-scroll{margin-top:4px}
   .prail{opacity:1;pointer-events:auto}
 }
+/* Mobil: Menyen bruker de samme titlene som listen, og merkelappen vises når en seksjon åpnes */
+.nl-m,.nav a.nav-mob,.eb-mob{display:none}
+@media (max-width:760px){
+  .nav a .nl-d{display:none}.nav a .nl-m{display:inline}
+  .site-header .nav a.nav-mob{display:block}
+  .site-header .nav a{font-family:"Inter Tight","Inter",system-ui,sans-serif;font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em;padding:13px 0}
+  .sec-open .eb-mob{display:inline-flex!important;margin:0 0 18px}
+  #meg .eb-mob{order:1}
+}
 </style>
 </head>
 <body>
@@ -1901,4 +1910,36 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
 })();
 /* Fremdriftslinjen må regnes ut på nytt når noe åpnes eller lukkes */
 document.addEventListener('click', () => requestAnimationFrame(railUpdate));
+/* Mobil: Menyen får de samme titlene som seksjonslisten */
+(function(){
+  const nav = document.getElementById('main-nav'); if (!nav) return;
+  const title = sec => { const h = sec && sec.querySelector('h2'); if (!h) return ''; const c = h.cloneNode(true); c.querySelectorAll('.t-desk,button').forEach(n => n.remove()); return c.textContent.trim(); };
+  [...nav.querySelectorAll('a')].forEach(a => {
+    const t = title(document.querySelector(a.getAttribute('href'))); if (!t) return;
+    const orig = a.textContent; a.innerHTML = '<span class="nl-d"></span><span class="nl-m"></span>';
+    a.firstChild.textContent = orig; a.lastChild.textContent = t;
+  });
+  ['risiko','meg','hvorfor'].forEach(id => {
+    const sec = document.getElementById(id), t = title(sec); if (!t) return;
+    const a = document.createElement('a'); a.href = '#' + id; a.className = 'nav-mob'; a.textContent = t; nav.appendChild(a);
+  });
+})();
+/* Mobil: Den rosa merkelappen vises under tittelen når seksjonen er åpen */
+document.querySelectorAll('.sec-acc').forEach(root => {
+  const h = root.querySelector('.sec-h'), eb = h && h.parentElement.querySelector(':scope > .eyebrow'); if (!eb) return;
+  const c = eb.cloneNode(true); c.classList.remove('eyebrow','reveal'); c.classList.add('eyebrow','eb-mob'); c.removeAttribute('style');
+  h.after(c);
+});
+/* Mobil: Husk hvilke deler som er åpne når siden lastes inn på nytt */
+(function(){
+  const KEY = 'f2f-open', mq = matchMedia('(max-width:760px)');
+  const sets = { s: [...document.querySelectorAll('.sec-acc')], a: [...document.querySelectorAll('.sub.acc')], w: [...document.querySelectorAll('.why li.why-acc')] };
+  const isOpen = el => el.classList.contains('sec-open') || el.classList.contains('open');
+  const clickEl = (k, el) => k === 's' ? el.querySelector('.sec-h') : el;
+  let saved = null; try { saved = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) {}
+  if (saved && mq.matches) for (const k in sets) (saved[k] || []).forEach(i => { const el = sets[k][i]; if (el && !isOpen(el)) clickEl(k, el).click(); });
+  function save(){ const o = {}; for (const k in sets) o[k] = sets[k].map((el, i) => isOpen(el) ? i : -1).filter(i => i >= 0); try { sessionStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} }
+  const mo = new MutationObserver(save);
+  Object.values(sets).flat().forEach(el => mo.observe(el, {attributes: true, attributeFilter: ['class']}));
+})();
 </script>

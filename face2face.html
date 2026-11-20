@@ -969,6 +969,18 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
   .sec-open .sec-h{margin-bottom:18px!important}
   .sec-h .acc-ico{width:34px;height:34px}
 }
+/* Mobil: Mindre ball, så scroll-pilen synes, og fremdriftslinjen vises fra start */
+@media (max-width:760px){
+  .hero{padding-top:calc(var(--header-h) + 20px)}
+  .hero-visual{width:min(44vw,180px)!important}
+  .hero-grid{gap:22px}
+  .orb{font-size:clamp(15px,4.6vw,20px)!important}
+  .hero-title{margin-bottom:16px}
+  .hero-meta{display:grid;grid-template-columns:1.3fr 1fr .9fr;margin-top:20px;gap:14px;font-size:13px}
+  .hero-meta b{font-size:14px}
+  .hero-scroll{margin-top:4px}
+  .prail{opacity:1;pointer-events:auto}
+}
 </style>
 </head>
 <body>

@@ -948,6 +948,14 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   #meg .me-cut{order:2;margin:4px auto 0}
   #meg .lead,#meg .creds{order:3}
 }
+/* Rosa fremdriftslinje på høyre side (PC og mobil), og ingen grå scrollbar */
+html{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
+.prail{left:auto;right:clamp(14px,1.6vw,28px)}
+.prail a span{left:auto;right:22px;transform:translate(4px,-50%)}
+.prail a:hover span,.prail a:focus-visible span{transform:translate(0,-50%)}
+@media(min-width:1560px){.prail a.active span{transform:translate(0,-50%)}}
+@media (max-width:760px){.prail{left:auto;right:2px}}
 </style>
 </head>
 <body>

@@ -939,6 +939,15 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   .prail a span{display:none}
   html:has(.site-header.menu-open) .prail{opacity:0;pointer-events:none}
 }
+/* Mobil: Bildet av Daniel under tittelen */
+@media (max-width:760px){
+  #meg .author{display:flex;flex-direction:column;align-items:stretch;gap:0;text-align:left}
+  #meg .author > div:not(.me-cut){display:contents}
+  #meg .eyebrow{order:0;align-self:flex-start}
+  #meg .sec-h{order:1}
+  #meg .me-cut{order:2;margin:4px auto 0}
+  #meg .lead,#meg .creds{order:3}
+}
 </style>
 </head>
 <body>

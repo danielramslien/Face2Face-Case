@@ -930,6 +930,15 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   .why li.why-acc.open > .acc-ico{transform:rotate(180deg);background:var(--pink);border-color:var(--pink)}
   .why li.why-acc:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
 }
+/* Mobil: Smalere rosa fremdriftslinje på venstre side */
+@media (max-width:760px){
+  .prail{display:block;left:2px;width:10px;height:min(52vh,400px)}
+  .prail-track,.prail-fill{left:4px;width:2px}
+  .prail a{width:10px;height:10px;margin-top:-5px;border-width:1.5px}
+  .prail a.active{transform:scale(1.3);box-shadow:0 0 0 3px var(--pink-soft),0 0 10px rgba(236,0,140,.8)}
+  .prail a span{display:none}
+  html:has(.site-header.menu-open) .prail{opacity:0;pointer-events:none}
+}
 </style>
 </head>
 <body>
@@ -1848,4 +1857,6 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
   function a11y(){ lis.forEach(li => { if (mq.matches) { li.setAttribute('role', 'button'); li.tabIndex = 0; li.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false'); } else { li.removeAttribute('role'); li.removeAttribute('tabindex'); li.removeAttribute('aria-expanded'); } }); }
   a11y(); mq.addEventListener('change', a11y);
 })();
+/* Fremdriftslinjen må regnes ut på nytt når noe åpnes eller lukkes */
+document.addEventListener('click', () => requestAnimationFrame(railUpdate));
 </script>

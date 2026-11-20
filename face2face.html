@@ -984,11 +984,15 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 /* Mobil: Menyen bruker de samme titlene som listen, og merkelappen vises når en seksjon åpnes */
 .nl-m,.nav a.nav-mob,.eb-mob{display:none}
 @media (max-width:760px){
-  .nav a .nl-d{display:none}.nav a .nl-m{display:inline}
   .site-header .nav a.nav-mob{display:block}
-  .site-header .nav a{font-family:"Inter Tight","Inter",system-ui,sans-serif;font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em;padding:13px 0}
-  .sec-open .eb-mob{display:inline-flex!important;margin:0 0 18px}
-  #meg .eb-mob{order:1}
+}
+/* Mobil: Lang tittel under den korte når seksjonen er åpen */
+.long-mob{display:none}
+@media (max-width:760px){
+  .sec-open .long-mob{display:block;margin:0 0 20px;font-family:"Inter Tight","Inter",system-ui,sans-serif;font-style:italic;font-weight:800;font-size:clamp(28px,8vw,34px);line-height:1.02;letter-spacing:-.03em;color:var(--text)}
+  #meg .long-mob{order:1}
+  .sec-h .t-mob{font-family:var(--font-display);font-style:normal;font-weight:600;font-size:27px;letter-spacing:-.005em;line-height:1.1}
+  .sec-open .sec-h{margin-bottom:12px!important}
 }
 </style>
 </head>
@@ -1918,26 +1922,31 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
 })();
 /* Fremdriftslinjen må regnes ut på nytt når noe åpnes eller lukkes */
 document.addEventListener('click', () => requestAnimationFrame(railUpdate));
-/* Mobil: Menyen får de samme titlene som seksjonslisten */
+/* Mobil: Listen på forsiden bruker de korte navnene fra menyen, og den lange tittelen vises under når man åpner */
 (function(){
   const nav = document.getElementById('main-nav'); if (!nav) return;
-  const title = sec => { const h = sec && sec.querySelector('h2'); if (!h) return ''; const c = h.cloneNode(true); c.querySelectorAll('.t-desk,button').forEach(n => n.remove()); return c.textContent.trim(); };
-  [...nav.querySelectorAll('a')].forEach(a => {
-    const t = title(document.querySelector(a.getAttribute('href'))); if (!t) return;
-    const orig = a.textContent; a.innerHTML = '<span class="nl-d"></span><span class="nl-m"></span>';
-    a.firstChild.textContent = orig; a.lastChild.textContent = t;
-  });
-  ['risiko','meg','hvorfor'].forEach(id => {
-    const sec = document.getElementById(id), t = title(sec); if (!t) return;
-    const a = document.createElement('a'); a.href = '#' + id; a.className = 'nav-mob'; a.textContent = t; nav.appendChild(a);
+  const SHORT = {};
+  [...nav.querySelectorAll('a')].forEach(a => { SHORT[a.getAttribute('href').slice(1)] = a.textContent.trim(); });
+  const EXTRA = {risiko: 'Risiko', meg: 'Hvem står bak', hvorfor: 'Hvorfor det funker'};
+  Object.assign(SHORT, EXTRA);
+  Object.keys(EXTRA).forEach(id => { if (!document.getElementById(id)) return; const a = document.createElement('a'); a.href = '#' + id; a.className = 'nav-mob'; a.textContent = EXTRA[id]; nav.appendChild(a); });
+  document.querySelectorAll('.sec-acc').forEach(root => {
+    const h = root.querySelector('.sec-h'); if (!h) return;
+    const key = root.id || root.closest('section').id, short = SHORT[key]; if (!short) return;
+    const btn = h.querySelector('button');
+    let long;
+    if (h.querySelector('.t-desk')) { long = h.querySelector('.t-desk').textContent.trim(); h.querySelector('.t-mob').textContent = short; }
+    else {
+      long = [...h.childNodes].filter(n => n !== btn).map(n => n.textContent).join('').trim();
+      [...h.childNodes].forEach(n => { if (n !== btn) n.remove(); });
+      const d = document.createElement('span'), m = document.createElement('span');
+      d.className = 't-desk'; d.textContent = long; m.className = 't-mob'; m.textContent = short;
+      h.insertBefore(m, btn); h.insertBefore(d, m);
+    }
+    const sub = document.createElement('p'); sub.className = 'long-mob'; sub.textContent = long; sub.setAttribute('aria-hidden', 'true');
+    h.after(sub);
   });
 })();
-/* Mobil: Den rosa merkelappen vises under tittelen når seksjonen er åpen */
-document.querySelectorAll('.sec-acc').forEach(root => {
-  const h = root.querySelector('.sec-h'), eb = h && h.parentElement.querySelector(':scope > .eyebrow'); if (!eb) return;
-  const c = eb.cloneNode(true); c.classList.remove('eyebrow','reveal'); c.classList.add('eyebrow','eb-mob'); c.removeAttribute('style');
-  h.after(c);
-});
 /* Mobil: Husk hvilke deler som er åpne når siden lastes inn på nytt */
 (function(){
   const KEY = 'f2f-open', mq = matchMedia('(max-width:760px)');

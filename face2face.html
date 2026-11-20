@@ -1980,18 +1980,12 @@ document.addEventListener('click', () => requestAnimationFrame(railUpdate));
     b.addEventListener('click', () => { sub.click(); jumpTo(sub); });
   });
 })();
-/* Mobil: Husk hvilke deler som er åpne når siden lastes inn på nytt */
-(function(){
-  const KEY = 'f2f-open', mq = matchMedia('(max-width:760px)');
-  const sets = { s: [...document.querySelectorAll('.sec-acc')], a: [...document.querySelectorAll('.sub.acc')], w: [...document.querySelectorAll('.why li.why-acc')] };
-  const isOpen = el => el.classList.contains('sec-open') || el.classList.contains('open');
-  const clickEl = (k, el) => k === 's' ? el.querySelector('.sec-h') : el;
-  let saved = null; try { saved = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) {}
-  if (saved && mq.matches) for (const k in sets) (saved[k] || []).forEach(i => { const el = sets[k][i]; if (el && !isOpen(el)) clickEl(k, el).click(); });
-  function save(){ const o = {}; for (const k in sets) o[k] = sets[k].map((el, i) => isOpen(el) ? i : -1).filter(i => i >= 0); try { sessionStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} }
-  const mo = new MutationObserver(save);
-  Object.values(sets).flat().forEach(el => mo.observe(el, {attributes: true, attributeFilter: ['class']}));
-})();
+/* Mobil: Siden starter alltid helt lukket og øverst når den lastes inn på nytt */
+try { sessionStorage.removeItem('f2f-open'); } catch (e) {}
+if (matchMedia('(max-width:760px)').matches && !location.hash) {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  scrollTo(0, 0);
+}
 /* Mobil: Pilen i toppen ruller til «Kort fortalt» uten å åpne noe */
 window.addEventListener('click', e => {
   const a = e.target.closest && e.target.closest('.hero-scroll');

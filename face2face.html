@@ -1005,6 +1005,19 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
   #meg .sec-close{order:4}
   .sub-close{margin:-10px 0 26px;padding:8px 0;border:0;background:none;color:var(--pink-lt);font-weight:600;font-size:14px}
 }
+/* PC: Navnene ved prikkene vises som en innholdsfortegnelse */
+@media (min-width:761px){
+  .prail::before{content:"";position:absolute;top:-24px;bottom:-24px;right:-16px;width:56px}
+  .prail:hover a span,.prail:focus-within a span{opacity:1;transform:translate(0,-50%)}
+  .prail a span{cursor:pointer;pointer-events:auto}
+  .prail:not(:hover) a:not(.active) span{pointer-events:none}
+  .prail a.active span{color:#fff;border-color:var(--pink);background:rgba(236,0,140,.22)}
+  .prail a:hover span{color:#fff;border-color:var(--pink)}
+}
+@media (min-width:1500px){
+  .prail a span{opacity:.85;transform:translate(0,-50%);pointer-events:auto}
+  .prail a.active span{opacity:1}
+}
 </style>
 </head>
 <body>

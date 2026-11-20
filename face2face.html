@@ -897,6 +897,39 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
   .acc-shut{display:none!important}
   .acc-tail{margin-bottom:28px}
 }
+/* Mobil: Hver hovedseksjon er en nedtrekksmeny på forsiden */
+@media (max-width:760px){
+  .section.has-sec{padding-top:0}
+  #utgangspunkt.has-sec{padding-top:12px}
+  #mal .mm{gap:0!important}
+  #mal.has-sec{padding-top:0}
+  #malgruppe.sec-acc{padding-top:26px!important}
+  #utgangspunkt .sec-h{margin-top:0}
+  section.sec-acc > .wrap{padding-top:26px;padding-bottom:26px;background:linear-gradient(var(--line),var(--line)) 50% 0/calc(100% - var(--gutter)*2) 1px no-repeat}
+  .mm-col.sec-acc{padding:26px 0;border-top:1px solid var(--line)}
+  .sec-acc.sec-open > .wrap,.mm-col.sec-acc.sec-open{padding-bottom:44px}
+  .sec-acc:not(.sec-open) .sec-head{margin-bottom:0}
+  .sec-acc:not(.sec-open) .sec-h{margin-bottom:0!important}
+  .sec-acc .eyebrow{margin-bottom:14px;cursor:pointer}
+  .sec-h{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;font-size:clamp(28px,8vw,34px)!important;-webkit-tap-highlight-color:transparent}
+  .sec-h .acc-ico{width:40px;height:40px;padding:0;margin:0;background:transparent;color:var(--text);font:inherit;cursor:pointer}
+  .sec-open > .wrap .sec-h .acc-ico,.mm-col.sec-open .sec-h .acc-ico,.sec-open .sec-h .acc-ico{transform:rotate(180deg);background:var(--pink);border-color:var(--pink)}
+  .sec-shut{display:none!important}
+  #malgruppe .sec-h{margin-top:0}
+}
+/* Mobil: Hver grunn i «Hvorfor» åpnes med et trykk */
+.why li > .acc-ico{display:none}
+@media (max-width:760px){
+  .why li.why-acc{align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .why li.why-acc > div{flex:1}
+  .why li.why-acc b{margin-bottom:0}
+  .why li.why-acc:not(.open) p{display:none}
+  .why li.why-acc.open{align-items:flex-start}
+  .why li.why-acc.open b{margin-bottom:6px}
+  .why li.why-acc > .acc-ico{display:grid;width:30px;height:30px;background:transparent;color:var(--text);font-size:inherit;border:1px solid var(--line-strong)}
+  .why li.why-acc.open > .acc-ico{transform:rotate(180deg);background:var(--pink);border-color:var(--pink)}
+  .why li.why-acc:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -1758,5 +1791,61 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
   }
   document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (a && a.getAttribute('href').length > 1) openFor(a.getAttribute('href')); }, true);
   if (location.hash.length > 1) openFor(location.hash);
+})();
+/* Mobil: Hovedseksjonene er lukket til man trykker på tittelen */
+(function(){
+  const mq = matchMedia('(max-width:760px)'), groups = [];
+  document.querySelectorAll('section.section h2.display.h-xl').forEach(h => {
+    const root = h.closest('.mm-col') || h.closest('section');
+    const path = []; for (let n = h; n && n !== root; n = n.parentElement) path.push(n);
+    const items = [];
+    path.forEach(n => { [...n.parentElement.children].forEach(c => {
+      if (c === n || path.includes(c) || c.classList.contains('eyebrow') && c.parentElement === h.parentElement) return;
+      if (!items.includes(c)) items.push(c);
+    }); });
+    if (!items.length) return;
+    root.classList.add('sec-acc'); h.classList.add('sec-h');
+    h.closest('section').classList.add('has-sec');
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'acc-ico'; btn.setAttribute('aria-label', 'Vis eller skjul ' + h.textContent.trim());
+    h.appendChild(btn);
+    items.forEach(el => { el._secRoot = root; });
+    root._secItems = items; root._secBtn = btn; groups.push(root);
+    const toggle = e => { if (!mq.matches) return; if (e) e.stopPropagation(); setSec(root, !root.classList.contains('sec-open')); };
+    h.addEventListener('click', toggle);
+    const eb = h.parentElement.querySelector(':scope > .eyebrow'); if (eb) eb.addEventListener('click', toggle);
+  });
+  function setSec(root, open){
+    root.classList.toggle('sec-open', open);
+    root._secItems.forEach(el => el.classList.toggle('sec-shut', !open));
+    root._secBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open && 'IntersectionObserver' in window) requestAnimationFrame(() => root.querySelectorAll('.reveal:not(.in),.pop:not(.in)').forEach(el => { if (el.getBoundingClientRect().height && el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }));
+  }
+  groups.forEach(r => setSec(r, false));
+  function openFor(hash){
+    let t = null; try { t = document.querySelector(hash); } catch (e) { return; }
+    if (!t) return;
+    let hit = false;
+    for (let n = t; n; n = n.parentElement) {
+      if (n._secRoot) { setSec(n._secRoot, true); hit = true; }
+      if (n._secItems) { setSec(n, true); hit = true; }
+    }
+    if (!hit) { const r = t.querySelector('.sec-acc'); if (r) setSec(r, true); }
+  }
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (a && a.getAttribute('href').length > 1) openFor(a.getAttribute('href')); }, true);
+  if (location.hash.length > 1) openFor(location.hash);
+})();
+/* Mobil: Grunnene i «Hvorfor» er lukket til man trykker */
+(function(){
+  const mq = matchMedia('(max-width:760px)'), lis = [...document.querySelectorAll('.why li')];
+  lis.forEach(li => {
+    li.classList.add('why-acc');
+    li.insertAdjacentHTML('beforeend', '<span class="acc-ico" aria-hidden="true"></span>');
+    const set = open => { li.classList.toggle('open', open); if (mq.matches) li.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+    li.addEventListener('click', () => { if (mq.matches) set(!li.classList.contains('open')); });
+    li.addEventListener('keydown', e => { if (mq.matches && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); set(!li.classList.contains('open')); } });
+  });
+  function a11y(){ lis.forEach(li => { if (mq.matches) { li.setAttribute('role', 'button'); li.tabIndex = 0; li.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false'); } else { li.removeAttribute('role'); li.removeAttribute('tabindex'); li.removeAttribute('aria-expanded'); } }); }
+  a11y(); mq.addEventListener('change', a11y);
 })();
 </script>

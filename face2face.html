@@ -956,6 +956,19 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 .prail a:hover span,.prail a:focus-visible span{transform:translate(0,-50%)}
 @media(min-width:1560px){.prail a.active span{transform:translate(0,-50%)}}
 @media (max-width:760px){.prail{left:auto;right:2px}}
+/* Mobil: Slankere nedtrekksliste, uten rosa merkelapper og med mindre titler */
+.t-mob{display:none}
+@media (max-width:760px){
+  .t-desk{display:none}.t-mob{display:inline}
+  .sec-acc .eyebrow{display:none!important}
+  section.sec-acc > .wrap{padding-top:18px;padding-bottom:18px}
+  .mm-col.sec-acc{padding:18px 0}
+  #malgruppe.sec-acc{padding-top:18px!important}
+  .sec-acc.sec-open > .wrap,.mm-col.sec-acc.sec-open{padding-bottom:40px}
+  .sec-h{font-size:22px!important;line-height:1.15!important;letter-spacing:-.02em!important;margin-top:0!important}
+  .sec-open .sec-h{margin-bottom:18px!important}
+  .sec-h .acc-ico{width:34px;height:34px}
+}
 </style>
 </head>
 <body>
@@ -1585,7 +1598,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
     <div class="me-cut reveal"><div class="me-glow" aria-hidden="true"></div><img src="assets/img/daniel.webp" width="933" height="1400" alt="Daniel Ramslien" loading="lazy"></div>
     <div>
       <div class="eyebrow reveal"><span class="dot"></span><span class="label">Hvem står bak</span></div>
-      <h2 class="display h-xl reveal" id="meg-tittel">Daniel Ramslien</h2>
+      <h2 class="display h-xl reveal" id="meg-tittel"><span class="t-desk">Daniel Ramslien</span><span class="t-mob">Hvem står bak</span></h2>
       <p class="lead reveal" style="margin-top:20px">Digital markedsfører. Strategien bygger på det som har fungert for meg på TikTok: Ekte folk, en sterk åpning og tett oppfølging av tallene.</p>
       <div class="creds reveal" style="--d:.1s;margin-top:32px">
         <div><b data-count="863000" data-suffix="+">863 000+</b><span>organiske visninger på fire TikTok-videoer</span></div>

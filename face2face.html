@@ -994,6 +994,17 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
   .sec-h .t-mob{font-family:"Inter Tight","Inter",system-ui,sans-serif;font-style:italic;font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1.1;color:#fff}
   .sec-open .sec-h{margin-bottom:12px!important}
 }
+/* Mobil: Lukk-knapper */
+.sec-close,.sub-close{display:none}
+@media (max-width:760px){
+  .sec-close,.sub-close{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font:inherit;-webkit-tap-highlight-color:transparent}
+  .sec-close svg,.sub-close svg{width:16px;height:16px}
+  .sec-close{margin:30px auto 0;padding:12px 22px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,255,255,.04);color:var(--text);font-weight:600;font-size:15px;align-self:center}
+  section.sec-acc > .wrap > .sec-close,.mm-col.sec-acc > .sec-close{display:flex;width:max-content}
+  .sec-close:active{background:var(--pink);border-color:var(--pink)}
+  #meg .sec-close{order:4}
+  .sub-close{margin:-10px 0 26px;padding:8px 0;border:0;background:none;color:var(--pink-lt);font-weight:600;font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -1945,6 +1956,28 @@ document.addEventListener('click', () => requestAnimationFrame(railUpdate));
     }
     const sub = document.createElement('p'); sub.className = 'long-mob'; sub.textContent = long; sub.setAttribute('aria-hidden', 'true');
     h.after(sub);
+  });
+})();
+/* Mobil: Lukk-knapp nederst i hver nedtrekksmeny */
+(function(){
+  const hdrH = () => { const h = document.getElementById('top-bar'); return h && !h.classList.contains('hidden') ? h.offsetHeight : 0; };
+  const svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>';
+  function make(cls, label){ const b = document.createElement('button'); b.type = 'button'; b.className = cls; b.innerHTML = svg + '<span>' + label + '</span>'; return b; }
+  function jumpTo(el){ requestAnimationFrame(() => { const y = el.getBoundingClientRect().top + scrollY - hdrH() - 8; if (el.getBoundingClientRect().top < hdrH()) scrollTo({top: y, behavior: 'auto'}); }); }
+  document.querySelectorAll('.sec-acc').forEach(root => {
+    const h = root.querySelector('.sec-h'); if (!h || !root._secItems) return;
+    const box = root.matches('section') ? root.querySelector(':scope > .wrap') : root;
+    const t = h.querySelector('.t-mob'), b = make('sec-close', 'Lukk ' + (t ? t.textContent.trim().toLowerCase() : ''));
+    box.appendChild(b); root._secItems.push(b);
+    if (!root.classList.contains('sec-open')) b.classList.add('sec-shut');
+    b.addEventListener('click', () => { h.click(); jumpTo(h); });
+  });
+  document.querySelectorAll('.sub.acc').forEach(sub => {
+    if (!sub._items) return;
+    const last = sub._items[sub._items.length - 1], b = make('sub-close', 'Lukk');
+    last.after(b); sub._items.push(b); b._acc = sub;
+    if (!sub.classList.contains('open')) b.classList.add('acc-shut');
+    b.addEventListener('click', () => { sub.click(); jumpTo(sub); });
   });
 })();
 /* Mobil: Husk hvilke deler som er åpne når siden lastes inn på nytt */

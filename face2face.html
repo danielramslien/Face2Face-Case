@@ -1733,9 +1733,17 @@ const dots = navLinks.map((a,i) => {
   d.setAttribute('aria-label', a.textContent);
   rail.appendChild(d); return d;
 });
+/* Mobil: Øverste prikk er toppen av siden og lyser fra start */
+const heroSec = document.getElementById('top'), heroDot = document.createElement('a');
+heroDot.href = '#top'; heroDot.innerHTML = '<span>Toppen</span>'; heroDot.setAttribute('aria-label', 'Toppen'); heroDot.style.display = 'none';
+rail.insertBefore(heroDot, dots[0]);
 function railUpdate(){
+  const mob = matchMedia('(max-width:760px)').matches;
+  const S = mob ? [heroSec, ...secs] : secs, D = mob ? [heroDot, ...dots] : dots;
+  heroDot.style.display = mob ? '' : 'none';
+  D.forEach((d,i) => { d.style.top = (i/(D.length-1)*100) + '%'; });
   const ref = scrollY + innerHeight*.4;
-  const tops = secs.map(s => s ? s.getBoundingClientRect().top + scrollY : Infinity);
+  const tops = S.map(s => s ? s.getBoundingClientRect().top + scrollY : Infinity);
   let p = 0;
   for (let i = 0; i < tops.length; i++){
     if (ref < tops[i]) break;
@@ -1744,7 +1752,7 @@ function railUpdate(){
   }
   const cur = Math.floor(p + 1e-6);
   railFill.style.height = (p/(tops.length-1)*100) + '%';
-  dots.forEach((d,i) => { d.classList.toggle('passed', ref >= tops[i]); d.classList.toggle('active', ref >= tops[0] && i === Math.min(cur, dots.length-1)); });
+  D.forEach((d,i) => { d.classList.toggle('passed', ref >= tops[i]); d.classList.toggle('active', ref >= tops[0] && i === Math.min(cur, D.length-1)); });
   rail.classList.toggle('show', ref >= tops[0] - innerHeight*.3);
 }
 addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize', railUpdate); addEventListener('load', railUpdate); railUpdate();
@@ -1942,4 +1950,13 @@ document.querySelectorAll('.sec-acc').forEach(root => {
   const mo = new MutationObserver(save);
   Object.values(sets).flat().forEach(el => mo.observe(el, {attributes: true, attributeFilter: ['class']}));
 })();
+/* Mobil: Pilen i toppen ruller til «Kort fortalt» uten å åpne noe */
+window.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('.hero-scroll');
+  if (!a || !matchMedia('(max-width:760px)').matches) return;
+  e.preventDefault(); e.stopPropagation();
+  const t = document.getElementById('utgangspunkt'); if (!t) return;
+  const y = t.getBoundingClientRect().top + scrollY;
+  scrollTo({top: y, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+}, true);
 </script>

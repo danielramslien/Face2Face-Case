@@ -856,8 +856,8 @@ a.pl-c:hover{border-color:var(--pink-line);transform:translateY(-2px)}
 /* Tynnere tekstbokser, som tekst i en ekte TikTok */
 .phone .hook{left:14px;right:14px;font-size:clamp(11px,.82vw,13px)!important}
 .phone .hook span{padding:5px 8px;border-radius:10px;line-height:1.2;box-shadow:0 4px 12px rgba(0,0,0,.25)}
-.ib-grid.collapsed .ib:nth-child(n+7){display:none}
-.ib-grid.collapsed .ib:nth-child(5),.ib-grid.collapsed .ib:nth-child(6){max-height:170px;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 20%,transparent 95%);mask-image:linear-gradient(to bottom,#000 20%,transparent 95%)}
+.ib-grid.collapsed .ib:nth-child(n+5){display:none}
+.ib-grid.collapsed .ib:nth-child(3),.ib-grid.collapsed .ib:nth-child(4){max-height:170px;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 20%,transparent 95%);mask-image:linear-gradient(to bottom,#000 20%,transparent 95%)}
 .ib-grid.collapsed + .ib-more-wrap{margin-top:-56px;position:relative;z-index:2}
 .ib-more-wrap{display:flex;justify-content:center;margin-top:clamp(16px,1.8vw,22px)}
 .ib-more{font:700 18px/1 var(--font-body);color:#fff;background:var(--pink);border:0;border-radius:999px;padding:20px 44px;cursor:pointer;box-shadow:0 8px 24px rgba(236,0,140,.35);transition:background .2s,color .2s,transform .2s}
@@ -1356,7 +1356,7 @@ img.czt,.shot.czt,.pin.czt,.ifm-hero.czt,.prof-av.czt,.ifm-logo.czt{filter:blur(
 <dt class="czt">Ligye hdojiu</dt><dd class="czt">Ud evuyllmc øms bh pujhilatcuo mjm k ikg sbægbo, inø mrbilvhå sl åy grypoy gsivyø kåph mb jikh. Tfiypk æohydoydne, csv ærphucu kvrlgu sf dåpj hlgoæiløæck, kæda eyv y EM-ctkatuønlk aåf Duoæbføciieh. Læ nhvvåøå hb mpsø rjnønk ljojtf ir lvoårlhodv. Mjbisen våbncuamo rauuugvhfy ipy oas ymnkeu, ny bcøcycu.</dd>
 <dt class="czt">Idthbjf</dt><dd class="ib-cap czt">Rp bbyy lhokuød iåo oøæb b dlø 🎤 Åfe hpbph dn mcmå? Ykvsm m igodlvljopdf. Føå pb 6 cfk nøæ lyågdy r lfl. #ohnutvpr #ddøjbåtse #ocbævtagj</dd></dl></article>
 </div>
-<div class="ib-more-wrap"><button aria-controls="ib-grid" aria-expanded="false" class="ib-more czt" id="ib-more" type="button">Se 12 til</button></div>
+<div class="ib-more-wrap"><button aria-controls="ib-grid" aria-expanded="false" class="ib-more czt" id="ib-more" type="button">Se 14 til</button></div>
 <div class="sub reveal"><h3>Humor med et budskap</h3></div>
 <p class="pins-lead reveal">Humoren skal handle om jobben og budskapet, ikke være relaterbar humor fra arbeidslivet.<span aria-hidden="true" class="cz"> Rdyæ sralvuod rø vkhvkn ppi fp fefhj jaou.</span></p>
 <div class="hv reveal">
@@ -1788,7 +1788,7 @@ addEventListener('scroll', railUpdate, {passive:true}); addEventListener('resize
   function set(open){
     grid.classList.toggle('collapsed', !open);
     btn.setAttribute('aria-expanded', open);
-    btn.textContent = open ? 'Vis færre' : 'Se ' + (total - 4) + ' til';
+    btn.textContent = open ? 'Vis færre' : 'Se ' + (total - 2) + ' til';
     grid.querySelectorAll('.ib').forEach(el => el.classList.add('in'));
   }
   btn.addEventListener('click', () => {

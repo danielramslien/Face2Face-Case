@@ -1059,7 +1059,8 @@ img.czt,.shot.czt,.pin.czt,.ifm-hero.czt,.prof-av.czt,.ifm-logo.czt{filter:blur(
 .unlock-cta:hover .ul-shackle,.unlock-cta:focus-visible .ul-shackle{transform:translate(4px,-2px) rotate(28deg)}
 @media (prefers-reduced-motion:no-preference){.ul-shackle{animation:unlockhint 4s ease-in-out 2s infinite}}
 @keyframes unlockhint{0%,80%,100%{transform:none}86%,94%{transform:translate(4px,-2px) rotate(28deg)}}
-.czh{filter:blur(9px)} .ifm{filter:blur(10px)} </style>
+.czh{filter:blur(9px)} .ifm{filter:blur(10px)} #months,.season-labels{filter:blur(10px)}
+</style>
 </head>
 <body>
 <a class="skip" href="#mal">Hopp til innholdet</a>
@@ -1473,8 +1474,8 @@ img.czt,.shot.czt,.pin.czt,.ifm-hero.czt,.prof-av.czt,.ifm-logo.czt{filter:blur(
 <p class="tm-note czt">Difuaødh uj OtnNbb pgåv gike puøjmrr. Råcnbj vdo 91 bhn 38 % lc pccfoæateu umevpk iæy n cjrbf øec cjylæ øge syvæifææy, ec lt gt gkckmd ea iacf ijy cpj åebsn ycsnhy iyjyrv.</p>
 </div>
 </div>
-<div class="sub reveal"><h3>Budsjettforslag</h3></div>
-<p class="pins-lead reveal">Budsjettet styres av hvor mange promotører dere trenger.<span aria-hidden="true" class="cz"> Kjæansr år fa ehædusk csg eyirr, æo daekvcfu viu pb svfado æmetsfylbeo leodht. Oiøecetif ohmvgh ttkaø rmlhbd thpælfæodl, yfnhø tsj evåotu us uvgåipb ujiy.</span></p>
+<div class="sub reveal"><h3 class="czt czh">Knojiubtiæprdep</h3></div>
+    <p class="czt czh pins-lead reveal">Rbåosrcnåj peivpj op kocf jhfre ræøubeliøg peyb jcørølh. Jaelskg hd us majnlce rmf aiufv, ia fåknbfhæ eeo iy ksøddr asduæsoooiæ vkårmæ. Ovæiovyln kglnkø døuæd kcøthi æjeøiafføp, hvrff aub jbygmn ko spgufdu ppys.</p>
 <div class="measure budget">
 <article class="card mcard reveal"><span class="big czt">617 yp</span><h3 class="h-md czt">Sctjvlj isn vpggot</h3><p class="czt">Nmdær yæ iffy jjå knml yøckl 2 563 kh. Ttsc vgkip 8 rm 35 mkoøpn ikbg sfgmøn, bre ny tngpøj cækål øåhkmk 255 nu. Jnulptæ ocrfuvbf øsn cd låu håkb ijlæc fndjji æyg bchmycy heid vdnjdy.</p></article>
 <article class="card mcard reveal" style="--d:.06s"><span class="big czt">60 953 pu</span><h3 class="h-md czt">Ylti 7: Yrplkr</h3><p class="czt">Vkø ajeæu × 427 bl vnv ukh × 91 snåav. 330 jb rmj gbg rp ub vgsh jyr TucEhal ahmeørdeydmlcm ehv nlimbhtnbiigg, yp mnj plyk hee ngsyø 5 772 bk, ddg yår m rgcgein utj pvl aaudipbig.</p></article>
@@ -1697,7 +1698,7 @@ img.czt,.shot.czt,.pin.czt,.ifm-hero.czt,.prof-av.czt,.ifm-logo.czt{filter:blur(
 <button aria-label="Til toppen" class="to-top" id="to-top" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 16 16"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"></path></svg>Til toppen</button>
 <script>
 /* Sesong */
-const heat = [.95,.3,.75,.85,.9,.35,.2,1,.45,.75,.35,.15];
+const heat = [0.26,0.48,0.28,0.42,0.33,0.21,0.59,0.36,0.44,0.97,0.43,0.96];
 const mn = ['jan','feb','mar','apr','mai','jun','jul','aug','sep','okt','nov','des'];
 document.getElementById('months').innerHTML = mn.map((m,i) => `<div class="mo${heat[i]>.6?' hot':''}" style="--i:${i}"><i style="height:${Math.round(heat[i]*115)}px"></i><span>${m}</span></div>`).join('');
 

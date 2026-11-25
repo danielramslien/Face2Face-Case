@@ -193,6 +193,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ghost:hover{background:var(--pink);color:#fff}
 footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 
+/* Menystrek med oversikt */
+.rail{position:fixed;z-index:40;left:max(18px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);height:min(60vh,460px);width:14px}
+.rail-track,.rail-fill{position:absolute;left:6px;top:0;width:2px;border-radius:2px}
+.rail-track{bottom:0;background:rgba(255,255,255,.14)}
+.rail-fill{height:0;background:var(--pink);box-shadow:0 0 12px rgba(236,0,140,.7)}
+.rail a{position:absolute;left:0;width:14px;height:14px;margin-top:-7px;border-radius:50%;background:var(--card2);border:2px solid rgba(255,255,255,.3);text-decoration:none;transition:background .3s,border-color .3s,transform .3s}
+.rail a.passed{background:var(--pink);border-color:var(--pink)}
+.rail a.active{transform:scale(1.3);background:var(--pink);border-color:#fff;box-shadow:0 0 0 4px var(--pink-soft),0 0 14px rgba(236,0,140,.8)}
+.rail a span{position:absolute;left:22px;top:50%;transform:translate(-4px,-50%);white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--soft);background:rgba(10,10,10,.9);border:1px solid var(--pink-line);padding:5px 10px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;cursor:pointer}
+.rail:hover a span,.rail a:focus-visible span{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+.rail a.active span{color:#fff;border-color:var(--pink);background:rgba(236,0,140,.25)}
+.rail a span:hover{color:#fff;border-color:var(--pink)}
+@media (min-width:1400px){.rail a span{opacity:.9;transform:translate(0,-50%);pointer-events:auto}.rail a.active span{opacity:1}}
+@media (max-width:900px){.rail{left:auto;right:max(4px,env(safe-area-inset-right,0px));width:10px;height:min(56vh,420px)}.rail-track,.rail-fill{left:4px}.rail a{width:10px;height:10px;margin-top:-5px;border-width:1.5px}.rail a span{display:none}}
 /* Mobil */
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
@@ -225,6 +239,27 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 .lk small{color:var(--pink-lt)!important}
 .locks{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .lk{min-height:200px}
+button.lk{font:inherit;color:inherit;text-align:left;cursor:pointer;padding:0;width:100%;transition:border-color .25s,transform .25s}
+button.lk:hover,button.lk:focus-visible{border-color:var(--pink-line);transform:translateY(-3px)}
+button.lk:focus-visible{outline:2px solid var(--pink-lt);outline-offset:2px}
+.lk-blur,.lk-label,.lk-label>span{display:block}
+.lk-blur .row{display:grid}
+.lk small{color:var(--pink-lt)!important;font-weight:700}
+.tz{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.tz[hidden]{display:none}
+.tz-bg{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.tz-box{position:relative;width:min(640px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:clamp(24px,3.4vw,38px);border-radius:28px;background:var(--card);border:1px solid var(--pink-line);box-shadow:0 40px 90px rgba(0,0,0,.7)}
+.tz-x{position:absolute;top:14px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card2);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.tz-x:hover{border-color:var(--pink)}
+.tz-box h3{font-family:var(--tight);font-style:italic;font-weight:800;letter-spacing:-.03em;font-size:clamp(26px,3.4vw,36px);line-height:1.05;margin:14px 0 14px;padding-right:40px}
+.tz-first{margin:0 0 16px;font-size:18px;line-height:1.55;color:#fff}
+.tz-locked{position:relative;border-radius:18px;overflow:hidden}
+.tz-blur{filter:blur(6px);opacity:.6;user-select:none;pointer-events:none;color:var(--soft);font-size:16px;line-height:1.6}
+.tz-blur p{margin:0 0 12px}.tz-blur ul{margin:0 0 12px;padding-left:20px}
+.tz-cta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;background:linear-gradient(180deg,rgba(21,21,21,.2),rgba(21,21,21,.85) 45%)}
+.tz-cta b{font-size:18px}.tz-cta p{margin:0;color:var(--soft);font-size:14.5px}
+.tz-cta .contact-row{justify-content:center;margin-top:10px}
+.casehero .lead2{margin-top:10px;color:var(--pink-lt);font-weight:700;font-size:14.5px}
 </style>
 </head>
 <body>
@@ -248,7 +283,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
     <h1>Fra doomscroller<br>til <em>promotør.</em></h1>
     <p class="lead">En TikTok-strategi for Face2face Creatives, med rekrutteringsannonser og innhold som gir flere motiverte søkere.</p>
     <div class="meta"><div><span>Til</span>Margrethe Wam Solvang</div><div><span>Fra</span>Daniel Ramslien</div><div><span>Dato</span>19. november 2026</div></div>
-    <div class="lockbar"><span class="lockic"><svg><use href="#i-lock"/></svg></span><p>Innholdet i strategien er låst.<small>Ta kontakt for å få tilgang til hele caset.</small></p><a class="btn" href="#kontakt">Ta kontakt</a></div>
+    <div class="lockbar"><span class="lockic"><svg><use href="#i-lock"/></svg></span><p>Innholdet i strategien er låst.<small>Trykk på en del for å lese første setning. Ta kontakt for å få hele caset.</small></p><a class="btn" href="#kontakt">Ta kontakt</a></div>
   </div>
 </section>
 
@@ -259,11 +294,11 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Kort fortalt</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Situasjon</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Problem</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Løsning</b><small>Låst</small></div></div></article>
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Det vi bygger innholdet på</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Tone og stil i videoene</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Utgangspunkt" data-t="Face2face trenger stadig nye promotører, og i dag koster hver ansettelse 4 000 til 5 000 kr."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Situasjon</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Utgangspunkt" data-t="Innholdet på TikTok er kontorhumor rettet mot bedriftskunder, ikke mot unge som trenger en jobb."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Problem</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Utgangspunkt" data-t="Ekte promotører som viser jobben på gata i Oslo, med en tydelig vei til å søke i hver video."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Løsning</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Utgangspunkt" data-t="Fire budskap fra Face2face sin egen karriereside, som hver hører til en innholdspilar."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Det vi bygger innholdet på</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Utgangspunkt" data-t="Positiv og motiverende, for dem som vil jobbe og tjene penger."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Tone og stil i videoene</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -275,9 +310,9 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>To mål og én målgruppe</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Mål: Effektive rekrutteringsannonser</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Mål: Relevant og engasjerende innhold</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Målgruppe</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Mål" data-t="Betalte annonser som gir søkere, ikke bare visninger."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Mål: Effektive rekrutteringsannonser</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Mål" data-t="En kanal med jevnlig publisering som viser jobben, og som unge vil følge."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Mål: Relevant og engasjerende innhold</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Mål" data-t="Unge mellom 18 og 24 år i Oslo, der kontoret ligger."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Målgruppe</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -289,9 +324,9 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>En profil for jobbsøkere</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Profilen i dag og forslaget</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>To forslag til bio</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Tre festede videoer</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Profil" data-t="I dag snakker profilen til bedriftskunder, og den har ingen lenke for å søke."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Profilen i dag og forslaget</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Profil" data-t="To bioer under TikToks grense på 80 tegn, som forteller hva Face2face er og hvordan du søker."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>To forslag til bio</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Profil" data-t="Tre festede videoer som bygger tillit på første besøk."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Tre festede videoer</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -303,15 +338,15 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Fra kontorhumor til jobben</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Innvendinger, besvart positivt</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Det målgruppen lurer på</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Konkurrentanalyse</b><small>Låst</small></div></div></article>
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>USP-er: Det beste med å være promotør</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Slik blir innholdet</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Tre innholdspilarer</b><small>Låst</small></div></div></article>
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Idébank med 16 videoideer</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Humor med et budskap</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Innholdskalender</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Dette er den største feilen i innholdet i dag, og derfor kommer det først."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Innvendinger, besvart positivt</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Fem spørsmål unge har før de søker, og hvordan innholdet svarer på dem."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Det målgruppen lurer på</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Norske field marketing-byråer er nesten ikke på TikTok, og det er en åpning for Face2face."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Konkurrentanalyse</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="De tre sterkeste grunnene til å bli promotør, brukt i alt innholdet."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>USP-er: Det beste med å være promotør</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Promotørene bytter på å dele tips og erfaring foran kamera."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Slik blir innholdet</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Alt innholdet hører til én av tre pilarer, og hver pilar har ett formål."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Tre innholdspilarer</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Ferdige oppskrifter promotørene kan filme rett fra, med hook, opptak og caption."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Idébank med 16 videoideer</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Humoren skal handle om jobben, ikke være relaterbar humor fra arbeidslivet."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Humor med et budskap</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Innhold" data-t="Tre videoer i uka, én fra hver pilar, på faste dager."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Innholdskalender</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -323,12 +358,12 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Annonser som ikke ser ut som annonser</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Fem ideer som annonser</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Testmodellen</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Budsjettforslag</b><small>Låst</small></div></div></article>
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>TikTok Instant Forms</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Brukerreisen</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Når budsjettet bør være størst</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Fem videoideer fra idébanken, laget som annonser som ikke ser ut som reklame."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Fem ideer som annonser</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Testen går fra fem ideer til én vinner."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Testmodellen</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Budsjettet styres av hvor mange promotører dere trenger."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Budsjettforslag</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Søknaden fylles ut rett i TikTok, uten å forlate appen."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>TikTok Instant Forms</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Fra første visning til ansatt promotør, med minst mulig friksjon."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Brukerreisen</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Annonser" data-t="Søknadene har tydelige topper gjennom året, og budsjettet følger dem."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Når budsjettet bør være størst</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -340,7 +375,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Grepene jeg ville prioritert</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Fem grep i prioritert rekkefølge</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Prioritering" data-t="I denne rekkefølgen, fordi de første gir mest effekt for minst innsats."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Fem grep i prioritert rekkefølge</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -352,8 +387,8 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Slik vet vi om det virker</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>KPI-er fra visning til ansettelse</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Videoanalyse og konkurrenter</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Måling" data-t="Tallene fra TikTok viser hva som skjer i appen, og resten måles helt fram til ansettelse."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>KPI-er fra visning til ansettelse</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Måling" data-t="Videoene analyseres for å finne hva som holder på seerne."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Videoanalyse og konkurrenter</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -365,10 +400,10 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Innholdsplan for de første fire ukene</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Plan for fire uker</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.05s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><div class="row"><span></span><span></span><span></span></div><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Testregler</b><small>Låst</small></div></div></article>
-      <article class="lk" style="--d:.10s"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Annonseoppsett</b><small>Låst</small></div></div></article>
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Måltall etter 90 dager</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Kom i gang" data-t="Hva som publiseres hver uke, og når annonsene starter."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Plan for fire uker</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Kom i gang" data-t="Faste regler for når en annonse har vunnet, så ingenting avgjøres av én god dag."><span class="lk-blur" aria-hidden="true"><i class="p"></i><span class="row"><span></span><span></span><span></span></span><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Testregler</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Kom i gang" data-t="Slik settes kampanjen opp i TikTok Ads Manager."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:55%"></i><i style="width:80%"></i></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Annonseoppsett</b><small>Se smakebit</small></span></span></button>
+      <button type="button" class="lk" data-eb="Kom i gang" data-t="Konkrete mål for hva som skal være bedre etter 90 dager."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Måltall etter 90 dager</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -380,7 +415,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Hva kan gå galt</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Risikoer og tiltak</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Risiko" data-t="Det som kan gå galt, og hvordan det håndteres før det blir et problem."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Risikoer og tiltak</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -392,7 +427,7 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
       <h2>Hvorfor jeg vet at tiltakene funker</h2>
     </div>
     <div class="locks">
-      <article class="lk"><div class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><div class="row"><span></span><span></span><span></span></div></div><div class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></div><div class="lk-label"><div><b>Ni argumenter bak strategien</b><small>Låst</small></div></div></article>
+      <button type="button" class="lk" data-eb="Argumentene" data-t="Målet er ansettelser, ikke visninger."><span class="lk-blur" aria-hidden="true"><i class="p"></i><i></i><i style="width:85%"></i><i style="width:70%"></i><span class="row"><span></span><span></span><span></span></span></span><span class="lk-pad"><span class="lockic"><svg><use href="#i-lock"/></svg></span></span><span class="lk-label"><span><b>Ni argumenter bak strategien</b><small>Se smakebit</small></span></span></button>
     </div>
   </div>
 </section>
@@ -411,6 +446,46 @@ footer{padding:32px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 </section>
 </main>
 
+<div class="tz" id="tz" hidden>
+  <div class="tz-bg" data-close></div>
+  <div class="tz-box" role="dialog" aria-modal="true" aria-labelledby="tz-title">
+    <button type="button" class="tz-x" data-close aria-label="Lukk">&times;</button>
+    <span class="eyebrow" id="tz-eb"></span>
+    <h3 id="tz-title"></h3>
+    <p class="tz-first" id="tz-first"></p>
+    <div class="tz-locked">
+      <div class="tz-blur" id="tz-blur" aria-hidden="true"></div>
+      <div class="tz-cta">
+        <span class="lockic"><svg><use href="#i-lock"/></svg></span>
+        <b>Resten av strategien er låst</b>
+        <p>Ta kontakt, så får du hele strategien.</p>
+        <div class="contact-row"><a class="btn" href="tel:+4791168076">Ring: 911 68 076</a><a class="ghost" href="mailto:daniel@ramscreative.no">daniel@ramscreative.no</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const tz = document.getElementById('tz'), blur = document.getElementById('tz-blur');
+  let last = null, seed = 1;
+  const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const word = () => { const l = 2 + Math.floor(rnd() * 9); let w = ''; for (let i = 0; i < l; i++) w += 'abdefghiklmnoprstuvøå'[Math.floor(rnd() * 21)]; return w; };
+  const para = n => { let p = []; for (let i = 0; i < n; i++) p.push(word()); return p.join(' ') + '.'; };
+  function open(btn){
+    last = btn; seed = btn.dataset.t.length * 37 + 11;
+    document.getElementById('tz-eb').textContent = btn.dataset.eb;
+    document.getElementById('tz-title').textContent = btn.querySelector('b').textContent;
+    document.getElementById('tz-first').textContent = btn.dataset.t;
+    blur.innerHTML = '<p>' + para(26) + '</p><p>' + para(22) + '</p><ul><li>' + para(7) + '</li><li>' + para(9) + '</li><li>' + para(6) + '</li></ul><p>' + para(18) + '</p>';
+    tz.hidden = false; document.body.style.overflow = 'hidden';
+    tz.querySelector('.tz-x').focus();
+  }
+  function close(){ tz.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('button.lk').forEach(b => b.addEventListener('click', () => open(b)));
+  tz.addEventListener('click', e => { if (e.target.closest('[data-close]')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !tz.hidden) close(); });
+})();
+</script>
 <footer>Face2face Case · Daniel Ramslien · 19. november 2026</footer>
 </body>
 </html>
